@@ -13,6 +13,7 @@ void SQLite::createTables(sqlite3 * db)
 	{
 		cerr << "Error executing first SQLite3 statement: " << sqlite3_errmsg(db) << endl << endl;
 		sqlite3_free(error);
+		cout << "Tables are already created" << endl;
 	}
 	else
 	{
@@ -45,30 +46,27 @@ SQLite::SQLite(){
 	this->createTableAmigos = "CREATE TABLE " + TABLE_AMIGOS::TABLE_NAME+"("+TABLE_AMIGOS::ID_ORIGEN+" INTEGER,"+TABLE_AMIGOS::ID_DESTINO+" INTEGER, FOREIGN KEY ("+ TABLE_AMIGOS::ID_ORIGEN +") REFERENCES "+ TABLE_USUARIOS::TABLE_NAME +"("+ TABLE_USUARIOS::ID +") ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (" + TABLE_AMIGOS::ID_DESTINO + ") REFERENCES " + TABLE_USUARIOS::TABLE_NAME + "(" + TABLE_USUARIOS::ID + ") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY("+ TABLE_AMIGOS::ID_ORIGEN +","+ TABLE_AMIGOS::ID_DESTINO +"));";
 	this->createTablePeticionesAmistad = "CREATE TABLE " + TABLE_PETICIONES_AMISTAD::TABLE_NAME + "(" + TABLE_PETICIONES_AMISTAD::ID_ORIGEN + " INTEGER," + TABLE_PETICIONES_AMISTAD::ID_DESTINO + " INTEGER, FOREIGN KEY (" + TABLE_PETICIONES_AMISTAD::ID_ORIGEN + ") REFERENCES " + TABLE_USUARIOS::TABLE_NAME + "(" + TABLE_USUARIOS::ID + ") ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (" + TABLE_PETICIONES_AMISTAD::ID_DESTINO + ") REFERENCES " + TABLE_USUARIOS::TABLE_NAME + "(" + TABLE_USUARIOS::ID + ") ON DELETE CASCADE ON UPDATE CASCADE, PRIMARY KEY(" + TABLE_PETICIONES_AMISTAD::ID_ORIGEN + "," + TABLE_PETICIONES_AMISTAD::ID_DESTINO + "));";
 
-	this->openConnection();
-	this->createTables(this->db);
-	
 }
 
 SQLite::~SQLite()
 {
-	this->closeConnection();
+	
 }
 
 
-int SQLite::openConnection(){
+int SQLite::openConnection(sqlite3 **db){
 	int rc;
 		
 	// Open Database
 	cout << "Opening MyDb.db ..." << endl;
 
-	rc = sqlite3_open("MyDb.db", &this->db);
+	rc = sqlite3_open("MyDb.db", db);
 		
 	//QUITAR DE AQUI
 	if (rc)
 	{
-		cerr << "Error opening SQLite3 database: " << sqlite3_errmsg(db) << endl << endl;
-		sqlite3_close(db);
+		cerr << "Error opening SQLite3 database: " << sqlite3_errmsg(*db) << endl << endl;
+		sqlite3_close(*db);
 		return 1;
 	}
 	else
@@ -79,10 +77,10 @@ int SQLite::openConnection(){
 	return rc;
 }
 
-void SQLite::closeConnection() {
+void SQLite::closeConnection(sqlite3 *db) {
 	// Close Database
 	cout << "Closing MyDb.db ..." << endl;
-	sqlite3_close(this->db);
+	sqlite3_close(db);
 	cout << "Closed MyDb.db" << endl << endl;
 }
 

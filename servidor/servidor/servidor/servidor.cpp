@@ -6,22 +6,19 @@
 #include <iostream>
 #include "SQLite.h"
 
-
 using namespace std;
 
 int main(){
-		
+	
+	sqlite3 *db;
 	SQLite gestorDB;
-
-	gestorDB.setDataBaseName("TEST");
-	cout << gestorDB.getDataBaseName() << "\nPulse una tecla para continuar";	
-	cin.get();
-
-
-	cout << "Creando Tablas";
 	
+
+	gestorDB.openConnection(&db);
+	gestorDB.createTables(db);
+	gestorDB.closeConnection(db);
+
 	cin.get();
-	
 
 	return 0;
 

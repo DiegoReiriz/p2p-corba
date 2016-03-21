@@ -15,15 +15,13 @@ class SQLite
 		std::string createTableAmigos;
 		std::string createTablePeticionesAmistad;
 		
-		void createTables(sqlite3 *db);
-		sqlite3 *db;
-
 	public:
 		SQLite();
 		~SQLite();
 
-		int openConnection();
-		void closeConnection();
+		int openConnection(sqlite3 **db);
+		void closeConnection(sqlite3 *db);
+		void createTables(sqlite3 *db);
 
 		std::string getDataBaseName();
 		void setDataBaseName(std::string name);
