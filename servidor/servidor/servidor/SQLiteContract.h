@@ -1,4 +1,7 @@
 #pragma once
+
+#include <string>
+
 namespace SQLiteContract
 {
 	class TABLE_USUARIOS 

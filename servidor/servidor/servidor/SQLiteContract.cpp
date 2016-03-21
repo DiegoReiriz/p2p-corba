@@ -1,6 +1,4 @@
-#pragma once
-
-#include <string>
+#include "stdafx.h"
 #include "SQLiteContract.h"
 
 namespace SQLiteContract

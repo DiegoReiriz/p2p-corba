@@ -14,9 +14,14 @@ int main(){
 	SQLite gestorDB;
 
 	gestorDB.setDataBaseName("TEST");
-	cout << gestorDB.getDataBaseName() << "\nPulse una tecla para continuar";
+	cout << gestorDB.getDataBaseName() << "\nPulse una tecla para continuar";	
+	cin.get();
+
+
+	cout << "Creando Tablas";
 	
 	cin.get();
+	
 
 	return 0;
 
