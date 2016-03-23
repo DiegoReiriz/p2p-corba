@@ -1,2 +1,6 @@
 ﻿  servidor.cpp
+  SQLiteContract.cpp
+  SQLite.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\Diego\repositorios\practica3-Distribuida\servidor\servidor\Debug\servidor.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   servidor.vcxproj -> C:\Users\Diego\repositorios\practica3-Distribuida\servidor\servidor\Debug\servidor.exe

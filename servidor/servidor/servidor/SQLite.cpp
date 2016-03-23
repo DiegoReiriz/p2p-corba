@@ -62,7 +62,6 @@ int SQLite::openConnection(sqlite3 **db){
 
 	rc = sqlite3_open("MyDb.db", db);
 		
-	//QUITAR DE AQUI
 	if (rc)
 	{
 		cerr << "Error opening SQLite3 database: " << sqlite3_errmsg(*db) << endl << endl;
