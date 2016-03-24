@@ -1,6 +1,2 @@
-﻿  servidor.cpp
-  SQLiteContract.cpp
-  SQLite.cpp
-  Generando código...
-  LINK : no se encontró C:\Users\Diego\repositorios\practica3-Distribuida\servidor\servidor\Debug\servidor.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-  servidor.vcxproj -> C:\Users\Diego\repositorios\practica3-Distribuida\servidor\servidor\Debug\servidor.exe
+﻿  sqlite3.c
+omniORB4_rtd.lib(omniORB420_vc10_rtd.dll) : fatal error LNK1112: tipo de equipo del módulo 'x64' en conflicto con tipo de equipo de destino 'X86'

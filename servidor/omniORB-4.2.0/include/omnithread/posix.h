@@ -35,9 +35,7 @@
 #endif
 #endif
 
-#ifndef __POSIX_NT__
-#  include <pthread.h>
-#else
+
 #  ifndef WIN32_LEAN_AND_MEAN
 #    define WIN32_LEAN_AND_MEAN
 #    define OMNI_DEFINED_WIN32_LEAN_AND_MEAN
@@ -48,7 +46,6 @@
 #    undef WIN32_LEAN_AND_MEAN
 #    undef OMNI_DEFINED_WIN32_LEAN_AND_MEAN
 #  endif
-#endif
 
 extern "C" void* omni_thread_wrapper(void* ptr);
 
