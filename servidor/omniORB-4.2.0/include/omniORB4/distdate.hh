@@ -1,3 +1,3 @@
 // distdate.hh -- Automatically generated file
 
-#define OMNIORB_DIST_DATE "Mon Apr 28 17:48:32 BST 2014 dgrisby"
+#define OMNIORB_DIST_DATE "Thu 29 Oct 12:47:34 GMT 2015 dgrisby"

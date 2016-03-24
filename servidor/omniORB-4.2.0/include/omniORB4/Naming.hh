@@ -124,12 +124,15 @@ _CORBA_MODULE_BEG
       return *this;
     }
     inline Name_var& operator = (const Name_var& _s) {
-      if (_s._pd_seq) {
-        if (!_pd_seq)  _pd_seq = new Name;
-        *_pd_seq = *_s._pd_seq;
-      } else if (_pd_seq) {
-        delete _pd_seq;
-        _pd_seq = 0;
+      if (&_s != this) {
+        if (_s._pd_seq) {
+          if (!_pd_seq)  _pd_seq = new Name;
+          *_pd_seq = *_s._pd_seq;
+        }
+        else if (_pd_seq) {
+          delete _pd_seq;
+          _pd_seq = 0;
+        }
       }
       return *this;
     }
@@ -260,12 +263,15 @@ _CORBA_MODULE_BEG
       return *this;
     }
     inline BindingList_var& operator = (const BindingList_var& _s) {
-      if (_s._pd_seq) {
-        if (!_pd_seq)  _pd_seq = new BindingList;
-        *_pd_seq = *_s._pd_seq;
-      } else if (_pd_seq) {
-        delete _pd_seq;
-        _pd_seq = 0;
+      if (&_s != this) {
+        if (_s._pd_seq) {
+          if (!_pd_seq)  _pd_seq = new BindingList;
+          *_pd_seq = *_s._pd_seq;
+        }
+        else if (_pd_seq) {
+          delete _pd_seq;
+          _pd_seq = 0;
+        }
       }
       return *this;
     }

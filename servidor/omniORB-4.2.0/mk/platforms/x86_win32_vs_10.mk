@@ -24,7 +24,7 @@ ABSTOP = $(shell cd $(TOP); pwd)
 # In that case, uncomment the first line below.
 
 #PYTHON = $(ABSTOP)/$(BINDIR)/omnipython
-PYTHON = /cygdrive/c/Python27_64/python
+#PYTHON = /cygdrive/c/Python26/python
 
 
 # Use the following set of flags to build and use multithreaded DLLs
@@ -76,7 +76,7 @@ OMNINAMES_LOG_DEFAULT_LOCATION = C:\\temp
 # the top level directory of the openssl library. The default is to disable
 # the build.
 #
-OPEN_SSL_ROOT = /cygdrive/c/OpenSSL-Win64
+#OPEN_SSL_ROOT = /cygdrive/c/openssl
 #
 
 OPEN_SSL_CPPFLAGS = -I$(OPEN_SSL_ROOT)/include

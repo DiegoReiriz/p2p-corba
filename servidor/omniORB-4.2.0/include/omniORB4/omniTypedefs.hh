@@ -96,12 +96,15 @@ _CORBA_MODULE_BEG
       return *this;
     }
     inline ValueBaseSeq_var& operator = (const ValueBaseSeq_var& _s) {
-      if (_s._pd_seq) {
-        if (!_pd_seq)  _pd_seq = new ValueBaseSeq;
-        *_pd_seq = *_s._pd_seq;
-      } else if (_pd_seq) {
-        delete _pd_seq;
-        _pd_seq = 0;
+      if (&_s != this) {
+        if (_s._pd_seq) {
+          if (!_pd_seq)  _pd_seq = new ValueBaseSeq;
+          *_pd_seq = *_s._pd_seq;
+        }
+        else if (_pd_seq) {
+          delete _pd_seq;
+          _pd_seq = 0;
+        }
       }
       return *this;
     }
@@ -205,12 +208,15 @@ _CORBA_MODULE_BEG
       return *this;
     }
     inline TypeCodeSeq_var& operator = (const TypeCodeSeq_var& _s) {
-      if (_s._pd_seq) {
-        if (!_pd_seq)  _pd_seq = new TypeCodeSeq;
-        *_pd_seq = *_s._pd_seq;
-      } else if (_pd_seq) {
-        delete _pd_seq;
-        _pd_seq = 0;
+      if (&_s != this) {
+        if (_s._pd_seq) {
+          if (!_pd_seq)  _pd_seq = new TypeCodeSeq;
+          *_pd_seq = *_s._pd_seq;
+        }
+        else if (_pd_seq) {
+          delete _pd_seq;
+          _pd_seq = 0;
+        }
       }
       return *this;
     }

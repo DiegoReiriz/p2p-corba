@@ -163,7 +163,6 @@ COSDynamic4_rtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
 omniORB4_rt.lib;
 omniDynamic4_rt.lib;
 omniCodeSets4_rt.lib;
-omnisslTP4_rt.lib;
 COS4_rt.lib;
 COSDynamic4_rt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>

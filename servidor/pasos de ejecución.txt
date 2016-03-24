@@ -1,0 +1,6 @@
+ejecutar omniName.exe ( coa opcion -start a primeira vez)[indicar como capeta de datos nunha variable do sistema -> a ruta da carpeta omniNamesData, que se encontra ao mesmo nivel que este arquivo ]
+ejecutar o programa ( podese facer desde servidor/x64/release/servidor.exe )
+rezar
+
+PD: xa se debería encontrar todos os archivos compilados e vinculados, incluido a omniorb 
+PD2: pode ser necesario ter python 2.7 no sistema

@@ -798,12 +798,15 @@ public:
     return *this;
   }
   inline InterfaceDefSeq_var& operator = (const InterfaceDefSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new InterfaceDefSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new InterfaceDefSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -909,12 +912,15 @@ public:
     return *this;
   }
   inline ValueDefSeq_var& operator = (const ValueDefSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new ValueDefSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new ValueDefSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -1020,12 +1026,15 @@ public:
     return *this;
   }
   inline AbstractInterfaceDefSeq_var& operator = (const AbstractInterfaceDefSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new AbstractInterfaceDefSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new AbstractInterfaceDefSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -1131,12 +1140,15 @@ public:
     return *this;
   }
   inline ContainedSeq_var& operator = (const ContainedSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new ContainedSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new ContainedSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -1262,12 +1274,15 @@ public:
     return *this;
   }
   inline InitializerSeq_var& operator = (const InitializerSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new InitializerSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new InitializerSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -1454,12 +1469,15 @@ public:
       return *this;
     }
     inline DescriptionSeq_var& operator = (const DescriptionSeq_var& _s) {
-      if (_s._pd_seq) {
-        if (!_pd_seq)  _pd_seq = new DescriptionSeq;
-        *_pd_seq = *_s._pd_seq;
-      } else if (_pd_seq) {
-        delete _pd_seq;
-        _pd_seq = 0;
+      if (&_s != this) {
+        if (_s._pd_seq) {
+          if (!_pd_seq)  _pd_seq = new DescriptionSeq;
+          *_pd_seq = *_s._pd_seq;
+        }
+        else if (_pd_seq) {
+          delete _pd_seq;
+          _pd_seq = 0;
+        }
       }
       return *this;
     }
@@ -4104,12 +4122,15 @@ public:
     return *this;
   }
   inline ParDescriptionSeq_var& operator = (const ParDescriptionSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new ParDescriptionSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new ParDescriptionSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -4221,12 +4242,15 @@ public:
     return *this;
   }
   inline ContextIdSeq_var& operator = (const ContextIdSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new ContextIdSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new ContextIdSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -4332,12 +4356,15 @@ public:
     return *this;
   }
   inline ExceptionDefSeq_var& operator = (const ExceptionDefSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new ExceptionDefSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new ExceptionDefSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -4443,12 +4470,15 @@ public:
     return *this;
   }
   inline ExcDescriptionSeq_var& operator = (const ExcDescriptionSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new ExcDescriptionSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new ExcDescriptionSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -4724,12 +4754,15 @@ public:
     return *this;
   }
   inline RepositoryIdSeq_var& operator = (const RepositoryIdSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new RepositoryIdSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new RepositoryIdSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -4835,12 +4868,15 @@ public:
     return *this;
   }
   inline OpDescriptionSeq_var& operator = (const OpDescriptionSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new OpDescriptionSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new OpDescriptionSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
@@ -4946,12 +4982,15 @@ public:
     return *this;
   }
   inline AttrDescriptionSeq_var& operator = (const AttrDescriptionSeq_var& _s) {
-    if (_s._pd_seq) {
-      if (!_pd_seq)  _pd_seq = new AttrDescriptionSeq;
-      *_pd_seq = *_s._pd_seq;
-    } else if (_pd_seq) {
-      delete _pd_seq;
-      _pd_seq = 0;
+    if (&_s != this) {
+      if (_s._pd_seq) {
+        if (!_pd_seq)  _pd_seq = new AttrDescriptionSeq;
+        *_pd_seq = *_s._pd_seq;
+      }
+      else if (_pd_seq) {
+        delete _pd_seq;
+        _pd_seq = 0;
+      }
     }
     return *this;
   }
