@@ -12,7 +12,7 @@ using namespace std;
 static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr, CORBA::Object_ptr);
 
 
-class Echo_i : public POA_Echo
+class Echo_i : public POA_ECHOAPP::Echo
 {
 public:
 	inline Echo_i() {}
@@ -23,6 +23,7 @@ public:
 
 char* Echo_i::echoString(const char* mesg)
 {
+	cout << mesg;
 	return CORBA::string_dup(mesg);
 }
 
@@ -126,14 +127,14 @@ static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr obj
 		// Bind objref with name Echo to the testContext:
 		CosNaming::Name objectName;
 		objectName.length(1);
-		objectName[0].id = (const char*) "Echo";   // string copied
-		objectName[0].kind = (const char*) "Object"; // string copied
-
+		objectName[0].id	= (const char*) "Echo";   // string copied
+		//objectName[0].kind = (const char*) "Object"; // string copied
+		
 		try {
-			testContext->bind(objectName, objref);
+			rootContext->bind(objectName, objref);
 		}
 		catch (CosNaming::NamingContext::AlreadyBound& ex) {
-			testContext->rebind(objectName, objref);
+			rootContext->rebind(objectName, objref);
 		}
 		// Note: Using rebind() will overwrite any Object previously bound
 		//       to /test/Echo with obj.
@@ -150,7 +151,7 @@ static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr obj
 		return 0;
 	}
 	catch (CORBA::SystemException& ex) {
-		cerr << "Caught a CORBA::" << ex._name()
+		cout << "Caught a CORBA::" << ex._name()
 			<< " while using the naming service." << endl;
 		return 0;
 	}
