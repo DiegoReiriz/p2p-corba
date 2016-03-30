@@ -28,9 +28,7 @@ char* Echo_i::echoString(const char* mesg)
 
 //////////////////////////////////////////////////////////////////////
 
-int
-main(int argc, char **argv)
-{
+int main(int argc, char **argv){
 	try {
 		CORBA::ORB_var          orb = CORBA::ORB_init(argc, argv);
 		CORBA::Object_var       obj = orb->resolve_initial_references("RootPOA");
@@ -54,6 +52,7 @@ main(int argc, char **argv)
 		pman->activate();
 
 		orb->run();
+			
 	}
 	catch (CORBA::SystemException& ex) {
 		cerr << "Caught CORBA::" << ex._name() << endl;
@@ -61,13 +60,15 @@ main(int argc, char **argv)
 	catch (CORBA::Exception& ex) {
 		cerr << "Caught CORBA::Exception: " << ex._name() << endl;
 	}
+
+	system("pause");
+	
 	return 0;
 }
 
 //////////////////////////////////////////////////////////////////////
 
-static CORBA::Boolean
-bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr objref)
+static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr objref)
 {
 	CosNaming::NamingContext_var rootContext;
 
@@ -141,7 +142,7 @@ bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr objref)
 		//       supplied is already bound to an object.
 	}
 	catch (CORBA::TRANSIENT& ex) {
-		cerr << "Caught system exception TRANSIENT -- unable to contact the "
+		cout << "Caught system exception TRANSIENT -- unable to contact the "
 			<< "naming service." << endl
 			<< "Make sure the naming server is running and that omniORB is "
 			<< "configured correctly." << endl;
