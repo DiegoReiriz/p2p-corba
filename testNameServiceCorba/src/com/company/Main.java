@@ -5,12 +5,15 @@ import ECHOAPP.EchoHelper;
 import org.omg.CORBA.ORB;
 import org.omg.CosNaming.*;
 
+import java.util.Properties;
+
 
 public class Main
 {
     public static void main(String args[]){
         try {
             // create and initialize the ORB
+
             ORB orb = ORB.init(args, null);
 
             // get the root naming context
@@ -22,7 +25,9 @@ public class Main
 
             // resolve the Object Reference in Naming
             String name = "Echo";
-            Echo e= EchoHelper.narrow(ncRef.resolve_str(name));
+            Echo e= EchoHelper.narrow(
+                    ncRef.resolve_str(name)
+            );
             e.echoString("FURRULA");
 
 
