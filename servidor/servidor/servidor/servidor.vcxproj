@@ -173,6 +173,7 @@ COSDynamic4_rt.lib;%(AdditionalDependencies)</AdditionalDependencies>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="echo.hh" />
+    <ClInclude Include="interface.hh" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SQLite.h" />
     <ClInclude Include="sqlite3.h" />
@@ -184,6 +185,9 @@ COSDynamic4_rt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     <ClCompile Include="echoSK.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="interfaceSK.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="servidor.cpp" />
