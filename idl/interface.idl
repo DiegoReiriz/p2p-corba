@@ -1,0 +1,21 @@
+module chat
+{
+  struct VOUser{
+    short id;
+    string nombre;
+    string email;
+    string hash;
+    string salt;
+    string avatar;
+  };
+
+  typedef sequence<VOUser> listaUsuarios;
+
+  interface userManager{
+    boolean signIn(in VOUser usuario);
+    boolean signOut(in VOUser usuario);
+    boolean signUp(in VOUser usuario);
+    boolean alterUser(in VOUser usuario);
+    listaUsuarios getFrindList(in VOUser usuario);
+  };
+};
