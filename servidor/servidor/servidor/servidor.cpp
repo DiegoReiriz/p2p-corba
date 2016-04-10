@@ -7,10 +7,15 @@
 #include <ios>
 #include <iostream>
 #include "SQLite.h"
+#include "SQLiteContract.h"
 
 using namespace std;
 
-static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr, CORBA::Object_ptr);
+//referencia estática a base de datos
+sqlite3 *db;
+SQLite database;
+
+static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr, CORBA::Object_ptr,const char* bindName);
 
 class Echo_i : public POA_ECHOAPP::Echo
 {
@@ -24,6 +29,7 @@ public:
 char* Echo_i::echoString(const char* mesg)
 {
 	cout << mesg;
+
 	return CORBA::string_dup(mesg);
 }
 
@@ -44,6 +50,8 @@ class userManager_i : public POA_chat::userManager
 ::CORBA::Boolean userManager_i::signIn(const ::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
 
+	cout << "SIGN IN" << endl;
+	cout << "=======" << endl;
 	cout << usuario.id << endl;
 	cout << usuario.nombre << endl;
 	cout << usuario.email << endl;
@@ -55,10 +63,25 @@ class userManager_i : public POA_chat::userManager
 }
 ::CORBA::Boolean userManager_i::signOut(const ::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
+	
+	database.obterUsuarios(db);
+
 	return res;
 }
 ::CORBA::Boolean userManager_i::signUp(const ::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
+
+	cout << "SIGN UP" << endl;
+	cout << "=======" << endl;
+	cout << usuario.id << endl;
+	cout << usuario.nombre << endl;
+	cout << usuario.email << endl;
+	cout << usuario.hash << endl;
+	cout << usuario.salt << endl;
+	cout << usuario.avatar << endl;
+
+	database.insertarUsuario((const char*)usuario.nombre, (const char*)usuario.email, (const char*)usuario.hash, (const char*)usuario.salt, (const char*)usuario.avatar,db);
+
 	return res;
 }
 ::CORBA::Boolean userManager_i::alterUser(const ::chat::VOUser& usuario) {
@@ -71,34 +94,48 @@ class userManager_i : public POA_chat::userManager
 }
 
 
+
 //////////////////////////////////////////////////////////////////////
 
 int main(int argc, char **argv){
+
+	database.openConnection(&db);
+	database.initialize();
+	database.createTables(db);
+	//SERIA INTERESANTE MIRAR COMO FACER MUTEXS EN c++ PARA CONTROLAR O USO DO OBXECTO CONEXION DA BASE DE DATOS
+	
 	try {
+		//inicialización e xestión de CORBA
 		CORBA::ORB_var          orb = CORBA::ORB_init(argc, argv);
 		CORBA::Object_var       obj = orb->resolve_initial_references("RootPOA");
 		PortableServer::POA_var poa = PortableServer::POA::_narrow(obj);
 
 		//PortableServer::Servant_var<Echo_i> myecho = new Echo_i();
+		//crease un obxecto servant
 		PortableServer::Servant_var<userManager_i> myuserManager = new userManager_i();
 
 		//PortableServer::ObjectId_var myechoid = poa->activate_object(myecho);
+		//activase no poa o servant que se  creou
 		PortableServer::ObjectId_var myuserManagerid = poa->activate_object(myuserManager);
 
-		// Obtain a reference to the object, and register it in
-		// the naming service.
+		//obtense unha referencia ao obxeto e se rexistra no servicio de nomes
 		//obj = myecho->_this();
 		obj = myuserManager->_this();
 
+		//obtense un string co IOR para depuración
 		CORBA::String_var sior(orb->object_to_string(obj));
 		cout << sior << endl;
 
-		if (!bindObjectToName(orb, obj))
+		//rexistrase o obxecto, en base a referencia obtida previamente, no servicio de nombre
+
+		if (!bindObjectToName(orb, obj,"User"))
 			return 1;
 
+		//activase o poa
 		PortableServer::POAManager_var pman = poa->the_POAManager();
 		pman->activate();
 
+		//lánzase o orb
 		orb->run();
 			
 	}
@@ -110,13 +147,15 @@ int main(int argc, char **argv){
 	}
 
 	system("pause");
-	
+
+	database.closeConnection(db);
+
 	return 0;
 }
 
 //////////////////////////////////////////////////////////////////////
 
-static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr objref)
+static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr objref,const char* bindName)
 {
 	CosNaming::NamingContext_var rootContext;
 
@@ -144,20 +183,10 @@ static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr obj
 	}
 
 	try {
-		// Bind a context called "test" to the root context:
-
-		CosNaming::Name contextName;
-		contextName.length(1);
-		contextName[0].id = (const char*) "test";       // string copied
-		contextName[0].kind = (const char*) "my_context"; // string copied
-														  // Note on kind: The kind field is used to indicate the type
-														  // of the object. This is to avoid conventions such as that used
-														  // by files (name.type -- e.g. test.ps = postscript etc.)
-
 		// Bind objref with name Echo to the testContext:
 		CosNaming::Name objectName;
 		objectName.length(1);
-		objectName[0].id	= (const char*) "User";   // string copied
+		objectName[0].id	= bindName;   // string copied
 		//objectName[0].kind = (const char*) "Object"; // string copied
 		
 		try {

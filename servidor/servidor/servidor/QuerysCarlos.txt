@@ -1,0 +1,41 @@
+### CONSULTAR USUARIOS DE LA BASE DE DATOS ###
+SELECT * FROM Usuarios;
+
+### CONSULTAR ID DE UN USUARIOS DE LA BASE DE DATOS ###
+SELECT ID FROM Usuarios WHERE nombre=="stringnombreaqui";
+
+### CONSULTAR NOMBRE USUARIO DE LA BASE DE DATOS FILTRANDO UNA ENTRADA ###
+SELECT DISTINCT nombre FROM Usuarios WHERE nombre LIKE "%stringfiltroaqui%"  OR email LIKE "%stringfiltroaqui%";
+
+### CREAR USUARIOS ###
+INSERT INTO Usuarios(nombre,email,hash,salt,avatar) values();
+
+### MODIFICAR USUARIOS ###
+UPDATE Usuarios SET nombre=stringnombreaqui, email=stringcorreoaqui, hash=stringhashaqui, salt=strinsaltaqui, avatar=stringavataraqui WHERE id=intidaqui;
+
+### BORRAR USUARIOS ###
+	### BORRAR USUARIOS POR ID ###
+	DELETE FROM Usuarios where id=intidaqui;
+
+	### BORRAR USUARIOS POR nombre ###
+	DELETE FROM Usuarios where nombre=stringnombreaqui;
+
+	### BORRAR USUARIOS POR email ###
+	DELETE FROM Usuarios where email=stringemailaqui;
+
+### CREAR PETICIONES DE AMISTAD ###
+INSERT INTO PeticionesAmistad values(intidoraqui,intiddestaqui);
+
+### BORRAR PETICIONES DE AMISTAD ###
+DELETE FROM PeticionesAmistad WHERE id_origen=intidoraqui AND id_destino=intiddestaqui;
+
+### CONSULTAR AMIGOS ###
+SELECT id_destino FROM Amigos WHERE id_origen=intidoraqui;
+
+### CREAR AMIGOS ###
+INSERT INTO Amigos values(intidoraqui,intiddestaqui);
+INSERT INTO Amigos values(intiddestaqui,intidoraqui);
+
+### BORRAR AMIGOS ###
+DELETE FROM Amigos WHERE id_origen=intidoraqui AND id_destino=intiddestaqui;
+DELETE FROM Amigos WHERE id_origen=intiddestaqui AND id_destino=intidoraqui;

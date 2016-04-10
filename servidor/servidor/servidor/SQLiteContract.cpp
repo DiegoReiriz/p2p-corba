@@ -3,6 +3,7 @@
 
 namespace SQLiteContract
 {
+	
 	const std::string TABLE_USUARIOS::TABLE_NAME = "Usuarios";
 	const std::string TABLE_USUARIOS::ID = "id";
 	const std::string TABLE_USUARIOS::NOMBRE = "nombre";

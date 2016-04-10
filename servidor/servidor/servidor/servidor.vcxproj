@@ -168,6 +168,7 @@ COSDynamic4_rt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="QuerysCarlos.txt" />
     <Text Include="ReadMe.txt" />
     <Text Include="sqliteExample.txt" />
   </ItemGroup>

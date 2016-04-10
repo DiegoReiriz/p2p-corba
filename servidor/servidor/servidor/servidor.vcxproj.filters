@@ -19,6 +19,9 @@
     <Text Include="sqliteExample.txt">
       <Filter>Archivos de código fuente</Filter>
     </Text>
+    <Text Include="QuerysCarlos.txt">
+      <Filter>Archivos de código fuente</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
