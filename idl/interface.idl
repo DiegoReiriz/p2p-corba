@@ -17,5 +17,20 @@ module chat
     boolean signUp(in VOUser usuario);
     boolean alterUser(in VOUser usuario);
     listaUsuarios getFrindList(in VOUser usuario);
+    boolean newFriendRequest(in VOUser origin,in VOUser destiny);
+    boolean resolveFriendRequest(in VOUser origin,in VOUser destiny,in boolean accept);
   };
+
+/*
+  Interfaz para enviat notificacións desede o servidor aos clientes.
+  considerar convertir as notificacións a oneway para que  non espere o servidor
+  a comprobar si os clientes recibiron ou no a notificación correspondiente
+*/
+  interface supertopeer{
+    void notifyFriendIn(in VOUser usuario);
+    void notifyFriendOut(in VOUser usuario);
+    void notifyFriendRequest(in VOUser usuario);
+    void notifyFriendRequestReslution(in VOUser usuario,in boolean result);
+  };
+
 };

@@ -11,12 +11,13 @@
 
 using namespace std;
 
-//referencia estática a base de datos
+CORBA::ORB_var orb;
 std::list<chat::VOUser> usuariosActivos;
 sqlite3 *db;
 SQLite database;
 
-static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr, CORBA::Object_ptr,const char* bindName);
+static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr, CORBA::Object_ptr,const char*);
+static CORBA::Boolean unbindObjectfromName(CORBA::ORB_ptr, CORBA::Object_ptr, const char*);
 
 class Echo_i : public POA_ECHOAPP::Echo
 {
@@ -45,7 +46,8 @@ class userManager_i : public POA_chat::userManager
 		virtual ::CORBA::Boolean signUp(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
 		virtual ::chat::listaUsuarios* getFrindList(const ::chat::VOUser& usuario);
-
+		virtual ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny);
+		virtual ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept);
 };
 
 ::CORBA::Boolean userManager_i::signIn(const ::chat::VOUser& usuario) {
@@ -101,14 +103,47 @@ class userManager_i : public POA_chat::userManager
 }
 ::chat::listaUsuarios* userManager_i::getFrindList(const ::chat::VOUser& usuario) {
 	::chat::listaUsuarios lista;
+
+
 	return &lista;
 }
 
+::CORBA::Boolean userManager_i::newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny) {
+	::CORBA::Boolean res = false;
+	return res;
+}
+::CORBA::Boolean userManager_i::resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept) {
+	::CORBA::Boolean res = false;
+	return res;
+}
 
 
 //////////////////////////////////////////////////////////////////////
 
+
+BOOL WINAPI consoleHandler(DWORD signal) {
+
+	//si se detecta sinal de peche da aplicación, se devinculan todos os obxectos rexistrados no servicio de nomes
+	if (signal == CTRL_C_EVENT || signal == CTRL_CLOSE_EVENT || signal == RIGHT_CTRL_PRESSED) {
+		orb->shutdown(true);
+		
+		cout << "EXCEPCION DONE" << endl;
+	}
+
+	return TRUE;
+}
+
+//////////////////////////////////////////////////////////////////////
+
 int main(int argc, char **argv){
+
+	//CAPTURANSE AS SINALES DA APLICACIÓN
+	if (!SetConsoleCtrlHandler(consoleHandler, TRUE)) {
+		printf("\nERROR: Could not set control handler");
+		return 1;
+	}
+
+	//INICIALIZACIÓN DA BD
 
 	database.openConnection(&db);
 	database.initialize();
@@ -117,7 +152,7 @@ int main(int argc, char **argv){
 	
 	try {
 		//inicialización e xestión de CORBA
-		CORBA::ORB_var          orb = CORBA::ORB_init(argc, argv);
+		orb = CORBA::ORB_init(argc, argv);
 		CORBA::Object_var       obj = orb->resolve_initial_references("RootPOA");
 		PortableServer::POA_var poa = PortableServer::POA::_narrow(obj);
 
@@ -145,10 +180,13 @@ int main(int argc, char **argv){
 		//activase o poa
 		PortableServer::POAManager_var pman = poa->the_POAManager();
 		pman->activate();
+		
 
 		//lánzase o orb
 		orb->run();
-			
+
+		//FALTA CONTROLAR A DESVINCULACION DOS OBXECTOS
+
 	}
 	catch (CORBA::SystemException& ex) {
 		cerr << "Caught CORBA::" << ex._name() << endl;
@@ -228,3 +266,54 @@ static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr orb, CORBA::Object_ptr obj
 	return 1;
 }
 
+static CORBA::Boolean unbindObjectfromName(CORBA::ORB_ptr orb, CORBA::Object_ptr objref, const char* bindName) {
+	CosNaming::NamingContext_var rootContext;
+
+	try {
+		// Obtain a reference to the root context of the Name service:
+		CORBA::Object_var obj = orb->resolve_initial_references("NameService");
+
+		// Narrow the reference returned.
+		rootContext = CosNaming::NamingContext::_narrow(obj);
+		if (CORBA::is_nil(rootContext)) {
+			cerr << "Failed to narrow the root naming context." << endl;
+			return 0;
+		}
+	}
+	catch (CORBA::NO_RESOURCES&) {
+		cerr << "Caught NO_RESOURCES exception. You must configure omniORB "
+			<< "with the location" << endl
+			<< "of the naming service." << endl;
+		return 0;
+	}
+	catch (CORBA::ORB::InvalidName&) {
+		// This should not happen!
+		cerr << "Service required is invalid [does not exist]." << endl;
+		return 0;
+	}
+
+	try {
+		// Bind objref with name Echo to the testContext:
+		CosNaming::Name objectName;
+		objectName.length(1);
+		objectName[0].id = bindName;   // string copied
+									   //objectName[0].kind = (const char*) "Object"; // string copied
+
+		try {
+			rootContext->unbind(objectName);
+		}
+		catch (CosNaming::NamingContext::NotFound& ex) {
+			
+		}
+		
+	}
+	catch (CORBA::TRANSIENT& ex) {
+		
+		return 0;
+	}
+	catch (CORBA::SystemException& ex) {
+		
+		return 0;
+	}
+	return 1;
+}
