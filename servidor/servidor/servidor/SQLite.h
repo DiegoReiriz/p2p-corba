@@ -3,6 +3,8 @@
 #include <iostream>
 #include "sqlite3.h"
 #include "SQLiteContract.h"
+#include <list>
+#include "interface.hh"
 
 using namespace std;
 using namespace SQLiteContract;
@@ -10,6 +12,7 @@ using namespace SQLiteContract;
 class SQLite
 {
 	private:
+		list<chat::VOUser>* res2User(int rows, int columns, char** result);
 		std::string dbName;
 		std::string createTableUsuarios;
 		std::string createTableAmigos;

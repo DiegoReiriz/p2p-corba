@@ -1,7 +1,7 @@
 ﻿  SQLite.cpp
   Generando código
-  80 of 2285 functions ( 3.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    30 functions had inline decision re-evaluated but remain unchanged
+  116 of 2381 functions ( 4.9%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    33 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   servidor.vcxproj -> C:\Users\Diego\repositorios\practica3-Distribuida\servidor\servidor\x64\Release\servidor.exe

@@ -43,9 +43,10 @@ public class Main
 
             for(int i=0;i<50;i++) {
                 um.signUp(new VOUser((short) 2, "nombre"+i, "email", "hash", "salt", "avatar"));
-                //um.signOut(new VOUser((short)1,"nombre","email","hash","salt","avatar"));
+
             }
 
+            um.signOut(new VOUser((short)1,"nombre","email","hash","salt","avatar"));
 
         } catch (Exception e) {
             e.printStackTrace(System.err);

@@ -63,6 +63,28 @@ void SQLite::insertarUsuario(const char* nombre, const char* email, const char* 
 
 }
 
+list<chat::VOUser>* SQLite::res2User(int rows, int columns, char** result) {
+	
+	list<chat::VOUser>* usuarios=new list<chat::VOUser>();
+
+	for (int cellPosition = 0; cellPosition <= rows; cellPosition+=6)
+	{
+		chat::VOUser *user = new chat::VOUser();
+
+		user->id = atoi(result[cellPosition + 0]);
+		user->nombre = result[cellPosition + 1];
+		user->email = result[cellPosition + 2];
+		user->hash = result[cellPosition + 3];
+		user->salt = result[cellPosition + 4];
+		user->avatar = result[cellPosition + 5];
+
+		usuarios->push_back(*user);
+	}
+
+	return usuarios;
+
+}
+
 void SQLite::obterUsuarios(sqlite3 *db) {
 
 	int rc=0;
@@ -80,34 +102,54 @@ void SQLite::obterUsuarios(sqlite3 *db) {
 	else
 	{
 		// Display Table
-		for (int rowCtr = 0; rowCtr <= rows; ++rowCtr)
-		{
-			for (int colCtr = 0; colCtr < columns; ++colCtr)
-			{
-				// Determine Cell Position
-				int cellPosition = (rowCtr * columns) + colCtr;
+		//for (int rowCtr = 0; rowCtr <= rows; ++rowCtr)
+		//{
+		//	for (int colCtr = 0; colCtr < columns; ++colCtr)
+		//	{
+		//		// Determine Cell Position
+		//		int cellPosition = (rowCtr * columns) + colCtr;
 
-				// Display Cell Value
-				cout.width(12);
-				cout.setf(ios::left);
-				cout << results[cellPosition] << " ";
-			}
+		//		// Display Cell Value
+		//		cout.width(12);
+		//		cout.setf(ios::left);
+		//		cout << results[cellPosition] << " ";
+		//	}
 
-			// End Line
-			cout << endl;
+		//	// End Line
+		//	cout << endl;
 
-			// Display Separator For Header
-			if (0 == rowCtr)
-			{
-				for (int colCtr = 0; colCtr < columns; ++colCtr)
-				{
-					cout.width(12);
-					cout.setf(ios::left);
-					cout << "~~~~~~~~~~~~ ";
-				}
-				cout << endl;
-			}
+		//	// Display Separator For Header
+		//	if (0 == rowCtr)
+		//	{
+		//		for (int colCtr = 0; colCtr < columns; ++colCtr)
+		//		{
+		//			cout.width(12);
+		//			cout.setf(ios::left);
+		//			cout << "~~~~~~~~~~~~ ";
+		//		}
+		//		cout << endl;
+		//	}
+		//}
+
+		/*====================================* 
+		 |                                    |
+		 |   ATENCIÖN  ALERTA POR SUBNORMAL!  |
+		 |                                    |
+		 |     LIBERAR A LISTA DE USUARIOS    |
+		 |                                    |
+		 |  A memoria das estructuras se ge-  |
+		 |    nera mediante o operador new    |
+		 |                                    |
+		 *====================================*/
+
+		std::list<chat::VOUser>* lista = res2User(rows, columns, results);
+		for (std::list<chat::VOUser>::iterator itr = lista->begin(); itr != lista->end();/*nothing*/) {
+		
+			cout << (*itr).id << (*itr).nombre << (*itr).email << (*itr).hash << (*itr).salt << (*itr).avatar << endl;
+
+			++itr;
 		}
+
 	}
 	sqlite3_free_table(results);
 

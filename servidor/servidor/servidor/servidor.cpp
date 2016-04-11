@@ -7,11 +7,12 @@
 #include <ios>
 #include <iostream>
 #include "SQLite.h"
-#include "SQLiteContract.h"
+#include <list>
 
 using namespace std;
 
 //referencia estática a base de datos
+std::list<chat::VOUser> usuariosActivos;
 sqlite3 *db;
 SQLite database;
 
@@ -59,11 +60,21 @@ class userManager_i : public POA_chat::userManager
 	cout << usuario.salt << endl;
 	cout << usuario.avatar << endl;
 
+	usuariosActivos.push_back(usuario);
+
 	return res;
 }
 ::CORBA::Boolean userManager_i::signOut(const ::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
 	
+	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+		
+		if ( (*itr).id == usuario.id )
+			usuariosActivos.erase(itr);
+
+			++itr;
+	}
+
 	database.obterUsuarios(db);
 
 	return res;
