@@ -41,16 +41,16 @@ class userManager_i : public POA_chat::userManager
 	public :
 		inline userManager_i() {}
 		virtual ~userManager_i() {}
-		virtual ::CORBA::Boolean signIn(const ::chat::VOUser& usuario);
+		virtual ::CORBA::Boolean signIn(::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean signOut(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean signUp(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
-		virtual ::chat::listaUsuarios* getFrindList(const ::chat::VOUser& usuario);
+		virtual ::CORBA::Boolean getFrindList(const ::chat::VOUser& usuario, ::chat::listaUsuarios& usuarios);
 		virtual ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny);
 		virtual ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept);
 };
 
-::CORBA::Boolean userManager_i::signIn(const ::chat::VOUser& usuario) {
+::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
 
 	cout << "SIGN IN" << endl;
@@ -61,6 +61,8 @@ class userManager_i : public POA_chat::userManager
 	cout << usuario.hash << endl;
 	cout << usuario.salt << endl;
 	cout << usuario.avatar << endl;
+
+	res=database.obterUsuario(usuario,db);
 
 	usuariosActivos.push_back(usuario);
 
@@ -77,7 +79,7 @@ class userManager_i : public POA_chat::userManager
 			++itr;
 	}
 
-	database.obterUsuarios(db);
+	//falta notificar aos usuarios das desconexions
 
 	return res;
 }
@@ -93,7 +95,7 @@ class userManager_i : public POA_chat::userManager
 	cout << usuario.salt << endl;
 	cout << usuario.avatar << endl;
 
-	database.insertarUsuario((const char*)usuario.nombre, (const char*)usuario.email, (const char*)usuario.hash, (const char*)usuario.salt, (const char*)usuario.avatar,db);
+	res = database.insertarUsuario((const char*)usuario.nombre, (const char*)usuario.email, (const char*)usuario.hash, (const char*)usuario.salt, (const char*)usuario.avatar,db);
 
 	return res;
 }
@@ -101,11 +103,20 @@ class userManager_i : public POA_chat::userManager
 	::CORBA::Boolean res = false;
 	return res;
 }
-::chat::listaUsuarios* userManager_i::getFrindList(const ::chat::VOUser& usuario) {
-	::chat::listaUsuarios lista;
+::CORBA::Boolean getFrindList(const ::chat::VOUser& usuario, ::chat::listaUsuarios& usuarios){
+	
+	
+	
+	int i = 0;
+	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+		
+		usuarios[i] = (*itr);
 
-
-	return &lista;
+		++itr;
+		++i;
+	}
+	
+	return ;
 }
 
 ::CORBA::Boolean userManager_i::newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny) {

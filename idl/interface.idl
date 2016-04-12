@@ -12,11 +12,11 @@ module chat
   typedef sequence<VOUser> listaUsuarios;
 
   interface userManager{
-    boolean signIn(in VOUser usuario);
+    boolean signIn(inout VOUser usuario);
     boolean signOut(in VOUser usuario);
     boolean signUp(in VOUser usuario);
     boolean alterUser(in VOUser usuario);
-    listaUsuarios getFrindList(in VOUser usuario);
+    boolean getFrindList(in VOUser usuario,inout listaUsuarios usuarios);
     boolean newFriendRequest(in VOUser origin,in VOUser destiny);
     boolean resolveFriendRequest(in VOUser origin,in VOUser destiny,in boolean accept);
   };

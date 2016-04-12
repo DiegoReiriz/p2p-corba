@@ -262,11 +262,11 @@ _CORBA_MODULE_BEG
   {
   public:
     // IDL operations
-    ::CORBA::Boolean signIn(const ::chat::VOUser& usuario);
+    ::CORBA::Boolean signIn(::chat::VOUser& usuario);
     ::CORBA::Boolean signOut(const ::chat::VOUser& usuario);
     ::CORBA::Boolean signUp(const ::chat::VOUser& usuario);
     ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
-    listaUsuarios* getFrindList(const ::chat::VOUser& usuario);
+    ::CORBA::Boolean getFrindList(const ::chat::VOUser& usuario, ::chat::listaUsuarios& usuarios);
     ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny);
     ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept);
 
@@ -303,11 +303,11 @@ _CORBA_MODULE_BEG
   public:
     virtual ~_impl_userManager();
 
-    virtual ::CORBA::Boolean signIn(const ::chat::VOUser& usuario) = 0;
+    virtual ::CORBA::Boolean signIn(::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean signOut(const ::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean signUp(const ::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario) = 0;
-    virtual listaUsuarios* getFrindList(const ::chat::VOUser& usuario) = 0;
+    virtual ::CORBA::Boolean getFrindList(const ::chat::VOUser& usuario, ::chat::listaUsuarios& usuarios) = 0;
     virtual ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny) = 0;
     virtual ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept) = 0;
     
