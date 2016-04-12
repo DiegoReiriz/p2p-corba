@@ -5,8 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane fx:id="frmRegistro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="343.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="frmRegistro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="343.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Label fx:id="lblRegistroTitulo" layoutX="151.0" layoutY="14.0" text="Registro de Usuario">
          <font>
@@ -34,7 +33,12 @@
             <Font name="System Bold" size="11.0" />
          </font>
       </Label>
-      <Button fx:id="btnRegistroRegistrar" layoutX="365.0" layoutY="293.0" mnemonicParsing="false" text="Registrar" />
-      <Button fx:id="btnRegistroCancelar" layoutX="276.0" layoutY="293.0" mnemonicParsing="false" text="Cancelar" />
+      <Label fx:id="lblRegistroErrorContr" layoutX="167.0" layoutY="264.0" text="Las contraseñas que indicas no coinciden" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRegistroRegistrar" layoutX="365.0" layoutY="293.0" mnemonicParsing="false" onAction="#Registrar" text="Registrar" />
+      <Button fx:id="btnRegistroCancelar" layoutX="276.0" layoutY="293.0" mnemonicParsing="false" onAction="#cancelarRegistro" text="Cancelar" />
    </children>
 </AnchorPane>
