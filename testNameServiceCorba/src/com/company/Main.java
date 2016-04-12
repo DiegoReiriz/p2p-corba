@@ -94,15 +94,15 @@ public class Main
 
                 listaUsuariosHolder lista=new listaUsuariosHolder(new VOUser[50]);
 
-                um.getFrindList(usr.value,lista);
-//                for (VOUser user : conectados) {
-//                    System.out.println(user.id);
-//                    System.out.println(user.nombre);
-//                    System.out.println(user.email);
-//                    System.out.println(user.hash);
-//                    System.out.println(user.salt);
-//                    System.out.println(user.avatar);
-//                }
+                VOUser[] pruebas = um.getFrindList(usr.value);
+                for (VOUser user : pruebas) {
+                    System.out.println(user.id);
+                    System.out.println(user.nombre);
+                    System.out.println(user.email);
+                    System.out.println(user.hash);
+                    System.out.println(user.salt);
+                    System.out.println(user.avatar);
+                }
             }
 
 

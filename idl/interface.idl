@@ -16,7 +16,7 @@ module chat
     boolean signOut(in VOUser usuario);
     boolean signUp(in VOUser usuario);
     boolean alterUser(in VOUser usuario);
-    boolean getFrindList(in VOUser usuario,inout listaUsuarios usuarios);
+    listaUsuarios getFrindList(in VOUser usuario);
     boolean newFriendRequest(in VOUser origin,in VOUser destiny);
     boolean resolveFriendRequest(in VOUser origin,in VOUser destiny,in boolean accept);
   };

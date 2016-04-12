@@ -364,7 +364,7 @@ _0RL_lcfn_8713a5b81a062b51_50000000(omniCallDescriptor* cd, omniServant* svnt)
 // Code for chat::userManager::getFrindList
 
 // Proxy call descriptor class. Mangled signature:
-//  _cboolean_i_cchat_mVOUser_n_cchat_mlistaUsuarios
+//  _cchat_mlistaUsuarios_i_cchat_mVOUser
 class _0RL_cd_8713a5b81a062b51_60000000
   : public omniCallDescriptor
 {
@@ -386,15 +386,12 @@ public:
 
   chat::VOUser_var arg_0_;
   const chat::VOUser* arg_0;
-  chat::listaUsuarios_var arg_1_;
-  chat::listaUsuarios* arg_1;
-  ::CORBA::Boolean result;
+  chat::listaUsuarios_var result;
 };
 
 void _0RL_cd_8713a5b81a062b51_60000000::marshalArguments(cdrStream& _n)
 {
   (const chat::VOUser&) *arg_0 >>= _n;
-  (const chat::listaUsuarios&) *arg_1 >>= _n;
 
 }
 
@@ -403,23 +400,19 @@ void _0RL_cd_8713a5b81a062b51_60000000::unmarshalArguments(cdrStream& _n)
   arg_0_ = new chat::VOUser;
   (chat::VOUser&)arg_0_ <<= _n;
   arg_0 = &arg_0_.in();
-  arg_1_ = new chat::listaUsuarios;
-  (chat::listaUsuarios&)arg_1_ <<= _n;
-  arg_1 = &arg_1_.inout();
 
 }
 
 void _0RL_cd_8713a5b81a062b51_60000000::marshalReturnedValues(cdrStream& _n)
 {
-  _n.marshalBoolean(result);
-  (const chat::listaUsuarios&) *arg_1 >>= _n;
+  (const chat::listaUsuarios&) result >>= _n;
 
 }
 
 void _0RL_cd_8713a5b81a062b51_60000000::unmarshalReturnedValues(cdrStream& _n)
 {
-  result = _n.unmarshalBoolean();
-  (chat::listaUsuarios&)*arg_1 <<= _n;
+  result = new chat::listaUsuarios;
+  (chat::listaUsuarios&)result <<= _n;
 
 }
 
@@ -433,19 +426,18 @@ _0RL_lcfn_8713a5b81a062b51_70000000(omniCallDescriptor* cd, omniServant* svnt)
 {
   _0RL_cd_8713a5b81a062b51_60000000* tcd = (_0RL_cd_8713a5b81a062b51_60000000*)cd;
   chat::_impl_userManager* impl = (chat::_impl_userManager*) svnt->_ptrToInterface(chat::userManager::_PD_repoId);
-  tcd->result = impl->getFrindList(*tcd->arg_0, *tcd->arg_1);
+  tcd->result = impl->getFrindList(*tcd->arg_0);
 
 
 }
 
-::CORBA::Boolean chat::_objref_userManager::getFrindList(const ::chat::VOUser& usuario, ::chat::listaUsuarios& usuarios)
+chat::listaUsuarios* chat::_objref_userManager::getFrindList(const ::chat::VOUser& usuario)
 {
   _0RL_cd_8713a5b81a062b51_60000000 _call_desc(_0RL_lcfn_8713a5b81a062b51_70000000, "getFrindList", 13);
   _call_desc.arg_0 = &(::chat::VOUser&) usuario;
-  _call_desc.arg_1 = &(::chat::listaUsuarios&) usuarios;
 
   _invoke(_call_desc);
-  return _call_desc.result;
+  return _call_desc.result._retn();
 
 
 }
