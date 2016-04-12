@@ -17,18 +17,13 @@
       </Label>
       <PasswordField fx:id="txtIniSesContr" layoutX="106.0" layoutY="85.0" />
       <Button fx:id="btnIniSesEntrar" layoutX="207.0" layoutY="155.0" mnemonicParsing="false" onAction="#crearPantallaPrincipal" text="Entrar" />
-      <Button fx:id="btnIniSesSalir" layoutX="143.0" layoutY="155.0" mnemonicParsing="false" text="Salir" />
+      <Button fx:id="btnIniSesSalir" layoutX="143.0" layoutY="155.0" mnemonicParsing="false" onAction="#SalirInicio" text="Salir" />
       <Label fx:id="lblIniSesRegistro" layoutX="111.0" layoutY="113.0" onMouseClicked="#crearPantallaRegistro" text="No tienes cuenta? Registrate aqui!!" textFill="#2200ff" underline="true" wrapText="true">
          <font>
             <Font size="9.0" />
          </font>
       </Label>
       <Label fx:id="lblIniSesError" layoutX="108.0" layoutY="132.0" text="Credenciales no válidas" textFill="RED" visible="false">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblIniSesExito" layoutX="108.0" layoutY="132.0" text="Usuario Registrado con éxito" textFill="#15ee15" visible="false">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>

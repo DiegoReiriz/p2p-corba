@@ -23,7 +23,7 @@
                   <Separator prefHeight="8.0" prefWidth="110.0" visible="false" />
                   <ListView fx:id="lstvwChatAvatarPropio" prefHeight="100.0" prefWidth="107.0" />
                   <Separator prefWidth="200.0" visible="false" />
-                  <Button fx:id="btnChatEnviar" mnemonicParsing="false" prefHeight="68.0" prefWidth="107.0" text="Enviar" />
+                  <Button fx:id="btnChatEnviar" mnemonicParsing="false" prefHeight="68.0" prefWidth="107.0" text="Enviar" onAction="#enviarMensaje" />
                </children>
             </VBox>
             <Separator orientation="VERTICAL" prefHeight="280.0" prefWidth="0.0" visible="false" />

@@ -7,8 +7,8 @@
 
 <AnchorPane fx:id="frmCamb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button fx:id="btnCambCambiar" layoutX="220.0" layoutY="196.0" mnemonicParsing="false" text="Cambiar" />
-      <Button fx:id="btnCambCancelar" layoutX="133.0" layoutY="196.0" mnemonicParsing="false" text="Cancelar" />
+      <Button fx:id="btnCambCambiar" layoutX="220.0" layoutY="196.0" mnemonicParsing="false" text="Cambiar" onAction="#cambiar"/>
+      <Button fx:id="btnCambCancelar" layoutX="133.0" layoutY="196.0" mnemonicParsing="false" text="Cancelar" onAction="#cancelarCambio"/>
       <Label fx:id="lblCambTitulo" layoutX="67.0" layoutY="14.0" text="Cambio de Contraseña">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -17,12 +17,12 @@
       <Label fx:id="lblCambContr" layoutX="16.0" layoutY="57.0" text="Contraseña:" />
       <Label fx:id="lblCambNuevaContr" layoutX="16.0" layoutY="96.0" text="Nueva Contraseña:" />
       <Label fx:id="lblCambConfContr" layoutX="16.0" layoutY="137.0" text="Confirmar Contraseña:" />
-      <Label fx:id="lblCambErrorContr" layoutX="158.0" layoutY="172.0" text="Contraseña incorrecta" textFill="RED" visible="false">
+      <Label fx:id="lblCambErrorContr" layoutX="158.0" layoutY="172.0" text="Completa los campos" textFill="RED" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblCambContrNoVale" layoutX="157.0" layoutY="172.0" text="Contraseña Inválida" textFill="RED" visible="false">
+      <Label fx:id="lblCambContrNoVale" layoutX="157.0" layoutY="172.0" text="Contraseña errónea" textFill="RED" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
