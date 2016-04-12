@@ -48,6 +48,7 @@ class userManager_i : public POA_chat::userManager
 		virtual ::chat::listaUsuarios* getFrindList(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny);
 		virtual ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept);
+
 };
 
 ::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario) {
@@ -103,6 +104,9 @@ class userManager_i : public POA_chat::userManager
 
 ::CORBA::Boolean userManager_i::alterUser(const ::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
+
+	res = database.alterarUsuario(usuario,db);
+
 	return res;
 }
 
@@ -111,17 +115,33 @@ class userManager_i : public POA_chat::userManager
 	chat::listaUsuarios* lista = new chat::listaUsuarios;
 	lista->length(usuariosActivos.size());
 	
+	list<chat::VOUser>* amigos=database.obterAmigos(usuario,db);
+
 	int i = 0;
 	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+		bool found = false;
 		
-		::chat::VOUser* user = new ::chat::VOUser; 
-		user->id = itr->id;
-		user->nombre = itr->nombre;
-		user->email = itr->email;
-		user->hash = itr->hash;
-		user->salt = itr->salt;
-		user->avatar = itr->avatar;
-		(*lista)[i] = *user;
+		int j = 0;
+		for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
+
+			if (itr->id == itr2->id)
+				found = true;
+
+			++itr2;
+			j++;
+		}
+
+		if (found){
+			::chat::VOUser* user = new ::chat::VOUser;
+		
+			user->id = itr->id;
+			user->nombre = itr->nombre;
+			user->email = itr->email;
+			user->hash = itr->hash;
+			user->salt = itr->salt;
+			user->avatar = itr->avatar;
+			(*lista)[i] = *user;
+		}
 
 		++itr;
 		++i;
@@ -132,10 +152,21 @@ class userManager_i : public POA_chat::userManager
 
 ::CORBA::Boolean userManager_i::newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny) {
 	::CORBA::Boolean res = false;
+
+	res=database.crearPeticionAmistad(origin, destiny, db);
+
 	return res;
 }
 ::CORBA::Boolean userManager_i::resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept) {
 	::CORBA::Boolean res = false;
+
+	if (accept)
+		res = database.insertarAmigo(origin, destiny, db);
+	else
+		return false;
+	
+	res = database.borrarPeticionAmistad(origin, destiny, db);
+	
 	return res;
 }
 

@@ -92,10 +92,10 @@ public class Main
                 System.out.println("  AMIGOS CONECTADOS  ");
                 System.out.println("=====================");
 
-                listaUsuariosHolder lista=new listaUsuariosHolder(new VOUser[50]);
+                //ao recuperar a lista de usuarios, debe de estar creandose un hilo e proboca que non se peche a aplicación
+                listaUsuariosHolder holder=new listaUsuariosHolder(um.getFrindList(usr.value));
 
-                VOUser[] pruebas = um.getFrindList(usr.value);
-                for (VOUser user : pruebas) {
+                for (VOUser user : holder.value) {
                     System.out.println(user.id);
                     System.out.println(user.nombre);
                     System.out.println(user.email);
@@ -105,10 +105,16 @@ public class Main
                 }
             }
 
+            um.newFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
+                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"));
 
-
+            um.resolveFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
+                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"),true);
+//
             if(!um.signOut(new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2")))
                 System.out.println("Ha fallado la operación");
+
+
 
         } catch (Exception e) {
             e.printStackTrace(System.err);

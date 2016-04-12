@@ -1,13 +1,13 @@
 ﻿  servidor.cpp
-servidor.cpp(112): warning C4267: 'argumento': conversión de 'size_t' a '_CORBA_ULong'; posible pérdida de datos
-servidor.cpp(266): warning C4101: 'ex': variable local sin referencia
-servidor.cpp(275): warning C4101: 'ex': variable local sin referencia
-servidor.cpp(327): warning C4101: 'ex': variable local sin referencia
-servidor.cpp(332): warning C4101: 'ex': variable local sin referencia
-servidor.cpp(336): warning C4101: 'ex': variable local sin referencia
+servidor.cpp(116): warning C4267: 'argumento': conversión de 'size_t' a '_CORBA_ULong'; posible pérdida de datos
+servidor.cpp(297): warning C4101: 'ex': variable local sin referencia
+servidor.cpp(306): warning C4101: 'ex': variable local sin referencia
+servidor.cpp(358): warning C4101: 'ex': variable local sin referencia
+servidor.cpp(363): warning C4101: 'ex': variable local sin referencia
+servidor.cpp(367): warning C4101: 'ex': variable local sin referencia
   Generando código
-  31 of 2479 functions ( 1.3%) were compiled, the rest were copied from previous compilation.
+  30 of 2489 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    35 functions had inline decision re-evaluated but remain unchanged
+    29 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   servidor.vcxproj -> C:\Users\Diego\repositorios\practica3-Distribuida\servidor\servidor\x64\Release\servidor.exe
