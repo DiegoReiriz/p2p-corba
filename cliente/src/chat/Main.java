@@ -10,8 +10,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    public static userManager um;
+
     @Override
-    //public static userManager um;
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Inicio.fxml"));
         primaryStage.setTitle("CHAtty");
@@ -26,7 +27,7 @@ public class Main extends Application {
             Object objRef = orb.resolve_initial_references("NameService"); // Objeto que referencia al servicio de nombres
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef); // Referencia al Contexto del servivio de nombre
             String name = "User";
-            //um = userManagerHelper.narrow(ncRef.resolve_str(name));  // Resolvemos la referencia de objetos en el servicio de nombres
+            um = userManagerHelper.narrow(ncRef.resolve_str(name));  // Resolvemos la referencia de objetos en el servicio de nombres
             //Falta importar los arvchivos IDL generados en el servidor para acceder al userManager
             System.out.println("ENTRÉ");
             launch(args);

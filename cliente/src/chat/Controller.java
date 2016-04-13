@@ -128,20 +128,21 @@ public class Controller{
                 else{
                     //Comprobacion con la base de datos correcta
                     /* Creación de la nueva ventana */
-                    pantallaPrincipal=new Stage();
-                    Parent root = FXMLLoader.load(getClass().getResource("interfazPrincipal.fxml"));
-                    pantallaPrincipal.setTitle("CHAtty - Principal");
-                    pantallaPrincipal.setScene(new Scene(root, 600, 400));
-                    pantallaPrincipal.setResizable(false);
-                    pantallaPrincipal.show();
-                    txtIniSesContr.setText("");
-                    txtIniSesEmail.setText("");
-                    lblIniSesError.setVisible(false);
-                    pantallaInicio.setOpacity(0.0);
-
-                    // Fallida:
-                    //lblIniSesError.setVisible(true);
-                    //Borrar los campos?
+                    if(Main.um.signIn(new VOUser((short)0,"",txtIniSesEmail.getText(),txtIniSesContr.getText(),"salt","avatar"))==true){
+                        pantallaPrincipal=new Stage();
+                        Parent root = FXMLLoader.load(getClass().getResource("interfazPrincipal.fxml"));
+                        pantallaPrincipal.setTitle("CHAtty - Principal");
+                        pantallaPrincipal.setScene(new Scene(root, 600, 400));
+                        pantallaPrincipal.setResizable(false);
+                        pantallaPrincipal.show();
+                        txtIniSesContr.setText("");
+                        txtIniSesEmail.setText("");
+                        lblIniSesError.setVisible(false);
+                        pantallaInicio.setOpacity(0.0);
+                    }
+                    else{
+                        lblIniSesError.setVisible(true);
+                    }
                 }
             }
 
