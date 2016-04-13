@@ -17,7 +17,7 @@ public class supertopeerImplementation extends supertopeerPOA {
 
     @Override
     public void notifyFriendIn(VOUser usuario) {
-        System.out.println("MENSAXE DO SERVIDOR");
+        System.out.println("MENSAXE DO SERVIDOR --> CONECTOUSE UN AMIGO");
     }
 
     @Override

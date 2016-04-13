@@ -26,7 +26,7 @@ public class Main
             stp.setOrb(orb);
 
             org.omg.CORBA.Object ref = rootPOA.servant_to_reference(stp);
-            supertopeer s= supertopeerHelper.narrow(ref);
+            supertopeer callback= supertopeerHelper.narrow(ref);
 
             // get the root naming context
             org.omg.CORBA.Object objRef =
@@ -56,11 +56,11 @@ public class Main
 //
 //            }
 
-            if (!um.signUp(new VOUser((short) 1, "nombre1", "email1", "hash1", "salt1", "avatar1")))
+            if (!um.signUp(new VOUser((short) 1, "nombre1", "email1", "hash1", "salt1", "avatar1",callback)))
                 System.out.println("Ha fallado la operación de registro");
-            if (!um.signUp(new VOUser((short) 2, "nombre2", "email2", "hash2", "salt2", "avatar2")))
+            if (!um.signUp(new VOUser((short) 2, "nombre2", "email2", "hash2", "salt2", "avatar2",callback)))
                 System.out.println("Ha fallado la operación de registro");
-            if (!um.signUp(new VOUser((short) 2, "nombre3", "email3", "hash3", "salt3", "avatar3")))
+            if (!um.signUp(new VOUser((short) 2, "nombre3", "email3", "hash3", "salt3", "avatar3",callback)))
                 System.out.println("Ha fallado la operación de registro");
 
 
@@ -69,9 +69,9 @@ public class Main
             System.out.println("===========================\n\n");
 
             VOUserHolder usr = new VOUserHolder();
-            usr.value = new VOUser((short) 1, "", "email1", "hash1", "", "");
+            usr.value = new VOUser((short) 1, "", "email1", "hash1", "", "",callback);
 
-            if (!um.signIn(usr,s)) {
+            if (!um.signIn(usr)) {
                 System.out.println("Ha fallado la operación");
             }else {
                 System.out.println(usr.value.id);
@@ -82,8 +82,8 @@ public class Main
                 System.out.println(usr.value.avatar);
             }
 
-            usr.value = new VOUser((short) 2, "nombre2", "", "hash", "", "");
-            if (!um.signIn(usr,s)){
+            usr.value = new VOUser((short) 2, "nombre2", "", "hash", "", "",callback);
+            if (!um.signIn(usr)){
                 System.out.println("Ha fallado la operación");
             }else{
                 System.out.println(usr.value.id);
@@ -94,8 +94,8 @@ public class Main
                 System.out.println(usr.value.avatar);
             }
 
-            usr.value=new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3");
-            if(!um.signIn(usr,s)) {
+            usr.value=new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3",callback);
+            if(!um.signIn(usr)) {
                 System.out.println("Ha fallado la operación");
             }else {
 
@@ -115,13 +115,13 @@ public class Main
                     System.out.println(user.avatar);
                 }
             }
-//
-//            um.newFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
-//                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"));
-//
-//            um.resolveFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
-//                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"),true);
-////
+
+            um.newFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3",callback),
+                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2",callback));
+
+            um.resolveFriendRequest(new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2",callback),
+                    new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3",callback),true);
+
 //            if(!um.signOut(new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2")))
 //                System.out.println("Ha fallado la operación");
 //

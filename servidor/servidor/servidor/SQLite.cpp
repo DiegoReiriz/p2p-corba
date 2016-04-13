@@ -330,6 +330,57 @@ list<chat::VOUser>* SQLite::obterAmigos(chat::VOUser usuario, sqlite3 * db)
 	return lista;
 }
 
+
+list<chat::VOUser>* SQLite::obterPeticionsAmistadPendientes(chat::VOUser usuario, sqlite3 * db)
+{
+
+	std::list<chat::VOUser>* lista;
+
+	int rc = 0;
+	char* error;
+
+	std::string sqlSelect = "";
+	char **results = NULL;
+	int rows, columns;
+	sqlite3_get_table(db, sqlSelect.c_str(), &results, &rows, &columns, &error);
+	if (rc)
+	{
+		cerr << "Error executing SQLite3 query: " << sqlite3_errmsg(db) << endl << endl;
+		sqlite3_free(error);
+		return false;
+	}
+	else
+	{
+
+		/*====================================*
+		|                                    |
+		|   ATENCIÖN  ALERTA POR SUBNORMAL!  |
+		|                                    |
+		|     LIBERAR A LISTA DE USUARIOS    |
+		|                                    |
+		|  A memoria das estructuras se ge-  |
+		|    nera mediante o operador new    |
+		|                                    |
+		*====================================*/
+
+		if (rows < 1)
+			return false;
+
+
+		lista = res2User(rows, columns, results);
+		for (std::list<chat::VOUser>::iterator itr = lista->begin(); itr != lista->end();/*nothing*/) {
+
+			cout << (*itr).id << (*itr).nombre << (*itr).email << (*itr).hash << (*itr).salt << (*itr).avatar << endl;
+
+			++itr;
+		}
+
+	}
+	sqlite3_free_table(results);
+
+	return lista;
+}
+
 bool SQLite::obterUsuario(chat::VOUser &usuario, sqlite3 * db)
 {
 

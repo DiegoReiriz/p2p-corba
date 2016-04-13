@@ -56,6 +56,32 @@ _CORBA_MODULE chat
 
 _CORBA_MODULE_BEG
 
+#ifndef __chat_msupertopeer__
+#define __chat_msupertopeer__
+  class supertopeer;
+  class _objref_supertopeer;
+  class _impl_supertopeer;
+  
+  typedef _objref_supertopeer* supertopeer_ptr;
+  typedef supertopeer_ptr supertopeerRef;
+
+  class supertopeer_Helper {
+  public:
+    typedef supertopeer_ptr _ptr_type;
+
+    static _ptr_type _nil();
+    static _CORBA_Boolean is_nil(_ptr_type);
+    static void release(_ptr_type);
+    static void duplicate(_ptr_type);
+    static void marshalObjRef(_ptr_type, cdrStream&);
+    static _ptr_type unmarshalObjRef(cdrStream&);
+  };
+
+  typedef _CORBA_ObjRef_Var<_objref_supertopeer, supertopeer_Helper> supertopeer_var;
+  typedef _CORBA_ObjRef_OUT_arg<_objref_supertopeer,supertopeer_Helper > supertopeer_out;
+
+#endif
+
   struct VOUser {
     typedef _CORBA_ConstrType_Variable_Var<VOUser> _var_type;
 
@@ -72,6 +98,8 @@ _CORBA_MODULE_BEG
 
     ::CORBA::String_member avatar;
 
+    _CORBA_ObjRef_Member< _objref_supertopeer, supertopeer_Helper>  callback;
+
   
 
     void operator>>= (cdrStream &) const;
@@ -81,118 +109,6 @@ _CORBA_MODULE_BEG
   typedef VOUser::_var_type VOUser_var;
 
   typedef _CORBA_ConstrType_Variable_OUT_arg< VOUser,VOUser_var > VOUser_out;
-
-  class listaUsuarios_var;
-
-  class listaUsuarios : public _CORBA_Unbounded_Sequence< VOUser >  {
-  public:
-    typedef listaUsuarios_var _var_type;
-    inline listaUsuarios() {}
-    inline listaUsuarios(const listaUsuarios& _s)
-      : _CORBA_Unbounded_Sequence< VOUser > (_s) {}
-
-    inline listaUsuarios(_CORBA_ULong _max)
-      : _CORBA_Unbounded_Sequence< VOUser > (_max) {}
-    inline listaUsuarios(_CORBA_ULong _max, _CORBA_ULong _len, VOUser* _val, _CORBA_Boolean _rel=0)
-      : _CORBA_Unbounded_Sequence< VOUser > (_max, _len, _val, _rel) {}
-
-  
-
-    inline listaUsuarios& operator = (const listaUsuarios& _s) {
-      _CORBA_Unbounded_Sequence< VOUser > ::operator=(_s);
-      return *this;
-    }
-  };
-
-  class listaUsuarios_out;
-
-  class listaUsuarios_var {
-  public:
-    inline listaUsuarios_var() : _pd_seq(0) {}
-    inline listaUsuarios_var(listaUsuarios* _s) : _pd_seq(_s) {}
-    inline listaUsuarios_var(const listaUsuarios_var& _s) {
-      if (_s._pd_seq)  _pd_seq = new listaUsuarios(*_s._pd_seq);
-      else             _pd_seq = 0;
-    }
-    inline ~listaUsuarios_var() { if (_pd_seq)  delete _pd_seq; }
-      
-    inline listaUsuarios_var& operator = (listaUsuarios* _s) {
-      if (_pd_seq)  delete _pd_seq;
-      _pd_seq = _s;
-      return *this;
-    }
-    inline listaUsuarios_var& operator = (const listaUsuarios_var& _s) {
-      if (&_s != this) {
-        if (_s._pd_seq) {
-          if (!_pd_seq)  _pd_seq = new listaUsuarios;
-          *_pd_seq = *_s._pd_seq;
-        }
-        else if (_pd_seq) {
-          delete _pd_seq;
-          _pd_seq = 0;
-        }
-      }
-      return *this;
-    }
-    inline VOUser& operator [] (_CORBA_ULong _s) {
-      return (*_pd_seq)[_s];
-    }
-
-  
-
-    inline listaUsuarios* operator -> () { return _pd_seq; }
-    inline const listaUsuarios* operator -> () const { return _pd_seq; }
-#if defined(__GNUG__)
-    inline operator listaUsuarios& () const { return *_pd_seq; }
-#else
-    inline operator const listaUsuarios& () const { return *_pd_seq; }
-    inline operator listaUsuarios& () { return *_pd_seq; }
-#endif
-      
-    inline const listaUsuarios& in() const { return *_pd_seq; }
-    inline listaUsuarios&       inout()    { return *_pd_seq; }
-    inline listaUsuarios*&      out() {
-      if (_pd_seq) { delete _pd_seq; _pd_seq = 0; }
-      return _pd_seq;
-    }
-    inline listaUsuarios* _retn() { listaUsuarios* tmp = _pd_seq; _pd_seq = 0; return tmp; }
-      
-    friend class listaUsuarios_out;
-    
-  private:
-    listaUsuarios* _pd_seq;
-  };
-
-  class listaUsuarios_out {
-  public:
-    inline listaUsuarios_out(listaUsuarios*& _s) : _data(_s) { _data = 0; }
-    inline listaUsuarios_out(listaUsuarios_var& _s)
-      : _data(_s._pd_seq) { _s = (listaUsuarios*) 0; }
-    inline listaUsuarios_out(const listaUsuarios_out& _s) : _data(_s._data) {}
-    inline listaUsuarios_out& operator = (const listaUsuarios_out& _s) {
-      _data = _s._data;
-      return *this;
-    }
-    inline listaUsuarios_out& operator = (listaUsuarios* _s) {
-      _data = _s;
-      return *this;
-    }
-    inline operator listaUsuarios*&()  { return _data; }
-    inline listaUsuarios*& ptr()       { return _data; }
-    inline listaUsuarios* operator->() { return _data; }
-
-    inline VOUser& operator [] (_CORBA_ULong _i) {
-      return (*_data)[_i];
-    }
-
-  
-
-    listaUsuarios*& _data;
-
-  private:
-    listaUsuarios_out();
-    listaUsuarios_out& operator=(const listaUsuarios_var&);
-  };
 
 #ifndef __chat_msupertopeer__
 #define __chat_msupertopeer__
@@ -315,6 +231,118 @@ _CORBA_MODULE_BEG
   };
 
 
+  class listaUsuarios_var;
+
+  class listaUsuarios : public _CORBA_Unbounded_Sequence< VOUser >  {
+  public:
+    typedef listaUsuarios_var _var_type;
+    inline listaUsuarios() {}
+    inline listaUsuarios(const listaUsuarios& _s)
+      : _CORBA_Unbounded_Sequence< VOUser > (_s) {}
+
+    inline listaUsuarios(_CORBA_ULong _max)
+      : _CORBA_Unbounded_Sequence< VOUser > (_max) {}
+    inline listaUsuarios(_CORBA_ULong _max, _CORBA_ULong _len, VOUser* _val, _CORBA_Boolean _rel=0)
+      : _CORBA_Unbounded_Sequence< VOUser > (_max, _len, _val, _rel) {}
+
+  
+
+    inline listaUsuarios& operator = (const listaUsuarios& _s) {
+      _CORBA_Unbounded_Sequence< VOUser > ::operator=(_s);
+      return *this;
+    }
+  };
+
+  class listaUsuarios_out;
+
+  class listaUsuarios_var {
+  public:
+    inline listaUsuarios_var() : _pd_seq(0) {}
+    inline listaUsuarios_var(listaUsuarios* _s) : _pd_seq(_s) {}
+    inline listaUsuarios_var(const listaUsuarios_var& _s) {
+      if (_s._pd_seq)  _pd_seq = new listaUsuarios(*_s._pd_seq);
+      else             _pd_seq = 0;
+    }
+    inline ~listaUsuarios_var() { if (_pd_seq)  delete _pd_seq; }
+      
+    inline listaUsuarios_var& operator = (listaUsuarios* _s) {
+      if (_pd_seq)  delete _pd_seq;
+      _pd_seq = _s;
+      return *this;
+    }
+    inline listaUsuarios_var& operator = (const listaUsuarios_var& _s) {
+      if (&_s != this) {
+        if (_s._pd_seq) {
+          if (!_pd_seq)  _pd_seq = new listaUsuarios;
+          *_pd_seq = *_s._pd_seq;
+        }
+        else if (_pd_seq) {
+          delete _pd_seq;
+          _pd_seq = 0;
+        }
+      }
+      return *this;
+    }
+    inline VOUser& operator [] (_CORBA_ULong _s) {
+      return (*_pd_seq)[_s];
+    }
+
+  
+
+    inline listaUsuarios* operator -> () { return _pd_seq; }
+    inline const listaUsuarios* operator -> () const { return _pd_seq; }
+#if defined(__GNUG__)
+    inline operator listaUsuarios& () const { return *_pd_seq; }
+#else
+    inline operator const listaUsuarios& () const { return *_pd_seq; }
+    inline operator listaUsuarios& () { return *_pd_seq; }
+#endif
+      
+    inline const listaUsuarios& in() const { return *_pd_seq; }
+    inline listaUsuarios&       inout()    { return *_pd_seq; }
+    inline listaUsuarios*&      out() {
+      if (_pd_seq) { delete _pd_seq; _pd_seq = 0; }
+      return _pd_seq;
+    }
+    inline listaUsuarios* _retn() { listaUsuarios* tmp = _pd_seq; _pd_seq = 0; return tmp; }
+      
+    friend class listaUsuarios_out;
+    
+  private:
+    listaUsuarios* _pd_seq;
+  };
+
+  class listaUsuarios_out {
+  public:
+    inline listaUsuarios_out(listaUsuarios*& _s) : _data(_s) { _data = 0; }
+    inline listaUsuarios_out(listaUsuarios_var& _s)
+      : _data(_s._pd_seq) { _s = (listaUsuarios*) 0; }
+    inline listaUsuarios_out(const listaUsuarios_out& _s) : _data(_s._data) {}
+    inline listaUsuarios_out& operator = (const listaUsuarios_out& _s) {
+      _data = _s._data;
+      return *this;
+    }
+    inline listaUsuarios_out& operator = (listaUsuarios* _s) {
+      _data = _s;
+      return *this;
+    }
+    inline operator listaUsuarios*&()  { return _data; }
+    inline listaUsuarios*& ptr()       { return _data; }
+    inline listaUsuarios* operator->() { return _data; }
+
+    inline VOUser& operator [] (_CORBA_ULong _i) {
+      return (*_data)[_i];
+    }
+
+  
+
+    listaUsuarios*& _data;
+
+  private:
+    listaUsuarios_out();
+    listaUsuarios_out& operator=(const listaUsuarios_var&);
+  };
+
 #ifndef __chat_muserManager__
 #define __chat_muserManager__
   class userManager;
@@ -383,7 +411,7 @@ _CORBA_MODULE_BEG
   {
   public:
     // IDL operations
-    ::CORBA::Boolean signIn(::chat::VOUser& usuario, ::chat::supertopeer_ptr callback);
+    ::CORBA::Boolean signIn(::chat::VOUser& usuario);
     ::CORBA::Boolean signOut(const ::chat::VOUser& usuario);
     ::CORBA::Boolean signUp(const ::chat::VOUser& usuario);
     ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
@@ -424,7 +452,7 @@ _CORBA_MODULE_BEG
   public:
     virtual ~_impl_userManager();
 
-    virtual ::CORBA::Boolean signIn(::chat::VOUser& usuario, ::chat::supertopeer_ptr callback) = 0;
+    virtual ::CORBA::Boolean signIn(::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean signOut(const ::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean signUp(const ::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario) = 0;

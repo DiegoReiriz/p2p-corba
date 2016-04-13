@@ -1,5 +1,12 @@
 module chat
 {
+  /*
+    Interfaz para enviat notificacións desede o servidor aos clientes.
+    considerar convertir as notificacións a oneway para que  non espere o servidor
+    a comprobar si os clientes recibiron ou no a notificación correspondiente
+  */
+  interface supertopeer;
+
   struct VOUser{
     short id;
     string nombre;
@@ -7,24 +14,21 @@ module chat
     string hash;
     string salt;
     string avatar;
+    supertopeer callback;
+  };
+
+
+  interface supertopeer {
+    void notifyFriendIn(in VOUser usuario);
+    void notifyFriendOut(in VOUser usuario);
+    void notifyFriendRequest(in VOUser usuario);
+    void notifyFriendRequestReslution(in VOUser usuario,in boolean result);
   };
 
   typedef sequence<VOUser> listaUsuarios;
 
-  /*
-    Interfaz para enviat notificacións desede o servidor aos clientes.
-    considerar convertir as notificacións a oneway para que  non espere o servidor
-    a comprobar si os clientes recibiron ou no a notificación correspondiente
-  */
-    interface supertopeer{
-      void notifyFriendIn(in VOUser usuario);
-      void notifyFriendOut(in VOUser usuario);
-      void notifyFriendRequest(in VOUser usuario);
-      void notifyFriendRequestReslution(in VOUser usuario,in boolean result);
-    };
-
   interface userManager{
-    boolean signIn(inout VOUser usuario,in supertopeer callback);
+    boolean signIn(inout VOUser usuario);
     boolean signOut(in VOUser usuario);
     boolean signUp(in VOUser usuario);
     boolean alterUser(in VOUser usuario);

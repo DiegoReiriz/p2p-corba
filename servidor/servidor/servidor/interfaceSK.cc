@@ -23,6 +23,7 @@ chat::VOUser::operator>>= (cdrStream &_n) const
   _n.marshalString(hash,0);
   _n.marshalString(salt,0);
   _n.marshalString(avatar,0);
+  supertopeer_Helper::marshalObjRef(callback,_n);
 
 }
 
@@ -35,6 +36,7 @@ chat::VOUser::operator<<= (cdrStream &_n)
   hash = _n.unmarshalString(0);
   salt = _n.unmarshalString(0);
   avatar = _n.unmarshalString(0);
+  callback = supertopeer_Helper::unmarshalObjRef(_n);
 
 }
 
@@ -527,7 +529,7 @@ chat::_objref_userManager::_ptrToObjRef(const char* id)
 // Code for chat::userManager::signIn
 
 // Proxy call descriptor class. Mangled signature:
-//  _cboolean_n_cchat_mVOUser_i_cchat_msupertopeer
+//  _cboolean_n_cchat_mVOUser
 class _0RL_cd_1548587b975e6013_60000000
   : public omniCallDescriptor
 {
@@ -549,15 +551,12 @@ public:
 
   chat::VOUser_var arg_0_;
   chat::VOUser* arg_0;
-  chat::supertopeer_var arg_1_;
-  chat::supertopeer_ptr arg_1;
   ::CORBA::Boolean result;
 };
 
 void _0RL_cd_1548587b975e6013_60000000::marshalArguments(cdrStream& _n)
 {
   (const chat::VOUser&) *arg_0 >>= _n;
-  chat::supertopeer::_marshalObjRef(arg_1,_n);
 
 }
 
@@ -566,8 +565,6 @@ void _0RL_cd_1548587b975e6013_60000000::unmarshalArguments(cdrStream& _n)
   arg_0_ = new chat::VOUser;
   (chat::VOUser&)arg_0_ <<= _n;
   arg_0 = &arg_0_.inout();
-  arg_1_ = chat::supertopeer::_unmarshalObjRef(_n);
-  arg_1 = arg_1_.in();
 
 }
 
@@ -595,16 +592,15 @@ _0RL_lcfn_1548587b975e6013_70000000(omniCallDescriptor* cd, omniServant* svnt)
 {
   _0RL_cd_1548587b975e6013_60000000* tcd = (_0RL_cd_1548587b975e6013_60000000*)cd;
   chat::_impl_userManager* impl = (chat::_impl_userManager*) svnt->_ptrToInterface(chat::userManager::_PD_repoId);
-  tcd->result = impl->signIn(*tcd->arg_0, tcd->arg_1);
+  tcd->result = impl->signIn(*tcd->arg_0);
 
 
 }
 
-::CORBA::Boolean chat::_objref_userManager::signIn(::chat::VOUser& usuario, ::chat::supertopeer_ptr callback)
+::CORBA::Boolean chat::_objref_userManager::signIn(::chat::VOUser& usuario)
 {
   _0RL_cd_1548587b975e6013_60000000 _call_desc(_0RL_lcfn_1548587b975e6013_70000000, "signIn", 7);
   _call_desc.arg_0 = &(::chat::VOUser&) usuario;
-  _call_desc.arg_1 = callback;
 
   _invoke(_call_desc);
   return _call_desc.result;
