@@ -12,7 +12,7 @@ module chat
   typedef sequence<VOUser> listaUsuarios;
 
   interface userManager{
-    boolean signIn(in VOUser usuario);
+    boolean signIn(inout VOUser usuario);
     boolean signOut(in VOUser usuario);
     boolean signUp(in VOUser usuario);
     boolean alterUser(in VOUser usuario);

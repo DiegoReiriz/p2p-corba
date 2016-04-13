@@ -28,8 +28,6 @@ public class Main extends Application {
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef); // Referencia al Contexto del servivio de nombre
             String name = "User";
             um = userManagerHelper.narrow(ncRef.resolve_str(name));  // Resolvemos la referencia de objetos en el servicio de nombres
-            //Falta importar los arvchivos IDL generados en el servidor para acceder al userManager
-            System.out.println("ENTRÉ");
             launch(args);
         }
         catch(Exception e){

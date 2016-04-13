@@ -1,5 +1,7 @@
 package chat;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,8 +10,12 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Controller{
+    public static VOUser usuario=new VOUser();
+    public LinkedList<VOUser> usuariosConectados=new LinkedList<VOUser>();
 
     /* Referencia a las pantallas de las interfaces de la aplicación */
     private static Stage pantallaPrincipal;
@@ -61,7 +67,7 @@ public class Controller{
 
     // Elementos de la interfaz Principal
     @FXML
-    private ListView lstvwInicioUsuarios;
+    private ListView<String> lstvwInicioUsuarios;
 
     // Elementos de la interfaz Baja
     @FXML
@@ -97,7 +103,7 @@ public class Controller{
 
     // Elementos de la interfaz Peticiones
     @FXML
-    private ListView lstvwPeticionPeticiones;
+    private ListView<String> lstvwPeticionPeticiones;
 
     // Elementos de la interfaz Solicitar Petición de amistad
     @FXML
@@ -126,10 +132,20 @@ public class Controller{
                     lblIniSesError.setVisible(true);
                 }
                 else{
-                    //Comprobacion con la base de datos correcta
-                    /* Creación de la nueva ventana */
-                    if(Main.um.signIn(new VOUser((short)0,"",txtIniSesEmail.getText(),txtIniSesContr.getText(),"salt","avatar"))==true){
+                    VOUserHolder usuarioHolder = new VOUserHolder();
+                    usuarioHolder.value=new VOUser((short)0,"",txtIniSesEmail.getText(),txtIniSesContr.getText(),"","");
+                    if(Main.um.signIn(usuarioHolder)){ // Comprobación con la base de datos correcta
+                        usuario=usuarioHolder.value;
+                        // Nos traemos la lista de amigos conectados del usuario
+                        listaUsuariosHolder holder=new listaUsuariosHolder(Main.um.getFrindList(usuario)); // Devuelve bien la lista?
+                        System.out.println("Amigos");
+                        for (VOUser user : holder.value) { // Añadimos a nuestra lista local de amigos conectados los amigos conectados
+                            usuariosConectados.add(user);
+                            System.out.println(user.nombre);
+                        }
+                        /* Creación de la nueva ventana */
                         pantallaPrincipal=new Stage();
+                        usuario=usuarioHolder.value;
                         Parent root = FXMLLoader.load(getClass().getResource("interfazPrincipal.fxml"));
                         pantallaPrincipal.setTitle("CHAtty - Principal");
                         pantallaPrincipal.setScene(new Scene(root, 600, 400));
@@ -186,16 +202,19 @@ public class Controller{
                     }
                     else{
                         //Comprobamos si el email existe en la base de datos, si existe:
-                        /*
+                        VOUserHolder usuarioHolder = new VOUserHolder();
+                        usuarioHolder.value=new VOUser((short)0,txtRegistroNombre.getText(),txtRegistroEmail.getText(),txtRegistroContr.getText(),"salt",txtRegistroAvatar.getText());
+                        if(Main.um.signIn(usuarioHolder)){ // Comprobacion con la base de datos correcta
                             lblRegistroErrorEmail.setVisible(true);
-                        */
-                        //Sino:
-                        //Comprobamos si la url de avatar es correcta, si no lo es fuera
-                        //Insertamos en la base de datos el usuario y cerramos la ventana
+                        }
+                        else{
+                            //Comprobamos si la url de avatar es correcta, si no lo es lblRegistroError.setVisible(true);
 
-                        pantallaRegistro.hide();
-                        pantallaInicio.setOpacity(1.0);
-
+                            //Sino:
+                            Main.um.signUp(usuarioHolder.value);
+                            pantallaRegistro.hide();
+                            pantallaInicio.setOpacity(1.0);
+                        }
                     }
                 }
             }
@@ -233,6 +252,14 @@ public class Controller{
                 pantallaPeticion.setResizable(false);
                 pantallaPeticion.show();
                 pantallaPrincipal.setOpacity(0.0);
+            }
+
+            public void insertarAmigosConectados(){
+                LinkedList<String> listaAmigos = new LinkedList<String>();
+                for (VOUser user : usuariosConectados) { // Introducimos en una lista que será la fuente de datos del listview los amigo para que pueda verlos
+                    listaAmigos.add(user.nombre+": "+user.email);
+                }
+                lstvwInicioUsuarios.setItems(FXCollections.observableArrayList(listaAmigos));
             }
 
             public void cerrarSesion(){
