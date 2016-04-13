@@ -287,8 +287,13 @@ public class Controller{
             }
             else{
                 // Comprobamos que la autentificación es correcta
-                if(true){
-                    // Terminar chats activos, Borrar usuario y lo de abajo /////\\\\\
+                VOUserHolder usuarioHolder = new VOUserHolder();
+                usuarioHolder.value=new VOUser((short)0,"",txtBajaEmail.getText(),txtBajaContr.getText(),"","");
+                if(Main.um.signIn(usuarioHolder)){ // Comprobación con la base de datos correcta
+                    // Terminar chats activos (notificar desconexión) + lo de abajo
+                    //Método de borrado
+                    // Main.um.
+                    System.out.println("Has borrado tu cuenta");
                     pantallaBaja.hide();
                     pantallaPrincipal.hide();
                     pantallaInicio.hide();
@@ -324,7 +329,7 @@ public class Controller{
                         VOUserHolder usuarioHolder = new VOUserHolder();
                         usuarioHolder.value=usuario;
                         if(Main.um.signIn(usuarioHolder)){//Si es correcta cambiamos la contraseña
-                            if(Main.um.alterUser(new VOUser(usuario.id,usuario.nombre,usuario.email,txtCambNewContr.getText(),usuario.salt,usuario.avatar))){
+                            if(Main.um.alterUser(new VOUser(usuario.id,usuario.nombre,usuario.email,txtCambNewContr.getText(),usuario.salt,usuario.avatar))){ //fallo en sentencia UsuariosSet
                                 usuario.hash=txtCambNewContr.getText();
                                 pantallaContr.hide();
                                 pantallaPrincipal.setOpacity(1.0);
