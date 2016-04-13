@@ -31,6 +31,7 @@ class SQLite
 		list<chat::VOUser>* obterAmigos(chat::VOUser usuario, sqlite3 * db);
 		list<chat::VOUser>* obterPeticionsAmistadPendientes(chat::VOUser usuario, sqlite3 * db);
 		bool alterarUsuario(chat::VOUser usuario, sqlite3 * db);
+		bool borrarUsuario(chat::VOUser usuario, sqlite3 * db);
 		bool obterUsuario(chat::VOUser &usuario,sqlite3 *db);
 		bool crearPeticionAmistad(chat::VOUser origen, chat::VOUser destino, sqlite3 *db);
 		bool borrarPeticionAmistad(chat::VOUser origen, chat::VOUser destino, sqlite3 *db);

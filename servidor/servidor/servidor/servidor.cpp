@@ -46,6 +46,7 @@ class userManager_i : public POA_chat::userManager
 		virtual ::CORBA::Boolean signOut(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean signUp(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
+		virtual ::CORBA::Boolean deleteUser(const ::chat::VOUser& usuario);
 		virtual ::chat::listaUsuarios* getFrindList(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny);
 		virtual ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept);
@@ -55,6 +56,7 @@ class userManager_i : public POA_chat::userManager
 ::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
 	
+	usuario.chat->sendMessge(usuario,"PEEEEEEEEEEEEEEEEENEEEEEEEEEEEEE");
 	
 	cout << "SIGN IN" << endl;
 	cout << "=======" << endl;
@@ -159,6 +161,20 @@ class userManager_i : public POA_chat::userManager
 	::CORBA::Boolean res = false;
 
 	res = database.alterarUsuario(usuario,db);
+
+	ReleaseMutex(ghMutex);
+
+	return res;
+}
+
+::CORBA::Boolean userManager_i::deleteUser(const ::chat::VOUser& usuario) {
+	DWORD dwWaitResult = WaitForSingleObject(
+		ghMutex,    // handle to mutex
+		INFINITE);  // no time-out interval
+
+	::CORBA::Boolean res = false;
+
+	res = database.borrarUsuario(usuario, db);
 
 	ReleaseMutex(ghMutex);
 

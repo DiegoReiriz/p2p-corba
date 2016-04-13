@@ -98,6 +98,30 @@ bool SQLite::alterarUsuario(chat::VOUser usuario, sqlite3 * db) {
 	return true;
 }
 
+
+bool SQLite::borrarUsuario(chat::VOUser usuario, sqlite3 * db) {
+
+	int rc;
+	char* error;
+
+	std::string updateSQL = "DELETE FROM "+ TABLE_USUARIOS::TABLE_NAME +" where "+ TABLE_USUARIOS::ID +"='"+ std::to_string(usuario.id) +"';";
+
+	cout << "Updating User ..." << endl;
+	cout << updateSQL << endl << endl;
+
+	rc = sqlite3_exec(db, updateSQL.c_str(), NULL, NULL, &error);
+	if (rc)
+	{
+		cerr << "Error executing first SQLite3 statement: " << sqlite3_errmsg(db) << endl << endl;
+		sqlite3_free(error);
+		cout << "Tables are already created" << endl;
+
+		return false;
+	}
+
+	return true;
+}
+
 bool SQLite::crearPeticionAmistad(chat::VOUser origen,chat::VOUser destino, sqlite3 * db) {
 
 	int rc;
