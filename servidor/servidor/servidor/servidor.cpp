@@ -118,6 +118,7 @@ class userManager_i : public POA_chat::userManager
 	list<chat::VOUser>* amigos=database.obterAmigos(usuario,db);
 
 	int i = 0;
+	int k = 0;
 	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
 		bool found = false;
 		
@@ -140,13 +141,27 @@ class userManager_i : public POA_chat::userManager
 			user->hash = itr->hash;
 			user->salt = itr->salt;
 			user->avatar = itr->avatar;
-			(*lista)[i] = *user;
+			(*lista)[k] = *user;
+			k++;
 		}
 
 		++itr;
 		++i;
 	}
 	
+	while (k < lista->length()) {
+		::chat::VOUser* user = new ::chat::VOUser;
+
+		user->id = 0;
+		user->nombre = "empty";
+		user->email = "empty";
+		user->hash = "empty";
+		user->salt = "empty";
+		user->avatar = "empty";
+		(*lista)[k] = *user;
+		k++;
+	}
+
 	return lista;
 }
 

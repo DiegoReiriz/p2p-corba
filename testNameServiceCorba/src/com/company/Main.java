@@ -104,16 +104,16 @@ public class Main
                     System.out.println(user.avatar);
                 }
             }
-
-            um.newFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
-                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"));
-
-            um.resolveFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
-                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"),true);
 //
-            if(!um.signOut(new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2")))
-                System.out.println("Ha fallado la operación");
-
+//            um.newFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
+//                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"));
+//
+//            um.resolveFriendRequest(new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3"),
+//                    new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2"),true);
+////
+//            if(!um.signOut(new VOUser((short)2,"nombre2","email2","hash2","salt2","avatar2")))
+//                System.out.println("Ha fallado la operación");
+//
 
 
         } catch (Exception e) {
