@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="frmNueva" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.Controller">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="20.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="txtNuevaFiltro" prefHeight="25.0" prefWidth="520.0" />
+                  <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="29.0" visible="false" />
+                  <Button fx:id="btnNuevaBuscar" mnemonicParsing="false" onAction="#buscarUsuarios" text="Buscar" />
+               </children>
+            </HBox>
+            <ListView fx:id="lsvwNuevaUsuarios" prefHeight="349.0" prefWidth="600.0" />
+            <HBox prefHeight="28.0" prefWidth="600.0">
+               <children>
+                  <Separator orientation="VERTICAL" prefHeight="27.0" prefWidth="396.0" visible="false" />
+                  <Button fx:id="btnNuevaSalir" mnemonicParsing="false" onAction="#salirNueva" prefHeight="25.0" prefWidth="78.0" text="Salir" />
+                  <Separator orientation="VERTICAL" prefHeight="27.0" prefWidth="27.0" visible="false" />
+                  <Button fx:id="btnNuevaSolicitar" mnemonicParsing="false" onAction="#enviarSolicitud" prefHeight="25.0" prefWidth="99.0" text="Enviar Solicitud" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

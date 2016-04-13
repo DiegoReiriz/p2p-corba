@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="frmInicio" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.Controller">
+   <children>
+      <VBox fx:id="vboxInicio" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar fx:id="menuInicio">
+              <menus>
+                <Menu fx:id="menuInicioOpciones" mnemonicParsing="false" text="Opciones">
+                  <items>
+                      <MenuItem fx:id="mnuitmInicioCerrar" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />
+                      <MenuItem fx:id="mnuitmInicioAmistad" mnemonicParsing="false" onAction="#crearPantallaPeticion" text="Peticiones de Amistad" />
+                      <MenuItem fx:id="mnuitmInicioCambContr" mnemonicParsing="false" onAction="#crearPantallaContr" text="Cambiar Contraseña" />
+                      <MenuItem fx:id="mnuitmInicioBaja" mnemonicParsing="false" onAction="#crearPantallaBaja" text="Darse de Baja" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TitledPane fx:id="pnelInicioUsuarios" text="Usuarios Conectados">
+               <content>
+                  <ListView fx:id="lstvwInicioUsuarios" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="200.0" onMouseClicked="#crearChat"/>
+               </content>
+            </TitledPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
