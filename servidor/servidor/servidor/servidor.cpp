@@ -15,6 +15,7 @@ CORBA::ORB_var orb;
 std::list<chat::VOUser> usuariosActivos;
 sqlite3 *db;
 SQLite database;
+HANDLE ghMutex;
 
 static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr, CORBA::Object_ptr,const char*);
 static CORBA::Boolean unbindObjectfromName(CORBA::ORB_ptr, CORBA::Object_ptr, const char*);
@@ -103,15 +104,26 @@ class userManager_i : public POA_chat::userManager
 }
 
 ::CORBA::Boolean userManager_i::alterUser(const ::chat::VOUser& usuario) {
+	DWORD dwWaitResult = WaitForSingleObject(
+		ghMutex,    // handle to mutex
+		INFINITE);  // no time-out interval
+
 	::CORBA::Boolean res = false;
 
 	res = database.alterarUsuario(usuario,db);
+
+	ReleaseMutex(ghMutex);
 
 	return res;
 }
 
 ::chat::listaUsuarios* userManager_i::getFrindList(const ::chat::VOUser& usuario) {
 	
+	DWORD dwWaitResult = WaitForSingleObject(
+		ghMutex,    // handle to mutex
+		INFINITE);  // no time-out interval
+
+
 	chat::listaUsuarios* lista = new chat::listaUsuarios;
 	lista->length(usuariosActivos.size());
 	
@@ -162,17 +174,31 @@ class userManager_i : public POA_chat::userManager
 		k++;
 	}
 
+	ReleaseMutex(ghMutex);
+
 	return lista;
 }
 
 ::CORBA::Boolean userManager_i::newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny) {
+	DWORD dwWaitResult = WaitForSingleObject(
+		ghMutex,    // handle to mutex
+		INFINITE);  // no time-out interval
+
+	
 	::CORBA::Boolean res = false;
 
 	res=database.crearPeticionAmistad(origin, destiny, db);
 
+	ReleaseMutex(ghMutex);
+
 	return res;
 }
 ::CORBA::Boolean userManager_i::resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept) {
+	DWORD dwWaitResult = WaitForSingleObject(
+		ghMutex,    // handle to mutex
+		INFINITE);  // no time-out interval
+
+
 	::CORBA::Boolean res = false;
 
 	if (accept)
@@ -182,6 +208,8 @@ class userManager_i : public POA_chat::userManager
 	
 	res = database.borrarPeticionAmistad(origin, destiny, db);
 	
+	ReleaseMutex(ghMutex);
+
 	return res;
 }
 
@@ -204,6 +232,18 @@ BOOL WINAPI consoleHandler(DWORD signal) {
 //////////////////////////////////////////////////////////////////////
 
 int main(int argc, char **argv){
+
+
+	ghMutex = CreateMutex(
+		NULL,              // default security attributes
+		FALSE,             // initially not owned
+		NULL);             // unnamed mutex
+
+	if (ghMutex == NULL)
+	{
+		printf("CreateMutex error: %d\n", GetLastError());
+		return 1;
+	}
 
 	//CAPTURANSE AS SINALES DA APLICACIÓN
 	if (!SetConsoleCtrlHandler(consoleHandler, TRUE)) {
@@ -253,6 +293,7 @@ int main(int argc, char **argv){
 		//lánzase o orb
 		orb->run();
 
+		CloseHandle(ghMutex);
 		//FALTA CONTROLAR A DESVINCULACION DOS OBXECTOS
 
 	}
