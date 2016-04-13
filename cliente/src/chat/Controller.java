@@ -256,6 +256,7 @@ public class Controller{
 
             public void insertarAmigosConectados(){
                 LinkedList<String> listaAmigos = new LinkedList<String>();
+
                 for (VOUser user : usuariosConectados) { // Introducimos en una lista que será la fuente de datos del listview los amigo para que pueda verlos
                     listaAmigos.add(user.nombre+": "+user.email);
                 }
@@ -375,7 +376,7 @@ public class Controller{
     // Métodos Pantalla Solicitar Petición de amistad
 
     public void buscarUsuarios(){
-        // Obtenemos el elemento eleccionado del listview y rellenamos los datos en filtrarUsuarios
+        // Obtenemos los datos del TextField y realizamos función de buscar Usuarios
         // Vaciamos el listview e introducimos los nuevos datos en el listview
         txtNuevaFiltro.setText("");
     }
