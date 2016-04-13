@@ -339,7 +339,8 @@ list<chat::VOUser>* SQLite::obterPeticionsAmistadPendientes(chat::VOUser usuario
 	int rc = 0;
 	char* error;
 
-	std::string sqlSelect = "";
+	std::string sqlSelect = "SELECT * FROM " + TABLE_USUARIOS::TABLE_NAME + " WHERE " + TABLE_USUARIOS::ID + " SELECT " +
+		TABLE_PETICIONES_AMISTAD::ID_ORIGEN + " FROM " + TABLE_PETICIONES_AMISTAD::TABLE_NAME + " WHERE " + TABLE_PETICIONES_AMISTAD::ID_DESTINO + " = " + std::to_string(usuario.id) + ";";
 	char **results = NULL;
 	int rows, columns;
 	sqlite3_get_table(db, sqlSelect.c_str(), &results, &rows, &columns, &error);
