@@ -321,9 +321,20 @@ public class Controller{
                     }
                     else{
                         // Comprobamos que la contraseña es correcta
-                        //Si es correcta cambiamos la contraseña
-                        //Sino:
-                        lblCambContrNoVale.setVisible(true);
+                        VOUserHolder usuarioHolder = new VOUserHolder();
+                        usuarioHolder.value=usuario;
+                        if(Main.um.signIn(usuarioHolder)){//Si es correcta cambiamos la contraseña
+                            if(Main.um.alterUser(new VOUser(usuario.id,usuario.nombre,usuario.email,txtCambNewContr.getText(),usuario.salt,usuario.avatar))){
+                                usuario.hash=txtCambNewContr.getText();
+                                pantallaContr.hide();
+                                pantallaPrincipal.setOpacity(1.0);
+                            }else{
+                                lblCambErrorContr.setVisible(true);
+                            }
+                        }
+                        else{
+                            lblCambContrNoVale.setVisible(true);
+                        }
                     }
                 }
             }
