@@ -74,13 +74,13 @@ bool SQLite::alterarUsuario(chat::VOUser usuario, sqlite3 * db) {
 	char* error;
 
 	std::string updateSQL = "UPDATE " + TABLE_USUARIOS::TABLE_NAME +
-		"SET " +
-		TABLE_USUARIOS::NOMBRE + "=" + std::string(usuario.nombre) + ", " +
-		TABLE_USUARIOS::EMAIL + "=" + std::string(usuario.email) + ", " +
-		TABLE_USUARIOS::HASH + "=" + std::string(usuario.hash) + ", " +
-		TABLE_USUARIOS::SALT + "=" + std::string(usuario.salt) + ", " +
-		TABLE_USUARIOS::AVATAR + "=" + std::string(usuario.avatar) +
-		" WHERE " + TABLE_USUARIOS::ID +"="+ std::to_string(usuario.id) + ";";
+		" SET " +
+		TABLE_USUARIOS::NOMBRE + "='" + std::string(usuario.nombre) + "', " +
+		TABLE_USUARIOS::EMAIL + "='" + std::string(usuario.email) + "', " +
+		TABLE_USUARIOS::HASH + "='" + std::string(usuario.hash) + "', " +
+		TABLE_USUARIOS::SALT + "='" + std::string(usuario.salt) + "', " +
+		TABLE_USUARIOS::AVATAR + "='" + std::string(usuario.avatar) +
+		"' WHERE " + TABLE_USUARIOS::ID +"="+ std::to_string(usuario.id) + ";";
 
 	cout << "Updating User ..." << endl;
 	cout << updateSQL << endl << endl;
