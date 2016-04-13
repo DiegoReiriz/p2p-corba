@@ -262,7 +262,7 @@ _CORBA_MODULE_BEG
   {
   public:
     // IDL operations
-    ::CORBA::Boolean signIn(const ::chat::VOUser& usuario);
+    ::CORBA::Boolean signIn(::chat::VOUser& usuario);
     ::CORBA::Boolean signOut(const ::chat::VOUser& usuario);
     ::CORBA::Boolean signUp(const ::chat::VOUser& usuario);
     ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
@@ -303,7 +303,7 @@ _CORBA_MODULE_BEG
   public:
     virtual ~_impl_userManager();
 
-    virtual ::CORBA::Boolean signIn(const ::chat::VOUser& usuario) = 0;
+    virtual ::CORBA::Boolean signIn(::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean signOut(const ::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean signUp(const ::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario) = 0;
