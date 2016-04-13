@@ -1,5 +1,5 @@
 :: java
-idlj interface.idl
+idlj -fall interface.idl
 rm ../cliente/src/chat/*
 cp chat ../cliente/src
 

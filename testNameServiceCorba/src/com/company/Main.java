@@ -5,9 +5,10 @@ import ECHOAPP.EchoHelper;
 import chat.*;
 import org.omg.CORBA.ORB;
 import org.omg.CosNaming.*;
+import org.omg.PortableServer.POA;
+import org.omg.PortableServer.POAHelper;
 
 import java.util.Properties;
-
 
 public class Main
 {
@@ -16,6 +17,16 @@ public class Main
             // create and initialize the ORB
 
             ORB orb = ORB.init(args, null);
+
+            POA rootPOA = POAHelper.narrow(orb.resolve_initial_references("RootPOA"));
+            rootPOA.the_POAManager().activate();
+
+            /*crease o servand*/
+            supertopeerImplementation stp=new supertopeerImplementation();
+            stp.setOrb(orb);
+
+            org.omg.CORBA.Object ref = rootPOA.servant_to_reference(stp);
+            supertopeer s= supertopeerHelper.narrow(ref);
 
             // get the root naming context
             org.omg.CORBA.Object objRef =
@@ -60,7 +71,7 @@ public class Main
             VOUserHolder usr = new VOUserHolder();
             usr.value = new VOUser((short) 1, "", "email1", "hash1", "", "");
 
-            if (!um.signIn(usr)) {
+            if (!um.signIn(usr,s)) {
                 System.out.println("Ha fallado la operación");
             }else {
                 System.out.println(usr.value.id);
@@ -72,7 +83,7 @@ public class Main
             }
 
             usr.value = new VOUser((short) 2, "nombre2", "", "hash", "", "");
-            if (!um.signIn(usr)){
+            if (!um.signIn(usr,s)){
                 System.out.println("Ha fallado la operación");
             }else{
                 System.out.println(usr.value.id);
@@ -84,7 +95,7 @@ public class Main
             }
 
             usr.value=new VOUser((short)3,"nombre3","email3","hash3","salt3","avatar3");
-            if(!um.signIn(usr)) {
+            if(!um.signIn(usr,s)) {
                 System.out.println("Ha fallado la operación");
             }else {
 

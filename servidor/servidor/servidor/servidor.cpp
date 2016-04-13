@@ -42,7 +42,7 @@ class userManager_i : public POA_chat::userManager
 	public :
 		inline userManager_i() {}
 		virtual ~userManager_i() {}
-		virtual ::CORBA::Boolean signIn(::chat::VOUser& usuario);
+		virtual ::CORBA::Boolean signIn(::chat::VOUser& usuario, ::chat::supertopeer_ptr callback);
 		virtual ::CORBA::Boolean signOut(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean signUp(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
@@ -52,8 +52,10 @@ class userManager_i : public POA_chat::userManager
 
 };
 
-::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario) {
+::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario, ::chat::supertopeer_ptr callback) {
 	::CORBA::Boolean res = false;
+
+	callback->notifyFriendIn(usuario);
 
 	cout << "SIGN IN" << endl;
 	cout << "=======" << endl;
