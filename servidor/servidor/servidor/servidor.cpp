@@ -340,7 +340,7 @@ class userManager_i : public POA_chat::userManager
 
 		int i = 0;
 	
-		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+		for (std::list<chat::VOUser>::iterator itr = amigos->begin(); itr != amigos->end();/*nothing*/) {
 		
 			::chat::VOUser* user = new ::chat::VOUser;
 
