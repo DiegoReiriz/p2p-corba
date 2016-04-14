@@ -221,7 +221,7 @@ class userManager_i : public POA_chat::userManager
 
 	int i = 0;
 	int k = 0;
-	if(amigos != NULL){
+	if(amigos != NULL && usuariosActivos.size() > 0 ){
 		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
 			bool found = false;
 		
@@ -286,7 +286,7 @@ class userManager_i : public POA_chat::userManager
 	if(usuariosActivos.size() > 0){
 		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
 			if (itr->id == destiny.id) {
-				destiny.callback->notifyFriendRequest(origin);
+				itr->callback->notifyFriendRequest(origin);
 				found = true;
 			}
 
@@ -315,8 +315,8 @@ class userManager_i : public POA_chat::userManager
 			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
 
 				if (itr->id == destiny.id) {
-					destiny.callback->notifyFriendIn(origin);
-					origin.callback->notifyFriendIn(destiny);
+					itr->callback->notifyFriendIn(origin);
+					origin.callback->notifyFriendIn(*itr);
 					found = true;
 				}
 
