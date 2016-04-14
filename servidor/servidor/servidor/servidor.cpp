@@ -69,7 +69,17 @@ class userManager_i : public POA_chat::userManager
 	res=database.obterUsuario(usuario,db);
 
 	if (res) {
+		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && res;/*nothing*/) {
+			if (itr->id == usuario.id)
+				res = false;
+			++itr;
+		}
+	}
+
+	if (res) {
 		//AVISA AOS AMIGOS CONECTADOS DE QUE SE ACABA DE CONECTAR
+		
+
 		list<chat::VOUser>* amigos = database.obterAmigos(usuario, db);
 		if(amigos != NULL && usuariosActivos.size() > 0){
 			int i = 0;
