@@ -16,7 +16,7 @@
                   <Button fx:id="btnNuevaBuscar" mnemonicParsing="false" onAction="#buscarUsuarios" text="Buscar" />
                </children>
             </HBox>
-            <ListView fx:id="lsvwNuevaUsuarios" prefHeight="349.0" prefWidth="600.0" />
+            <ListView fx:id="lstvwNuevaUsuarios" prefHeight="349.0" prefWidth="600.0" />
             <HBox prefHeight="28.0" prefWidth="600.0">
                <children>
                   <Separator orientation="VERTICAL" prefHeight="27.0" prefWidth="396.0" visible="false" />

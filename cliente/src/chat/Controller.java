@@ -146,8 +146,7 @@ public class Controller{
             if(Main.um.signIn(usuarioHolder)){ // Comprobación con la base de datos correcta
                 usuario=usuarioHolder.value;
                 // Nos traemos la lista de amigos conectados del usuario
-                listaUsuariosHolder holder=new listaUsuariosHolder(Main.um.getFrindList(usuario)); // Devuelve bien la lista?
-                System.out.println("Amigos");
+                listaUsuariosHolder holder=new listaUsuariosHolder(Main.um.getFrindList(usuario));
                 for (VOUser user : holder.value) { // Añadimos a nuestra lista local de amigos conectados los amigos conectados
                     if(user.id==0){
                         System.out.println("Vacio");
@@ -180,8 +179,6 @@ public class Controller{
         pantallaInicio.close();
     }
 
-    // Métodos Pantalla Registro
-
     public void crearPantallaRegistro() throws IOException{
         pantallaInicio= (Stage) lblIniSesError.getScene().getWindow();
         lblIniSesError.setVisible(false);
@@ -194,6 +191,8 @@ public class Controller{
         pantallaRegistro.show();
         pantallaInicio.setOpacity(0.0);
     }
+
+    // Métodos Pantalla Registro
 
     public void cancelarRegistro(){
         pantallaRegistro.hide();
@@ -216,7 +215,7 @@ public class Controller{
             else{
                 //Comprobamos si el email existe en la base de datos, si existe:
                 VOUserHolder usuarioHolder = new VOUserHolder();
-                usuarioHolder.value=new VOUser((short)0,txtRegistroNombre.getText(),txtRegistroEmail.getText(),txtRegistroContr.getText(),"salt",txtRegistroAvatar.getText(),Main.callback,Main.mensaje);
+                usuarioHolder.value=new VOUser((short)0,txtRegistroNombre.getText(),txtRegistroEmail.getText(),txtRegistroContr.getText(),"salt",txtRegistroAvatar.getText(), null, null);
                 if(Main.um.signIn(usuarioHolder)){ // Comprobacion con la base de datos correcta
                     lblRegistroErrorEmail.setVisible(true);
                 }
@@ -285,7 +284,7 @@ public class Controller{
 
     public void crearChat(){
         int indice =lstvwInicioUsuarios.getSelectionModel().getSelectedIndex();
-
+        System.out.println(lstvwInicioUsuarios.getSelectionModel().getSelectedItem());
     }
 
     // Métodos Pantalla Baja Usuario ((BAJA))
@@ -423,9 +422,15 @@ public class Controller{
     // Métodos Pantalla Solicitar Petición de amistad
 
     public void buscarUsuarios(){ // FALTA EL MÉTODO PARA BUSCAR LOS USUARIOS // EN PROCESO DE PRUEBA
+        listaUsuariosHolder holder=new listaUsuariosHolder(Main.um.getUserLike(usuario,new VOUser((short)0,txtNuevaFiltro.getText(),txtNuevaFiltro.getText(),"","","",null,null)));
         LinkedList<String> listaUsuarios = new LinkedList<String>();
-        for (VOUser user : usuariosSolicitudes) { // Introducimos en una lista que será la fuente de datos del listview las peticiones para que pueda verlas
+        for (VOUser user : holder.value) { // Añadimos a nuestra lista local de usuarios posibles los resultados de la busqueda (Limitado a 10)
+            if(user.id==0){
+            }
+            else{
+                usuariosSolicitudes.add(user);
                 listaUsuarios.add(user.email);
+            }
         }
         lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(listaUsuarios));
         txtNuevaFiltro.setText("");

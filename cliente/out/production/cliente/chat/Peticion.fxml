@@ -8,17 +8,21 @@
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ListView fx:id="lstvwPeticionPeticiones" prefHeight="454.0" prefWidth="600.0" />
+            <TitledPane fx:id="pnelPeticionPeticionesAmistad" expanded="false" onMouseClicked="#insertarPeticionesAmistad" text="Peticiones de Amistad">
+               <content>
+                  <ListView fx:id="lstvwPeticionPeticiones" prefHeight="454.0" prefWidth="600.0" />
+               </content>
+            </TitledPane>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="205.0" visible="false" />
-                  <Button fx:id="btnPeticionSalir" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Salir" onAction="#salirPeticion" />
+                  <Button fx:id="btnPeticionSalir" mnemonicParsing="false" onAction="#salirPeticion" prefHeight="25.0" prefWidth="80.0" text="Salir" />
                   <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="25.0" visible="false" />
-                  <Button fx:id="btnPeticionNueva" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Nueva" onAction="#crearPantallaNueva"/>
+                  <Button fx:id="btnPeticionNueva" mnemonicParsing="false" onAction="#crearPantallaNueva" prefHeight="25.0" prefWidth="80.0" text="Nueva" />
                   <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="25.0" visible="false" />
-                  <Button fx:id="btnPeticionRechazar" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Rechazar" onAction="#rechazarPeticion"/>
+                  <Button fx:id="btnPeticionRechazar" mnemonicParsing="false" onAction="#rechazarPeticion" prefHeight="25.0" prefWidth="80.0" text="Rechazar" />
                   <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="25.0" visible="false" />
-                  <Button fx:id="btnPeticionAceptar" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Aceptar" onAction="#aceptarPeticion"/>
+                  <Button fx:id="btnPeticionAceptar" mnemonicParsing="false" onAction="#aceptarPeticion" prefHeight="25.0" prefWidth="80.0" text="Aceptar" />
                </children>
             </HBox>
          </children>
