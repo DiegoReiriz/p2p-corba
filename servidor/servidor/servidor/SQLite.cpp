@@ -388,8 +388,11 @@ list<chat::VOUser>* SQLite::buscarPorNombreyEmail(chat::VOUser usuario, chat::VO
 
 	std::string sqlSelect = "SELECT DISTINCT * FROM " + TABLE_USUARIOS::TABLE_NAME +
 		" WHERE ((" + TABLE_USUARIOS::NOMBRE + " LIKE \"%" + (char *)busqueda.nombre + "%\"  OR " + TABLE_USUARIOS::EMAIL + " LIKE \"%" + (char *)busqueda.email + "%\") AND " +
-		TABLE_USUARIOS::ID + " !=" + std::to_string(usuario.id) + " )AND " + TABLE_USUARIOS::ID +" NOT IN (SELECT "+TABLE_AMIGOS::ID_DESTINO+
-		" FROM "+ TABLE_AMIGOS::TABLE_NAME +" WHERE "+ TABLE_AMIGOS::ID_ORIGEN +"="+ std::to_string(usuario.id)+") LIMIT "+ std::to_string(limit) +";";
+		TABLE_USUARIOS::ID + " !=" + std::to_string(usuario.id) + " ) AND " + TABLE_USUARIOS::ID +" NOT IN (SELECT "+TABLE_AMIGOS::ID_DESTINO+
+		" FROM "+ TABLE_AMIGOS::TABLE_NAME +" WHERE "+ TABLE_AMIGOS::ID_ORIGEN +"="+ std::to_string(usuario.id)+") AND " + TABLE_USUARIOS::ID + 
+		" NOT IN ( SELECT "+TABLE_PETICIONES_AMISTAD::ID_DESTINO+" FROM "+ TABLE_PETICIONES_AMISTAD::TABLE_NAME +" WHERE "+
+		TABLE_PETICIONES_AMISTAD::ID_ORIGEN+"="+ std::to_string(usuario.id) +" ) LIMIT "+ std::to_string(limit) +";";
+	
 	char **results = NULL;
 	int rows, columns;
 	sqlite3_get_table(db, sqlSelect.c_str(), &results, &rows, &columns, &error);
@@ -399,7 +402,7 @@ list<chat::VOUser>* SQLite::buscarPorNombreyEmail(chat::VOUser usuario, chat::VO
 		sqlite3_free(error);
 		return false;
 	}
-	else
+	else 
 	{
 
 		/*====================================*
