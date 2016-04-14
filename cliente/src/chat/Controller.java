@@ -133,7 +133,7 @@ public class Controller{
                 }
                 else{
                     VOUserHolder usuarioHolder = new VOUserHolder();
-                    usuarioHolder.value=new VOUser((short)0,"",txtIniSesEmail.getText(),txtIniSesContr.getText(),"","");
+                    usuarioHolder.value=new VOUser((short)0,"",txtIniSesEmail.getText(),txtIniSesContr.getText(),"","", Main.callback,Main.mensaje);
                     if(Main.um.signIn(usuarioHolder)){ // Comprobación con la base de datos correcta
                         usuario=usuarioHolder.value;
                         // Nos traemos la lista de amigos conectados del usuario
@@ -203,7 +203,7 @@ public class Controller{
                     else{
                         //Comprobamos si el email existe en la base de datos, si existe:
                         VOUserHolder usuarioHolder = new VOUserHolder();
-                        usuarioHolder.value=new VOUser((short)0,txtRegistroNombre.getText(),txtRegistroEmail.getText(),txtRegistroContr.getText(),"salt",txtRegistroAvatar.getText());
+                        usuarioHolder.value=new VOUser((short)0,txtRegistroNombre.getText(),txtRegistroEmail.getText(),txtRegistroContr.getText(),"salt",txtRegistroAvatar.getText(),Main.callback,Main.mensaje);
                         if(Main.um.signIn(usuarioHolder)){ // Comprobacion con la base de datos correcta
                             lblRegistroErrorEmail.setVisible(true);
                         }
@@ -289,11 +289,11 @@ public class Controller{
             else{
                 // Comprobamos que la autentificación es correcta
                 VOUserHolder usuarioHolder = new VOUserHolder();
-                usuarioHolder.value=new VOUser((short)0,"",txtBajaEmail.getText(),txtBajaContr.getText(),"","");
+                usuarioHolder.value=new VOUser((short)0,"",txtBajaEmail.getText(),txtBajaContr.getText(),"","",usuario.callback,usuario.chat);
                 if(Main.um.signIn(usuarioHolder)){ // Comprobación con la base de datos correcta
                     // Terminar chats activos (notificar desconexión) + lo de abajo
                     //Método de borrado
-                    // Main.um.
+                    Main.um.deleteUser(usuario);
                     System.out.println("Has borrado tu cuenta");
                     pantallaBaja.hide();
                     pantallaPrincipal.hide();
@@ -330,7 +330,7 @@ public class Controller{
                         VOUserHolder usuarioHolder = new VOUserHolder();
                         usuarioHolder.value=usuario;
                         if(Main.um.signIn(usuarioHolder)){//Si es correcta cambiamos la contraseña
-                            if(Main.um.alterUser(new VOUser(usuario.id,usuario.nombre,usuario.email,txtCambNewContr.getText(),usuario.salt,usuario.avatar))){ //fallo en sentencia UsuariosSet
+                            if(Main.um.alterUser(new VOUser(usuario.id,usuario.nombre,usuario.email,txtCambNewContr.getText(),usuario.salt,usuario.avatar,usuario.callback,usuario.chat))){ // fallo en sentencia UsuariosSet
                                 usuario.hash=txtCambNewContr.getText();
                                 pantallaContr.hide();
                                 pantallaPrincipal.setOpacity(1.0);

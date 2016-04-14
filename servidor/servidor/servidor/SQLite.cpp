@@ -74,13 +74,37 @@ bool SQLite::alterarUsuario(chat::VOUser usuario, sqlite3 * db) {
 	char* error;
 
 	std::string updateSQL = "UPDATE " + TABLE_USUARIOS::TABLE_NAME +
-		"SET " +
-		TABLE_USUARIOS::NOMBRE + "=" + std::string(usuario.nombre) + ", " +
-		TABLE_USUARIOS::EMAIL + "=" + std::string(usuario.email) + ", " +
-		TABLE_USUARIOS::HASH + "=" + std::string(usuario.hash) + ", " +
-		TABLE_USUARIOS::SALT + "=" + std::string(usuario.salt) + ", " +
-		TABLE_USUARIOS::AVATAR + "=" + std::string(usuario.avatar) +
-		" WHERE " + TABLE_USUARIOS::ID +"="+ std::to_string(usuario.id) + ";";
+		" SET " +
+		TABLE_USUARIOS::NOMBRE + "='" + std::string(usuario.nombre) + "', " +
+		TABLE_USUARIOS::EMAIL + "='" + std::string(usuario.email) + "', " +
+		TABLE_USUARIOS::HASH + "='" + std::string(usuario.hash) + "', " +
+		TABLE_USUARIOS::SALT + "='" + std::string(usuario.salt) + "', " +
+		TABLE_USUARIOS::AVATAR + "='" + std::string(usuario.avatar) +
+		"' WHERE " + TABLE_USUARIOS::ID +"="+ std::to_string(usuario.id) + ";";
+
+	cout << "Updating User ..." << endl;
+	cout << updateSQL << endl << endl;
+
+	rc = sqlite3_exec(db, updateSQL.c_str(), NULL, NULL, &error);
+	if (rc)
+	{
+		cerr << "Error executing first SQLite3 statement: " << sqlite3_errmsg(db) << endl << endl;
+		sqlite3_free(error);
+		cout << "Tables are already created" << endl;
+
+		return false;
+	}
+
+	return true;
+}
+
+
+bool SQLite::borrarUsuario(chat::VOUser usuario, sqlite3 * db) {
+
+	int rc;
+	char* error;
+
+	std::string updateSQL = "DELETE FROM "+ TABLE_USUARIOS::TABLE_NAME +" where "+ TABLE_USUARIOS::ID +"='"+ std::to_string(usuario.id) +"';";
 
 	cout << "Updating User ..." << endl;
 	cout << updateSQL << endl << endl;
@@ -289,6 +313,58 @@ list<chat::VOUser>* SQLite::obterAmigos(chat::VOUser usuario, sqlite3 * db)
 	char* error;
 
 	std::string sqlSelect = "SELECT * FROM " + TABLE_USUARIOS::TABLE_NAME + " WHERE " + TABLE_USUARIOS::EMAIL + "==\"" + std::string(usuario.email) + "\";";
+	char **results = NULL;
+	int rows, columns;
+	sqlite3_get_table(db, sqlSelect.c_str(), &results, &rows, &columns, &error);
+	if (rc)
+	{
+		cerr << "Error executing SQLite3 query: " << sqlite3_errmsg(db) << endl << endl;
+		sqlite3_free(error);
+		return false;
+	}
+	else
+	{
+
+		/*====================================*
+		|                                    |
+		|   ATENCIÖN  ALERTA POR SUBNORMAL!  |
+		|                                    |
+		|     LIBERAR A LISTA DE USUARIOS    |
+		|                                    |
+		|  A memoria das estructuras se ge-  |
+		|    nera mediante o operador new    |
+		|                                    |
+		*====================================*/
+
+		if (rows < 1)
+			return false;
+
+
+		lista = res2User(rows, columns, results);
+		for (std::list<chat::VOUser>::iterator itr = lista->begin(); itr != lista->end();/*nothing*/) {
+
+			cout << (*itr).id << (*itr).nombre << (*itr).email << (*itr).hash << (*itr).salt << (*itr).avatar << endl;
+
+			++itr;
+		}
+
+	}
+	sqlite3_free_table(results);
+
+	return lista;
+}
+
+
+list<chat::VOUser>* SQLite::obterPeticionsAmistadPendientes(chat::VOUser usuario, sqlite3 * db)
+{
+
+	std::list<chat::VOUser>* lista;
+
+	int rc = 0;
+	char* error;
+
+	std::string sqlSelect = "SELECT * FROM " + TABLE_USUARIOS::TABLE_NAME + " WHERE " + TABLE_USUARIOS::ID + " SELECT " +
+		TABLE_PETICIONES_AMISTAD::ID_ORIGEN + " FROM " + TABLE_PETICIONES_AMISTAD::TABLE_NAME + " WHERE " + TABLE_PETICIONES_AMISTAD::ID_DESTINO + " = " + std::to_string(usuario.id) + ";";
 	char **results = NULL;
 	int rows, columns;
 	sqlite3_get_table(db, sqlSelect.c_str(), &results, &rows, &columns, &error);
