@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-DESKTOP-KUS4NUC.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-DESKTOP-KUS4NUC.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../servidor/servidor/ipch/SERVIDOR-1362c121/SERVIDOR-6f8e8b32.ipch" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/_userManagerStub.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/_userManagerStub.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/userManagerOperations.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/userManagerOperations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/userManagerPOA.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/userManagerPOA.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/.vs/servidor/v14/.suo" afterPath="$PROJECT_DIR$/../servidor/servidor/.vs/servidor/v14/.suo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor.sdf" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor.sdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/MyDb.db" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/MyDb.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLite.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLite.obj" />
@@ -24,24 +21,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.ipdb" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.ipdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.pdb" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Nueva.fxml" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Nueva.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Peticion.fxml" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Peticion.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/Controller.java" afterPath="$PROJECT_DIR$/src/chat/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.bak" afterPath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.bak" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.dat" afterPath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/sample.cfg" afterPath="$PROJECT_DIR$/../servidor/sample.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.vcxproj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.vcxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.log" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.cpp" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.command.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.command.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.read.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.read.1.tlog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.write.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.write.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.command.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.command.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.read.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.read.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.write.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.write.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.command.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.command.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.read.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.read.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.write.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.write.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/servidor.lastbuildstate" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/servidor.lastbuildstate" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,10 +102,9 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44078946">
-              <caret line="416" column="0" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4375">
+              <caret line="444" column="0" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
               <folding>
-                <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
                 <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
                 <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
                 <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -128,7 +112,6 @@
                 <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
                 <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
                 <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-                <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
                 <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
                 <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
                 <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -139,34 +122,29 @@
                 <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
                 <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
                 <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-                <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-                <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
                 <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
                 <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-                <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+                <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userManagerOperations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chat/userManagerOperations.java">
+      <file leaf-file-name="_userManagerStub.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chat/_userManagerStub.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Nueva.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chat/Nueva.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
+      <file leaf-file-name="VOUserHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chat/VOUserHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.181818">
-              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -655,7 +633,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14479166" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
@@ -663,7 +641,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39534885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39534885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -730,31 +708,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>143</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>148</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>202</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>439</line>
+          <line>435</line>
           <properties />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>434</line>
+          <line>430</line>
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
@@ -764,8 +724,20 @@
           <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
+          <line>149</line>
+          <properties />
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
+          <line>285</line>
+          <properties />
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="69" />
+      <option name="time" value="74" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -779,7 +751,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -787,7 +758,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -798,11 +768,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -820,7 +788,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -828,7 +795,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -839,11 +805,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -872,7 +836,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -880,7 +843,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -891,11 +853,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -957,7 +917,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -965,7 +924,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -976,11 +934,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -998,7 +954,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -1006,7 +961,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -1017,11 +971,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1050,7 +1002,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -1058,7 +1009,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -1069,11 +1019,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1102,7 +1050,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -1110,7 +1057,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -1121,11 +1067,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1154,7 +1098,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -1162,7 +1105,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -1173,11 +1115,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1275,13 +1215,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/VOUserHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1337,16 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1651" column="0" selection-start-line="1651" selection-start-column="0" selection-end-line="1651" selection-end-column="0" />
-          <folding>
-            <element signature="e#66832#66833#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/javafx-src.zip!/javafx/scene/control/Button.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33272058">
@@ -1360,13 +1284,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/_userManagerStub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33223686">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1392,31 +1309,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/userManagerOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5625">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/chat/Nueva.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.181818">
+        <state vertical-scroll-proportion="0.5828221">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/userManagerOperations.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2389706">
+          <caret line="1767" column="0" selection-start-line="1767" selection-start-column="0" selection-end-line="1767" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/_userManagerStub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/VOUserHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44078946">
-          <caret line="416" column="0" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4375">
+          <caret line="444" column="0" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
           <folding>
-            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
@@ -1424,7 +1364,6 @@
             <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
@@ -1435,11 +1374,9 @@
             <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
             <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
             <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
             <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
-            <marker date="1460656034364" expanded="false" signature="1333:3242" placeholder="..." />
+            <marker date="1460657735717" expanded="false" signature="1333:3242" placeholder="..." />
           </folding>
         </state>
       </provider>

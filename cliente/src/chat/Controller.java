@@ -222,10 +222,10 @@ public class Controller{
                 else{
                     //Comprobamos si la url de avatar es correcta, si no lo es lblRegistroError.setVisible(true);
 
-                    //Sino:
                     Main.um.signUp(usuarioHolder.value);
                     pantallaRegistro.hide();
                     pantallaInicio.setOpacity(1.0);
+                    //Sino:
                 }
             }
         }
@@ -425,12 +425,8 @@ public class Controller{
         listaUsuariosHolder holder=new listaUsuariosHolder(Main.um.getUserLike(usuario,new VOUser((short)0,txtNuevaFiltro.getText(),txtNuevaFiltro.getText(),"","","",null,null)));
         LinkedList<String> listaUsuarios = new LinkedList<String>();
         for (VOUser user : holder.value) { // Añadimos a nuestra lista local de usuarios posibles los resultados de la busqueda (Limitado a 10)
-            if(user.id==0){
-            }
-            else{
-                usuariosSolicitudes.add(user);
-                listaUsuarios.add(user.email);
-            }
+            usuariosSolicitudes.add(user);
+            listaUsuarios.add(user.email);
         }
         lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(listaUsuarios));
         txtNuevaFiltro.setText("");
@@ -450,8 +446,7 @@ public class Controller{
             while(!usuariosPeticiones.isEmpty()){ // Vaciamos los usuarios temporales para la solicitud que hay
                 usuariosPeticiones.remove(0);
             }
-            LinkedList<String> listaUsuarios = new LinkedList<String>(); // Borramos los usuarios del listview
-            lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(listaUsuarios));
+            lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(""));
         }
     } // EN PROCESO DE PRUEBA
 
@@ -467,4 +462,5 @@ public class Controller{
         pantallaPrincipal.hide();
         pantallaInicio.hide();
     }
+
 }
