@@ -48,6 +48,7 @@ class userManager_i : public POA_chat::userManager
 		virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
 		virtual ::CORBA::Boolean deleteUser(const ::chat::VOUser& usuario);
 		virtual ::chat::listaUsuarios* getFrindList(const ::chat::VOUser& usuario);
+		virtual ::chat::listaUsuarios* getUserLike(const ::chat::VOUser& usuario, const ::chat::VOUser& busqueda);
 		virtual ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny);
 		virtual ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept);
 
@@ -72,21 +73,23 @@ class userManager_i : public POA_chat::userManager
 	if (res) {
 		//AVISA AOS AMIGOS CONECTADOS DE QUE SE ACABA DE CONECTAR
 		list<chat::VOUser>* amigos = database.obterAmigos(usuario, db);
-		int i = 0;
-		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
-			bool found = false;
-			int j = 0;
-			for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
-				if (itr->id == itr2->id){
-					itr->callback->notifyFriendIn(usuario);
-					found = true;
-				}
+		if(amigos != NULL){
+			int i = 0;
+			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+				bool found = false;
+				int j = 0;
+				for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
+					if (itr->id == itr2->id){
+						itr->callback->notifyFriendIn(usuario);
+						found = true;
+					}
 
-				++itr2;
-				j++;
+					++itr2;
+					j++;
+				}
+				++itr;
+				++i;
 			}
-			++itr;
-			++i;
 		}
 
 
@@ -302,7 +305,40 @@ class userManager_i : public POA_chat::userManager
 	return res;
 }
 
+::chat::listaUsuarios* userManager_i::getUserLike(const ::chat::VOUser& usuario, const ::chat::VOUser& busqueda) {
+	DWORD dwWaitResult = WaitForSingleObject(
+		ghMutex,    // handle to mutex
+		INFINITE);  // no time-out interval
 
+
+	int limit = 10;
+
+	chat::listaUsuarios* lista = new chat::listaUsuarios;
+	lista->length(limit);
+
+	list<chat::VOUser>* amigos = database.buscarPorNombreyEmail(usuario,busqueda,limit, db);
+
+	int i = 0;
+	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+		
+		::chat::VOUser* user = new ::chat::VOUser;
+
+		user->id = itr->id;
+		user->nombre = itr->nombre;
+		user->email = itr->email;
+		user->hash = itr->hash;
+		user->salt = itr->salt;
+		user->avatar = itr->avatar;
+		(*lista)[i] = *user;
+		
+		++itr;
+		++i;
+	}
+
+	ReleaseMutex(ghMutex);
+
+	return lista;
+}
 //////////////////////////////////////////////////////////////////////
 
 

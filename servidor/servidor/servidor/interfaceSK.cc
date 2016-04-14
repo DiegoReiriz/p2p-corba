@@ -1177,10 +1177,10 @@ chat::listaUsuarios* chat::_objref_userManager::getFrindList(const ::chat::VOUse
 
 
 //
-// Code for chat::userManager::newFriendRequest
+// Code for chat::userManager::getUserLike
 
 // Proxy call descriptor class. Mangled signature:
-//  _cboolean_i_cchat_mVOUser_i_cchat_mVOUser
+//  _cchat_mlistaUsuarios_i_cchat_mVOUser_i_cchat_mVOUser
 class _0RL_cd_64782852c2451d6c_31000000
   : public omniCallDescriptor
 {
@@ -1204,7 +1204,7 @@ public:
   const chat::VOUser* arg_0;
   chat::VOUser_var arg_1_;
   const chat::VOUser* arg_1;
-  ::CORBA::Boolean result;
+  chat::listaUsuarios_var result;
 };
 
 void _0RL_cd_64782852c2451d6c_31000000::marshalArguments(cdrStream& _n)
@@ -1227,13 +1227,14 @@ void _0RL_cd_64782852c2451d6c_31000000::unmarshalArguments(cdrStream& _n)
 
 void _0RL_cd_64782852c2451d6c_31000000::marshalReturnedValues(cdrStream& _n)
 {
-  _n.marshalBoolean(result);
+  (const chat::listaUsuarios&) result >>= _n;
 
 }
 
 void _0RL_cd_64782852c2451d6c_31000000::unmarshalReturnedValues(cdrStream& _n)
 {
-  result = _n.unmarshalBoolean();
+  result = new chat::listaUsuarios;
+  (chat::listaUsuarios&)result <<= _n;
 
 }
 
@@ -1247,29 +1248,29 @@ _0RL_lcfn_64782852c2451d6c_41000000(omniCallDescriptor* cd, omniServant* svnt)
 {
   _0RL_cd_64782852c2451d6c_31000000* tcd = (_0RL_cd_64782852c2451d6c_31000000*)cd;
   chat::_impl_userManager* impl = (chat::_impl_userManager*) svnt->_ptrToInterface(chat::userManager::_PD_repoId);
-  tcd->result = impl->newFriendRequest(*tcd->arg_0, *tcd->arg_1);
+  tcd->result = impl->getUserLike(*tcd->arg_0, *tcd->arg_1);
 
 
 }
 
-::CORBA::Boolean chat::_objref_userManager::newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny)
+chat::listaUsuarios* chat::_objref_userManager::getUserLike(const ::chat::VOUser& usuario, const ::chat::VOUser& busqueda)
 {
-  _0RL_cd_64782852c2451d6c_31000000 _call_desc(_0RL_lcfn_64782852c2451d6c_41000000, "newFriendRequest", 17);
-  _call_desc.arg_0 = &(::chat::VOUser&) origin;
-  _call_desc.arg_1 = &(::chat::VOUser&) destiny;
+  _0RL_cd_64782852c2451d6c_31000000 _call_desc(_0RL_lcfn_64782852c2451d6c_41000000, "getUserLike", 12);
+  _call_desc.arg_0 = &(::chat::VOUser&) usuario;
+  _call_desc.arg_1 = &(::chat::VOUser&) busqueda;
 
   _invoke(_call_desc);
-  return _call_desc.result;
+  return _call_desc.result._retn();
 
 
 }
 
 
 //
-// Code for chat::userManager::resolveFriendRequest
+// Code for chat::userManager::newFriendRequest
 
 // Proxy call descriptor class. Mangled signature:
-//  _cboolean_i_cchat_mVOUser_i_cchat_mVOUser_i_cboolean
+//  _cboolean_i_cchat_mVOUser_i_cchat_mVOUser
 class _0RL_cd_64782852c2451d6c_51000000
   : public omniCallDescriptor
 {
@@ -1293,7 +1294,6 @@ public:
   const chat::VOUser* arg_0;
   chat::VOUser_var arg_1_;
   const chat::VOUser* arg_1;
-  ::CORBA::Boolean arg_2;
   ::CORBA::Boolean result;
 };
 
@@ -1301,7 +1301,6 @@ void _0RL_cd_64782852c2451d6c_51000000::marshalArguments(cdrStream& _n)
 {
   (const chat::VOUser&) *arg_0 >>= _n;
   (const chat::VOUser&) *arg_1 >>= _n;
-  _n.marshalBoolean(arg_2);
 
 }
 
@@ -1313,7 +1312,6 @@ void _0RL_cd_64782852c2451d6c_51000000::unmarshalArguments(cdrStream& _n)
   arg_1_ = new chat::VOUser;
   (chat::VOUser&)arg_1_ <<= _n;
   arg_1 = &arg_1_.in();
-  arg_2 = _n.unmarshalBoolean();
 
 }
 
@@ -1339,6 +1337,98 @@ _0RL_lcfn_64782852c2451d6c_61000000(omniCallDescriptor* cd, omniServant* svnt)
 {
   _0RL_cd_64782852c2451d6c_51000000* tcd = (_0RL_cd_64782852c2451d6c_51000000*)cd;
   chat::_impl_userManager* impl = (chat::_impl_userManager*) svnt->_ptrToInterface(chat::userManager::_PD_repoId);
+  tcd->result = impl->newFriendRequest(*tcd->arg_0, *tcd->arg_1);
+
+
+}
+
+::CORBA::Boolean chat::_objref_userManager::newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny)
+{
+  _0RL_cd_64782852c2451d6c_51000000 _call_desc(_0RL_lcfn_64782852c2451d6c_61000000, "newFriendRequest", 17);
+  _call_desc.arg_0 = &(::chat::VOUser&) origin;
+  _call_desc.arg_1 = &(::chat::VOUser&) destiny;
+
+  _invoke(_call_desc);
+  return _call_desc.result;
+
+
+}
+
+
+//
+// Code for chat::userManager::resolveFriendRequest
+
+// Proxy call descriptor class. Mangled signature:
+//  _cboolean_i_cchat_mVOUser_i_cchat_mVOUser_i_cboolean
+class _0RL_cd_64782852c2451d6c_71000000
+  : public omniCallDescriptor
+{
+public:
+  inline _0RL_cd_64782852c2451d6c_71000000(LocalCallFn lcfn, const char* op_, size_t oplen, _CORBA_Boolean upcall=0)
+    : omniCallDescriptor(lcfn, op_, oplen, 0, _user_exns, 0, upcall)
+  {
+    
+  }
+  
+  void marshalArguments(cdrStream&);
+  void unmarshalArguments(cdrStream&);
+
+  void unmarshalReturnedValues(cdrStream&);
+  void marshalReturnedValues(cdrStream&);
+  
+  
+  static const char* const _user_exns[];
+
+  chat::VOUser_var arg_0_;
+  const chat::VOUser* arg_0;
+  chat::VOUser_var arg_1_;
+  const chat::VOUser* arg_1;
+  ::CORBA::Boolean arg_2;
+  ::CORBA::Boolean result;
+};
+
+void _0RL_cd_64782852c2451d6c_71000000::marshalArguments(cdrStream& _n)
+{
+  (const chat::VOUser&) *arg_0 >>= _n;
+  (const chat::VOUser&) *arg_1 >>= _n;
+  _n.marshalBoolean(arg_2);
+
+}
+
+void _0RL_cd_64782852c2451d6c_71000000::unmarshalArguments(cdrStream& _n)
+{
+  arg_0_ = new chat::VOUser;
+  (chat::VOUser&)arg_0_ <<= _n;
+  arg_0 = &arg_0_.in();
+  arg_1_ = new chat::VOUser;
+  (chat::VOUser&)arg_1_ <<= _n;
+  arg_1 = &arg_1_.in();
+  arg_2 = _n.unmarshalBoolean();
+
+}
+
+void _0RL_cd_64782852c2451d6c_71000000::marshalReturnedValues(cdrStream& _n)
+{
+  _n.marshalBoolean(result);
+
+}
+
+void _0RL_cd_64782852c2451d6c_71000000::unmarshalReturnedValues(cdrStream& _n)
+{
+  result = _n.unmarshalBoolean();
+
+}
+
+const char* const _0RL_cd_64782852c2451d6c_71000000::_user_exns[] = {
+  0
+};
+
+// Local call call-back function.
+static void
+_0RL_lcfn_64782852c2451d6c_81000000(omniCallDescriptor* cd, omniServant* svnt)
+{
+  _0RL_cd_64782852c2451d6c_71000000* tcd = (_0RL_cd_64782852c2451d6c_71000000*)cd;
+  chat::_impl_userManager* impl = (chat::_impl_userManager*) svnt->_ptrToInterface(chat::userManager::_PD_repoId);
   tcd->result = impl->resolveFriendRequest(*tcd->arg_0, *tcd->arg_1, tcd->arg_2);
 
 
@@ -1346,7 +1436,7 @@ _0RL_lcfn_64782852c2451d6c_61000000(omniCallDescriptor* cd, omniServant* svnt)
 
 ::CORBA::Boolean chat::_objref_userManager::resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept)
 {
-  _0RL_cd_64782852c2451d6c_51000000 _call_desc(_0RL_lcfn_64782852c2451d6c_61000000, "resolveFriendRequest", 21);
+  _0RL_cd_64782852c2451d6c_71000000 _call_desc(_0RL_lcfn_64782852c2451d6c_81000000, "resolveFriendRequest", 21);
   _call_desc.arg_0 = &(::chat::VOUser&) origin;
   _call_desc.arg_1 = &(::chat::VOUser&) destiny;
   _call_desc.arg_2 = accept;
@@ -1434,9 +1524,17 @@ chat::_impl_userManager::_dispatch(omniCallHandle& _handle)
     return 1;
   }
 
+  if (omni::strMatch(op, "getUserLike")) {
+
+    _0RL_cd_64782852c2451d6c_31000000 _call_desc(_0RL_lcfn_64782852c2451d6c_41000000, "getUserLike", 12, 1);
+    
+    _handle.upcall(this,_call_desc);
+    return 1;
+  }
+
   if (omni::strMatch(op, "newFriendRequest")) {
 
-    _0RL_cd_64782852c2451d6c_31000000 _call_desc(_0RL_lcfn_64782852c2451d6c_41000000, "newFriendRequest", 17, 1);
+    _0RL_cd_64782852c2451d6c_51000000 _call_desc(_0RL_lcfn_64782852c2451d6c_61000000, "newFriendRequest", 17, 1);
     
     _handle.upcall(this,_call_desc);
     return 1;
@@ -1444,7 +1542,7 @@ chat::_impl_userManager::_dispatch(omniCallHandle& _handle)
 
   if (omni::strMatch(op, "resolveFriendRequest")) {
 
-    _0RL_cd_64782852c2451d6c_51000000 _call_desc(_0RL_lcfn_64782852c2451d6c_61000000, "resolveFriendRequest", 21, 1);
+    _0RL_cd_64782852c2451d6c_71000000 _call_desc(_0RL_lcfn_64782852c2451d6c_81000000, "resolveFriendRequest", 21, 1);
     
     _handle.upcall(this,_call_desc);
     return 1;
