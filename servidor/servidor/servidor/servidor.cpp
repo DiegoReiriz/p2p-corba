@@ -72,21 +72,23 @@ class userManager_i : public POA_chat::userManager
 	if (res) {
 		//AVISA AOS AMIGOS CONECTADOS DE QUE SE ACABA DE CONECTAR
 		list<chat::VOUser>* amigos = database.obterAmigos(usuario, db);
-		int i = 0;
-		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
-			bool found = false;
-			int j = 0;
-			for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
-				if (itr->id == itr2->id){
-					itr->callback->notifyFriendIn(usuario);
-					found = true;
-				}
+		if(amigos != NULL){
+			int i = 0;
+			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+				bool found = false;
+				int j = 0;
+				for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
+					if (itr->id == itr2->id){
+						itr->callback->notifyFriendIn(usuario);
+						found = true;
+					}
 
-				++itr2;
-				j++;
+					++itr2;
+					j++;
+				}
+				++itr;
+				++i;
 			}
-			++itr;
-			++i;
 		}
 
 

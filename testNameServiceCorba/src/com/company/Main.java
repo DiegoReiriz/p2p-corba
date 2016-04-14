@@ -87,7 +87,7 @@ public class Main
                 System.out.println(usr.value.avatar);
             }
 
-            usr.value = new VOUser((short) 2, "nombre2", "", "hash", "", "",callback,mensaje);
+            usr.value = new VOUser((short) 2, "nombre2", "email2", "hash2", "salt2", "avatar2",callback,mensaje);
             if (!um.signIn(usr)){
                 System.out.println("Ha fallado la operación");
             }else{
