@@ -42,6 +42,7 @@ module chat
     boolean alterUser(in VOUser usuario);
     boolean deleteUser(in VOUser usuario);
     listaUsuarios getFrindList(in VOUser usuario);
+    listaUsuarios getUserLike(in VOUser usuario,in VOUser busqueda);
     boolean newFriendRequest(in VOUser origin,in VOUser destiny);
     boolean resolveFriendRequest(in VOUser origin,in VOUser destiny,in boolean accept);
   };

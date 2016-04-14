@@ -674,6 +674,7 @@ _CORBA_MODULE_BEG
     ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario);
     ::CORBA::Boolean deleteUser(const ::chat::VOUser& usuario);
     listaUsuarios* getFrindList(const ::chat::VOUser& usuario);
+    listaUsuarios* getUserLike(const ::chat::VOUser& usuario, const ::chat::VOUser& busqueda);
     ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny);
     ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept);
 
@@ -716,6 +717,7 @@ _CORBA_MODULE_BEG
     virtual ::CORBA::Boolean alterUser(const ::chat::VOUser& usuario) = 0;
     virtual ::CORBA::Boolean deleteUser(const ::chat::VOUser& usuario) = 0;
     virtual listaUsuarios* getFrindList(const ::chat::VOUser& usuario) = 0;
+    virtual listaUsuarios* getUserLike(const ::chat::VOUser& usuario, const ::chat::VOUser& busqueda) = 0;
     virtual ::CORBA::Boolean newFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny) = 0;
     virtual ::CORBA::Boolean resolveFriendRequest(const ::chat::VOUser& origin, const ::chat::VOUser& destiny, ::CORBA::Boolean accept) = 0;
     
