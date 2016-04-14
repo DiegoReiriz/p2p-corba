@@ -57,8 +57,6 @@ class userManager_i : public POA_chat::userManager
 ::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
 	
-	usuario.chat->sendMessge(usuario,"PEEEEEEEEEEEEEEEEENEEEEEEEEEEEEE");
-	
 	cout << "SIGN IN" << endl;
 	cout << "=======" << endl;
 	cout << usuario.id << endl;
@@ -73,14 +71,25 @@ class userManager_i : public POA_chat::userManager
 	if (res) {
 		//AVISA AOS AMIGOS CONECTADOS DE QUE SE ACABA DE CONECTAR
 		list<chat::VOUser>* amigos = database.obterAmigos(usuario, db);
-		if(amigos != NULL){
+		if(amigos != NULL && usuariosActivos.size() > 0){
 			int i = 0;
 			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
 				bool found = false;
 				int j = 0;
 				for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
 					if (itr->id == itr2->id){
-						itr->callback->notifyFriendIn(usuario);
+
+						::chat::VOUser* user = new ::chat::VOUser;
+
+						user->id = usuario.id;
+						user->nombre = usuario.nombre;
+						user->email = usuario.email;
+						user->hash = usuario.hash;
+						user->salt = usuario.salt;
+						user->avatar = usuario.avatar;
+						user->callback = usuario.callback;
+
+						itr->callback->notifyFriendIn(*user);
 						found = true;
 					}
 
@@ -111,30 +120,34 @@ class userManager_i : public POA_chat::userManager
 ::CORBA::Boolean userManager_i::signOut(const ::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
 	
-	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+	if(usuariosActivos.size() > 0){
+		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
 		
-		if ( (*itr).id == usuario.id )
-			usuariosActivos.erase(itr);
+			if ( (*itr).id == usuario.id )
+				usuariosActivos.erase(itr);
 
-		++itr;
-	}
-
-	list<chat::VOUser>* amigos = database.obterAmigos(usuario, db);
-	int i = 0;
-	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
-		bool found = false;
-		int j = 0;
-		for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
-			if (itr->id == itr2->id) {
-				itr->callback->notifyFriendOut(usuario);
-				found = true;
-			}
-
-			++itr2;
-			j++;
+			++itr;
 		}
-		++itr;
-		++i;
+
+		list<chat::VOUser>* amigos = database.obterAmigos(usuario, db);
+		if(amigos != NULL){
+			int i = 0;
+			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+				bool found = false;
+				int j = 0;
+				for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
+					if (itr->id == itr2->id) {
+						itr->callback->notifyFriendOut(usuario);
+						found = true;
+					}
+
+					++itr2;
+					j++;
+				}
+				++itr;
+				++i;
+			}
+		}
 	}
 
 	return res;
@@ -198,49 +211,51 @@ class userManager_i : public POA_chat::userManager
 
 	int i = 0;
 	int k = 0;
-	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
-		bool found = false;
+	if(amigos != NULL){
+		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+			bool found = false;
 		
-		int j = 0;
-		for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
+			int j = 0;
+			for (std::list<chat::VOUser>::iterator itr2 = amigos->begin(); j<amigos->size() && !found;/*nothing*/) {
 
-			if (itr->id == itr2->id)
-				found = true;
+				if (itr->id == itr2->id)
+					found = true;
 
-			++itr2;
-			j++;
+				++itr2;
+				j++;
+			}
+
+			if (found){
+				::chat::VOUser* user = new ::chat::VOUser;
+		
+				user->id = itr->id;
+				user->nombre = itr->nombre;
+				user->email = itr->email;
+				user->hash = itr->hash;
+				user->salt = itr->salt;
+				user->avatar = itr->avatar;
+				user->callback = itr->callback;
+				(*lista)[k] = *user;
+				k++;
+			}
+
+			++itr;
+			++i;
 		}
-
-		if (found){
+	
+		while (k < lista->length()) {
 			::chat::VOUser* user = new ::chat::VOUser;
-		
-			user->id = itr->id;
-			user->nombre = itr->nombre;
-			user->email = itr->email;
-			user->hash = itr->hash;
-			user->salt = itr->salt;
-			user->avatar = itr->avatar;
+
+			user->id = 0;
+			user->nombre = "empty";
+			user->email = "empty";
+			user->hash = "empty";
+			user->salt = "empty";
+			user->avatar = "empty";
 			(*lista)[k] = *user;
 			k++;
 		}
-
-		++itr;
-		++i;
 	}
-	
-	while (k < lista->length()) {
-		::chat::VOUser* user = new ::chat::VOUser;
-
-		user->id = 0;
-		user->nombre = "empty";
-		user->email = "empty";
-		user->hash = "empty";
-		user->salt = "empty";
-		user->avatar = "empty";
-		(*lista)[k] = *user;
-		k++;
-	}
-
 	ReleaseMutex(ghMutex);
 
 	return lista;
@@ -258,14 +273,16 @@ class userManager_i : public POA_chat::userManager
 
 	bool found = false;
 	int i = 0;
-	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
-		if (itr->id == destiny.id) {
-			destiny.callback->notifyFriendRequest(origin);
-			found = true;
-		}
+	if(usuariosActivos.size() > 0){
+		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
+			if (itr->id == destiny.id) {
+				destiny.callback->notifyFriendRequest(origin);
+				found = true;
+			}
 
-		++itr;
-		++i;
+			++itr;
+			++i;
+		}
 	}
 
 	ReleaseMutex(ghMutex);
@@ -284,15 +301,17 @@ class userManager_i : public POA_chat::userManager
 		res = database.insertarAmigo(origin, destiny, db);
 
 		bool found = false;
-		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
-			
-			if (itr->id == destiny.id){
-				destiny.callback->notifyFriendIn(origin);
-				origin.callback->notifyFriendIn(destiny);
-				found = true;
-			}
+		if (usuariosActivos.size() > 0) {
+			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
 
-			++itr;
+				if (itr->id == destiny.id) {
+					destiny.callback->notifyFriendIn(origin);
+					origin.callback->notifyFriendIn(destiny);
+					found = true;
+				}
+
+				++itr;
+			}
 		}
 	}
 	else
@@ -312,27 +331,30 @@ class userManager_i : public POA_chat::userManager
 
 
 	int limit = 10;
-
 	chat::listaUsuarios* lista = new chat::listaUsuarios;
-	lista->length(limit);
+	lista->length(0);
 
 	list<chat::VOUser>* amigos = database.buscarPorNombreyEmail(usuario,busqueda,limit, db);
+	if (amigos != NULL) {
+		lista->length(amigos->size());
 
-	int i = 0;
-	for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+		int i = 0;
+	
+		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
 		
-		::chat::VOUser* user = new ::chat::VOUser;
+			::chat::VOUser* user = new ::chat::VOUser;
 
-		user->id = itr->id;
-		user->nombre = itr->nombre;
-		user->email = itr->email;
-		user->hash = itr->hash;
-		user->salt = itr->salt;
-		user->avatar = itr->avatar;
-		(*lista)[i] = *user;
+			user->id = itr->id;
+			user->nombre = itr->nombre;
+			user->email = itr->email;
+			user->hash = itr->hash;
+			user->salt = itr->salt;
+			user->avatar = itr->avatar;
+			(*lista)[i] = *user;
 		
-		++itr;
-		++i;
+			++itr;
+			++i;
+		}
 	}
 
 	ReleaseMutex(ghMutex);
