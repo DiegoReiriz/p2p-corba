@@ -599,10 +599,12 @@ public class Controller implements Initializable {
     // Métodos Pantalla Chat
 
     public void enviarMensaje(){
+        if(txtChatMensaje.getText().compareTo("")!=0){
             txtChatMensajes.appendText("Yo: "+txtChatMensaje.getText().trim()+"\n");
             txtChatMensajes.appendText("");
             usuarioREM.chat.sendMessge(usuario,txtChatMensaje.getText());
             txtChatMensaje.setText("");
+        }
     }
 
     // Métodos Pantalla Chat
@@ -615,7 +617,7 @@ public class Controller implements Initializable {
 
                 byte[] arrayChachi = IOUtils.readFully(is, (int) f.length(), true);
                 usuarioREM.chat.sendFile(usuario, arrayChachi, f.getPath());
-                txtChatMensajes.appendText("Yo: Petición de Archivo Enviada\n");
+                txtChatMensajes.appendText("CHAtty: Petición de Archivo Enviada\n");
                 txtChatMensajes.appendText("");
                 }
             }

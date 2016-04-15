@@ -95,75 +95,37 @@ public class peertopeerImplementation extends peertopeerPOA {
         user.hash=usuario.hash;
         user.salt=usuario.salt;
         user.avatar=usuario.avatar;
-        int i=0;
-        String mens="";
-        while(i<usuario.nombre.length()+2){
-            mens=mens+"\b";
-            i++;
-        }
-        sendMessge(usuario,mens);
-        sendMessge(user,"Petición de Archivo Recibida");
 
-        /*Controller cuser=null;
+        sendMessge(usuario,"");
 
-        *//*Buscase o usuario co que se fala*//*
-        for(Controller c : Controller.pantallasChat.values()){
-            if(c != null &&
-                    c.getUsuarioREM().email.compareTo(Controller.usuario.email)==0){
-                cuser=c;
-            }
-        }*/
-        /*VOUser cuser =null;
-        *//*Buscase o usuario co que se fala*//*
-        for(VOUser c : Controller.usuariosConectados){
-            if(c != null && c.email.compareTo(usuario.email)==0){
-                cuser=c;
-                break;
-            }
-        }
-
-        this.finalCuser=cuser;*/
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                    alert.setTitle("Dialogo de confirmación");
-                    alert.setHeaderText("El usuario "+usuario.nombre+" quiere enviarte el archivo "+nombre.substring(nombre.lastIndexOf('\\')));
-                    alert.setContentText("Desea almacenar el archivo?");
+                Controller.pantallasChat.get(usuario).getTxtChatMensajes().setText(Controller.pantallasChat.get(usuario).getTxtChatMensajes().getText().substring(0,(Controller.pantallasChat.get(usuario).getTxtChatMensajes().getText().length()-(usuario.nombre.length()+3))));
+                sendMessge(user,"Petición de Archivo Recibida");
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Dialogo de confirmación");
+                alert.setHeaderText("El usuario "+usuario.nombre+" quiere enviarte el archivo "+nombre.substring(nombre.lastIndexOf('\\')));
+                alert.setContentText("Desea almacenar el archivo?");
 
-                    Optional<ButtonType> result = alert.showAndWait();
-                    if (result.get() == ButtonType.OK) {
-                        try {
-                            FileChooser fc= new FileChooser();
-                            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("File",nombre.substring(nombre.indexOf('.'))));
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK) {
+                    try {
+                        FileChooser fc= new FileChooser();
+                        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("File",nombre.substring(nombre.indexOf('.'))));
 
-                            File f2 = fc.showSaveDialog(new Stage());
+                        File f2 = fc.showSaveDialog(new Stage());
 
-                            if (!f2.exists()) {
-                                f2.createNewFile();
-                            }
-                            OutputStream out = new FileOutputStream(f2);
-
-                            out.write(archivo, 0, archivo.length);
-
-                            //se ciera el archivo
-                            out.close();
-                            sendMessge(user,"Archivo guardado en: "+f2.getPath());
-                            user.chat= Controller.usuario.chat;
-                            user.nombre="CHAtty";
-                            user.email=Controller.usuario.email;
-                            user.id=Controller.usuario.id;
-                            user.callback=Controller.usuario.callback;
-                            user.hash=Controller.usuario.hash;
-                            user.salt=Controller.usuario.salt;
-                            user.avatar=Controller.usuario.avatar;
-                            usuario.chat.sendMessge(user,"El usuario "+Controller.usuario.nombre+" ha aceptado el archivo enviado");
-                        }catch (Exception e) {
-                            e.printStackTrace();
+                        if (!f2.exists()) {
+                            f2.createNewFile();
                         }
+                        OutputStream out = new FileOutputStream(f2);
 
-                    } else {
-                        sendMessge(usuario,"Petición rechazada");
+                        out.write(archivo, 0, archivo.length);
+
+                        //se ciera el archivo
+                        out.close();
+                        sendMessge(user,"Archivo guardado en: "+f2.getPath());
                         user.chat= Controller.usuario.chat;
                         user.nombre="CHAtty";
                         user.email=Controller.usuario.email;
@@ -172,10 +134,24 @@ public class peertopeerImplementation extends peertopeerPOA {
                         user.hash=Controller.usuario.hash;
                         user.salt=Controller.usuario.salt;
                         user.avatar=Controller.usuario.avatar;
-                        usuario.chat.sendMessge(user,"El usuario "+Controller.usuario.nombre+" ha rechazado el archivo enviado");
+                        usuario.chat.sendMessge(user,"El usuario "+Controller.usuario.nombre+" ha aceptado el archivo enviado");
+                    }catch (Exception e) {
+                        e.printStackTrace();
                     }
+
+                } else {
+                    sendMessge(usuario,"Petición rechazada");
+                    user.chat= Controller.usuario.chat;
+                    user.nombre="CHAtty";
+                    user.email=Controller.usuario.email;
+                    user.id=Controller.usuario.id;
+                    user.callback=Controller.usuario.callback;
+                    user.hash=Controller.usuario.hash;
+                    user.salt=Controller.usuario.salt;
+                    user.avatar=Controller.usuario.avatar;
+                    usuario.chat.sendMessge(user,"El usuario "+Controller.usuario.nombre+" ha rechazado el archivo enviado");
                 }
             }
-        );
+        });
     }
 }
