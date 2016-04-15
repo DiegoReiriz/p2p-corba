@@ -87,12 +87,22 @@ public class peertopeerImplementation extends peertopeerPOA {
 
     @Override
     public void sendFile(VOUser usuario, byte[] archivo, String nombre) {
-        user.callback= usuario.callback;
+        user.chat= usuario.chat;
         user.nombre="CHAtty";
         user.email=usuario.email;
         user.id=usuario.id;
-        sendMessge(usuario,"");
-        sendMessge(user,"\bPetición de Archivo Recibida");
+        user.callback=usuario.callback;
+        user.hash=usuario.hash;
+        user.salt=usuario.salt;
+        user.avatar=usuario.avatar;
+        int i=0;
+        String mens="";
+        while(i<usuario.nombre.length()+2){
+            mens=mens+"\b";
+            i++;
+        }
+        sendMessge(usuario,mens);
+        sendMessge(user,"Petición de Archivo Recibida");
 
         /*Controller cuser=null;
 
@@ -139,9 +149,14 @@ public class peertopeerImplementation extends peertopeerPOA {
                             //se ciera el archivo
                             out.close();
                             sendMessge(user,"Archivo guardado en: "+f2.getPath());
-                            user.callback=Controller.usuario.callback;
-                            user.id=Controller.usuario.id;
+                            user.chat= Controller.usuario.chat;
+                            user.nombre="CHAtty";
                             user.email=Controller.usuario.email;
+                            user.id=Controller.usuario.id;
+                            user.callback=Controller.usuario.callback;
+                            user.hash=Controller.usuario.hash;
+                            user.salt=Controller.usuario.salt;
+                            user.avatar=Controller.usuario.avatar;
                             usuario.chat.sendMessge(user,"El usuario "+Controller.usuario.nombre+" ha aceptado el archivo enviado");
                         }catch (Exception e) {
                             e.printStackTrace();
@@ -149,9 +164,14 @@ public class peertopeerImplementation extends peertopeerPOA {
 
                     } else {
                         sendMessge(usuario,"Petición rechazada");
-                        user.callback=Controller.usuario.callback;
-                        user.id=Controller.usuario.id;
+                        user.chat= Controller.usuario.chat;
+                        user.nombre="CHAtty";
                         user.email=Controller.usuario.email;
+                        user.id=Controller.usuario.id;
+                        user.callback=Controller.usuario.callback;
+                        user.hash=Controller.usuario.hash;
+                        user.salt=Controller.usuario.salt;
+                        user.avatar=Controller.usuario.avatar;
                         usuario.chat.sendMessge(user,"El usuario "+Controller.usuario.nombre+" ha rechazado el archivo enviado");
                     }
                 }
