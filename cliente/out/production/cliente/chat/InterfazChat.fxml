@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
 
 <AnchorPane fx:id="frmChat" prefHeight="280.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chat.Controller">
    <children>
@@ -19,11 +21,11 @@
             <Separator orientation="VERTICAL" prefHeight="280.0" prefWidth="0.0" visible="false" />
             <VBox fx:id="vboxChatAvatar" prefHeight="280.0" prefWidth="100.0">
                <children>
-                  <ListView fx:id="lstvwChatAvatarAmigo" prefHeight="100.0" prefWidth="100.0" />
+                  <ImageView fx:id="ImvwChatAvatarAmigo" fitHeight="100.0" fitWidth="100.0" />
                   <Separator prefHeight="8.0" prefWidth="100.0" visible="false" />
-                  <ListView fx:id="lstvwChatAvatarPropio" prefHeight="100.0" prefWidth="107.0" />
+                  <ImageView fx:id="ImvwChatAvatarPropio" fitHeight="100.0" fitWidth="100.0" />
                   <Separator prefHeight="3.0" prefWidth="100.0" visible="false" />
-                  <Button fx:id="btnChatFile" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Enviar Archivo" />
+                  <Button fx:id="btnChatFile" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Enviar Archivo" onAction="#enviarArchivo"/>
                   <Separator prefHeight="8.0" prefWidth="100.0" visible="false" />
                   <Button fx:id="btnChatEnviar" mnemonicParsing="false" onAction="#enviarMensaje" prefHeight="30.0" prefWidth="100.0" text="Enviar" />
                </children>

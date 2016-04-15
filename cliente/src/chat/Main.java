@@ -37,7 +37,6 @@ public class Main extends Application {
             ORB orb = ORB.init(args,null); // Creamos el objeto ORB con los parámetros de conexión proporcionados en la ejecución
 
             POA rootPOA = POAHelper.narrow(orb.resolve_initial_references("RootPOA"));
-            rootPOA.the_POAManager().activate();
 
             /*crease o servand*/ // Definición de objetos para el envio de callbacks al cliente
             supertopeerImplementation stp=new supertopeerImplementation();
@@ -52,6 +51,7 @@ public class Main extends Application {
             mensaje = peertopeerHelper.narrow(ref2);
 
             Object objRef = orb.resolve_initial_references("NameService"); // Objeto que referencia al servicio de nombres
+            rootPOA.the_POAManager().activate();
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef); // Referencia al Contexto del servivio de nombre
             String name = "User";
             um = userManagerHelper.narrow(ncRef.resolve_str(name));  // Resolvemos la referencia de objetos en el servicio de nombres

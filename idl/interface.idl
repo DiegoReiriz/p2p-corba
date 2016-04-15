@@ -23,7 +23,7 @@ module chat
 
   interface peertopeer{
     void sendMessge(in VOUser usuario,in string message);
-    void sendFile(in VOUser usuario,in file archivo);
+    void sendFile(in VOUser usuario,in file archivo, in string nombre);
   };
 
   interface supertopeer {

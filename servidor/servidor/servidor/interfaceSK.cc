@@ -223,7 +223,7 @@ void chat::_objref_peertopeer::sendMessge(const ::chat::VOUser& usuario, const c
 // Code for chat::peertopeer::sendFile
 
 // Proxy call descriptor class. Mangled signature:
-//  void_i_cchat_mVOUser_i_cchat_mfile
+//  void_i_cchat_mVOUser_i_cchat_mfile_i_cstring
 class _0RL_cd_64782852c2451d6c_20000000
   : public omniCallDescriptor
 {
@@ -245,12 +245,15 @@ public:
   const chat::VOUser* arg_0;
   chat::file_var arg_1_;
   const chat::file* arg_1;
+  ::CORBA::String_var arg_2_;
+  const char* arg_2;
 };
 
 void _0RL_cd_64782852c2451d6c_20000000::marshalArguments(cdrStream& _n)
 {
   (const chat::VOUser&) *arg_0 >>= _n;
   (const chat::file&) *arg_1 >>= _n;
+  _n.marshalString(arg_2,0);
 
 }
 
@@ -262,6 +265,8 @@ void _0RL_cd_64782852c2451d6c_20000000::unmarshalArguments(cdrStream& _n)
   arg_1_ = new chat::file;
   (chat::file&)arg_1_ <<= _n;
   arg_1 = &arg_1_.in();
+  arg_2_ = _n.unmarshalString(0);
+  arg_2 = arg_2_.in();
 
 }
 
@@ -275,16 +280,17 @@ _0RL_lcfn_64782852c2451d6c_30000000(omniCallDescriptor* cd, omniServant* svnt)
 {
   _0RL_cd_64782852c2451d6c_20000000* tcd = (_0RL_cd_64782852c2451d6c_20000000*)cd;
   chat::_impl_peertopeer* impl = (chat::_impl_peertopeer*) svnt->_ptrToInterface(chat::peertopeer::_PD_repoId);
-  impl->sendFile(*tcd->arg_0, *tcd->arg_1);
+  impl->sendFile(*tcd->arg_0, *tcd->arg_1, tcd->arg_2);
 
 
 }
 
-void chat::_objref_peertopeer::sendFile(const ::chat::VOUser& usuario, const ::chat::file& archivo)
+void chat::_objref_peertopeer::sendFile(const ::chat::VOUser& usuario, const ::chat::file& archivo, const char* nombre)
 {
   _0RL_cd_64782852c2451d6c_20000000 _call_desc(_0RL_lcfn_64782852c2451d6c_30000000, "sendFile", 9);
   _call_desc.arg_0 = &(::chat::VOUser&) usuario;
   _call_desc.arg_1 = &(::chat::file&) archivo;
+  _call_desc.arg_2 = nombre;
 
   _invoke(_call_desc);
 

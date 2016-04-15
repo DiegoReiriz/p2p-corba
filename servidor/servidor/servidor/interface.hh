@@ -319,7 +319,7 @@ _CORBA_MODULE_BEG
   public:
     // IDL operations
     void sendMessge(const ::chat::VOUser& usuario, const char* message);
-    void sendFile(const ::chat::VOUser& usuario, const ::chat::file& archivo);
+    void sendFile(const ::chat::VOUser& usuario, const ::chat::file& archivo, const char* nombre);
 
     // Constructors
     inline _objref_peertopeer()  { _PR_setobj(0); }  // nil
@@ -355,7 +355,7 @@ _CORBA_MODULE_BEG
     virtual ~_impl_peertopeer();
 
     virtual void sendMessge(const ::chat::VOUser& usuario, const char* message) = 0;
-    virtual void sendFile(const ::chat::VOUser& usuario, const ::chat::file& archivo) = 0;
+    virtual void sendFile(const ::chat::VOUser& usuario, const ::chat::file& archivo, const char* nombre) = 0;
     
   public:  // Really protected, workaround for xlC
     virtual _CORBA_Boolean _dispatch(omniCallHandle&);

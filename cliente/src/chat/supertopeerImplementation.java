@@ -12,8 +12,12 @@ public class supertopeerImplementation extends supertopeerPOA {
 
     @Override
     public void notifyFriendIn(VOUser usuario) {
+
+        System.out.println("SE HA CONECTADO EL USUARIO: "+usuario.email);
+
         if(!Controller.usuariosConectados.contains(usuario)){
             Controller.usuariosConectados.add(usuario);
+
         }
     }
 
@@ -34,7 +38,7 @@ public class supertopeerImplementation extends supertopeerPOA {
 
     @Override
     public void notifyFriendRequestReslution(VOUser usuario, boolean result) {
-        System.out.println("MENSAXE DO SERVIDOR");
+        // ALERTA
     }
 
 }

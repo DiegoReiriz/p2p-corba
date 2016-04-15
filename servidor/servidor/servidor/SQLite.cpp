@@ -283,7 +283,7 @@ list<chat::VOUser>* SQLite::obterAmigos(chat::VOUser usuario, sqlite3 * db)
 	int rc = 0;
 	char* error;
 
-	std::string sqlSelect = "SELECT * FROM " + TABLE_USUARIOS::TABLE_NAME + " WHERE " + TABLE_USUARIOS::ID + "= (SELECT " +
+	std::string sqlSelect = "SELECT * FROM " + TABLE_USUARIOS::TABLE_NAME + " WHERE " + TABLE_USUARIOS::ID + " IN (SELECT " +
 		TABLE_AMIGOS::ID_DESTINO + " FROM " + TABLE_AMIGOS::TABLE_NAME + " WHERE " + TABLE_PETICIONES_AMISTAD::ID_ORIGEN + " = " + std::to_string(usuario.id) + ");";
 	char **results = NULL;
 	int rows, columns;

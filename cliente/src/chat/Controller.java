@@ -9,10 +9,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import sun.misc.IOUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -23,6 +29,7 @@ public class Controller implements Initializable {
     public static LinkedList<VOUser> usuariosConectados = new LinkedList<>(); // Lista de usuarios conectados (Objetos usuario)
     public static LinkedList<VOUser> usuariosPeticiones = new LinkedList<>(); // Lista de usuarios de los que se tiene solicitudes (Objetos usuario)
     public static LinkedList<VOUser> usuariosSolicitudes = new LinkedList<>();// Lista de usuarios a los que se le pueden hacer solicitudes (Objetos usuario)
+    public static HashMap<VOUser, Controller> pantallasChat = new HashMap();
 
     // Referencia a las pantallas de las interfaces de la aplicación
     private static Stage pantallaPrincipal;
@@ -32,7 +39,6 @@ public class Controller implements Initializable {
     private static Stage pantallaContr;
     private static Stage pantallaRegistro;
     private static Stage pantallaInicio;
-    public static HashMap<VOUser, Controller> pantallasChat = new HashMap();
 
     // Elementos de las interfaces
     // Elementos de la interfaz Inicio
@@ -133,11 +139,26 @@ public class Controller implements Initializable {
     @FXML
     private TextArea txtChatMensaje;
 
-    // Método para añadir cosas
+    @FXML
+    private ImageView ImvwChatAvatarAmigo;
+
+    @FXML
+    private ImageView ImvwChatAvatarPropio;
+
+    // Añadir cosas en la ventana de chat
     public TextArea getTxtChatMensajes(){
         return txtChatMensajes;
     }
-////////////////////////////
+
+    public ImageView getImvwChatAvatarAmigo() {
+        return ImvwChatAvatarAmigo;
+    }
+
+    public ImageView getImvwChatAvatarPropio() {
+        return ImvwChatAvatarPropio;
+    }
+
+    ////////////////////////////
     //    Métodos Pantallas   //
     ////////////////////////////
 
@@ -157,10 +178,7 @@ public class Controller implements Initializable {
                 // Nos traemos la lista de amigos conectados del usuario
                 listaUsuariosHolder holder=new listaUsuariosHolder(Main.um.getFrindList(usuario));
                 for (VOUser user : holder.value) { // Añadimos a nuestra lista local de amigos conectados los amigos conectados
-                    if(user.id==0){
-                        System.out.println("Vacio");
-                    }
-                    else{
+                    if(user.chat!=null){
                         usuariosConectados.add(user);
                     }
                 }
@@ -236,12 +254,19 @@ public class Controller implements Initializable {
                     lblRegistroErrorEmail.setVisible(true);
                 }
                 else{
-                    //Comprobamos si la url de avatar es correcta, si no lo es lblRegistroError.setVisible(true);
-
-                    Main.um.signUp(usuarioHolder.value);
-                    pantallaRegistro.hide();
-                    pantallaInicio.setOpacity(1.0);
-                    //Sino:
+                    //Comprobamos si la url de avatar es correcta, si no lo es avatar standar;
+                    String regexp="(https?:\\/\\/(?:www\\.|(?!www))(.*)(\\.gif|\\.gifv|\\.png|\\.jpg))";
+                    if(txtRegistroAvatar.getText().matches(regexp)){
+                        Main.um.signUp(usuarioHolder.value);
+                        pantallaRegistro.hide();
+                        pantallaInicio.setOpacity(1.0);
+                    }
+                    else{
+                        usuarioHolder.value.avatar="http://codigoespagueti.com/wp-content/uploads/2014/10/Facebook-an%C3%B3nimo-640x360.jpg";
+                        Main.um.signUp(usuarioHolder.value);
+                        pantallaRegistro.hide();
+                        pantallaInicio.setOpacity(1.0);
+                    }
                 }
             }
         }
@@ -305,7 +330,9 @@ public class Controller implements Initializable {
         LinkedList<String> listaAmigos = new LinkedList<String>();
 
         for (VOUser user : usuariosConectados) { // Introducimos en una lista que será la fuente de datos del listview los amigo para que pueda verlos
-            listaAmigos.add(user.nombre+": "+user.email);
+            if (user.chat!=null){
+                listaAmigos.add(user.nombre+": "+user.email);
+            }
         }
         lstvwInicioUsuarios.setItems(FXCollections.observableArrayList(listaAmigos));
     }
@@ -324,28 +351,43 @@ public class Controller implements Initializable {
 
     public void crearChat() throws IOException{
         try{
-            int indice =lstvwInicioUsuarios.getSelectionModel().getSelectedIndex();
-            if(pantallasChat.containsKey(usuariosConectados.get(indice))){ // Si ya existe no hacemos nada
-
-            }
-            else{
-                pantallasChat.put(usuariosConectados.get(indice),this);
-                usuarioREMaux=usuariosConectados.get(indice);
-                Stage chat = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("InterfazChat.fxml"));
-                chat.setTitle("CHAtty - Chat con "+usuariosConectados.get(indice).nombre);
-                chat.setScene(new Scene(root, 499, 280));
-                chat.setResizable(false);
-                chat.show();
-                chat.setOnCloseRequest(new EventHandler<WindowEvent>() {
-                    public void handle(WindowEvent we) {
-                        chat.hide();
-                        pantallasChat.remove(usuariosConectados.get(indice)); // AQUI
-                    }
-                });
+            if(lstvwInicioUsuarios.getSelectionModel().getSelectedItem()!=null) {
+                int indice =lstvwInicioUsuarios.getSelectionModel().getSelectedIndex();
+                if(!pantallasChat.containsKey(usuariosConectados.get(indice))){
+                    Controller c=this;
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            try{
+                                pantallasChat.put(usuariosConectados.get(indice),c);
+                                usuarioREMaux=usuariosConectados.get(indice);
+                                Stage chat = new Stage();
+                                Parent root = FXMLLoader.load(getClass().getResource("InterfazChat.fxml"));
+                                chat.setTitle("CHAtty - Chat con "+usuariosConectados.get(indice).nombre);
+                                chat.setScene(new Scene(root, 499, 280));
+                                chat.setResizable(false);
+                                chat.show();
+                                chat.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                                    public void handle(WindowEvent we) {
+                                        chat.hide();
+                                        pantallasChat.remove(usuariosConectados.get(indice));
+                                    }
+                                });
+                                Image imgAmigo=new Image(usuariosConectados.get(indice).avatar);
+                                ImvwChatAvatarAmigo=new ImageView(imgAmigo);
+                                Image imgUser=new Image(usuario.avatar);
+                                ImvwChatAvatarPropio= new ImageView(imgUser);
+                            }
+                            catch(Exception e){
+                                e.printStackTrace();
+                            }
+                        }});
+                }
             }
         }
-        catch(Exception e){}
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     // Métodos Pantalla Baja Usuario ((BAJA))
@@ -451,18 +493,20 @@ public class Controller implements Initializable {
 
     public void aceptarPeticion(){
         try{
-            String email= lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
-            // Buscamos al usuario en la lista de peticiones
-            VOUser nuevoAmigo= new VOUser();
-            for(VOUser pet : usuariosPeticiones){
-                if(pet.email.compareTo(email)==0){
-                    nuevoAmigo=pet;
-                    break;
+            if(pnelPeticionPeticionesAmistad.isExpanded() && lstvwPeticionPeticiones.getSelectionModel().getSelectedItem()!=null) {
+                String email = lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
+                // Buscamos al usuario en la lista de peticiones
+                VOUser nuevoAmigo = new VOUser();
+                for (VOUser pet : usuariosPeticiones) {
+                    if (pet.email.compareTo(email) == 0) {
+                        nuevoAmigo = pet;
+                        break;
+                    }
                 }
-            }
-            if(Main.um.resolveFriendRequest(usuario,nuevoAmigo,true)){ // Si la operación se realiza con éxito
-                usuariosPeticiones.remove(nuevoAmigo);
-                insertarPeticionesAmistad();
+                if (Main.um.resolveFriendRequest(usuario, nuevoAmigo, true)) { // Si la operación se realiza con éxito
+                    usuariosPeticiones.remove(nuevoAmigo);
+                    insertarPeticionesAmistad();
+                }
             }
         }
         catch(Exception e){}
@@ -470,18 +514,20 @@ public class Controller implements Initializable {
 
     public void rechazarPeticion(){
         try {
-            String email = lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
-            // Buscamos al usuario en la lista de peticiones
-            VOUser nuevoAmigo = new VOUser();
-            for (VOUser pet : usuariosPeticiones) {
-                if (pet.email.compareTo(email) == 0) {
-                    nuevoAmigo = pet;
-                    break;
+            if(pnelPeticionPeticionesAmistad.isExpanded() && lstvwPeticionPeticiones.getSelectionModel().getSelectedItem()!=null) {
+                String email = lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
+                // Buscamos al usuario en la lista de peticiones
+                VOUser nuevoAmigo = new VOUser();
+                for (VOUser pet : usuariosPeticiones) {
+                    if (pet.email.compareTo(email) == 0) {
+                        nuevoAmigo = pet;
+                        break;
+                    }
                 }
-            }
-            if (Main.um.resolveFriendRequest(usuario, nuevoAmigo, false)) { // Si la operacion se realiza con éxito
-                usuariosPeticiones.remove(nuevoAmigo);
-                insertarPeticionesAmistad();
+                if (Main.um.resolveFriendRequest(usuario, nuevoAmigo, false)) { // Si la operacion se realiza con éxito
+                    usuariosPeticiones.remove(nuevoAmigo);
+                    insertarPeticionesAmistad();
+                }
             }
         }
         catch(Exception e){}
@@ -507,20 +553,22 @@ public class Controller implements Initializable {
 
     public void enviarSolicitud(){
         try{
-            String email= lstvwNuevaUsuarios.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
-            // Buscamos al usuario en la lista de solicitudes
-            VOUser nuevaSolicitud= new VOUser();
-            for(VOUser sol : usuariosSolicitudes){
-                if(sol.email.compareTo(email)==0){
-                    nuevaSolicitud=sol;
-                    break;
+            if(lstvwNuevaUsuarios.getSelectionModel().getSelectedItem()!=null) {
+                String email= lstvwNuevaUsuarios.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
+                // Buscamos al usuario en la lista de solicitudes
+                VOUser nuevaSolicitud= new VOUser();
+                for(VOUser sol : usuariosSolicitudes){
+                    if(sol.email.compareTo(email)==0){
+                        nuevaSolicitud=sol;
+                        break;
+                    }
                 }
-            }
-            if(Main.um.newFriendRequest(usuario,nuevaSolicitud)){ // Si la operación se realiza con éxito
-                while(!usuariosSolicitudes.isEmpty()){ // Vaciamos los usuarios temporales para la solicitud que hay
-                    usuariosSolicitudes.remove(0);
+                if(Main.um.newFriendRequest(usuario,nuevaSolicitud)){ // Si la operación se realiza con éxito
+                    while(!usuariosSolicitudes.isEmpty()){ // Vaciamos los usuarios temporales para la solicitud que hay
+                        usuariosSolicitudes.remove(0);
+                    }
+                    lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(""));
                 }
-                lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(""));
             }
         }
         catch(Exception e){}
@@ -538,8 +586,27 @@ public class Controller implements Initializable {
         txtChatMensajes.appendText("");
         usuarioREM.chat.sendMessge(usuario,txtChatMensaje.getText());
         txtChatMensaje.setText("");
-        //pantallaPrincipal.hide();
-        //pantallaInicio.hide();
+    }
+
+    // Métodos Pantalla Chat
+
+    public void enviarArchivo(){
+        File f=new File("C:\\Users\\Carlos\\Desktop\\Práctica 5.pdf");
+
+
+        if(f.canRead()){
+            try {
+                InputStream is = new FileInputStream(f);
+
+                byte[] arrayChachi = IOUtils.readFully(is, (int) f.length(), true);
+                usuarioREM.chat.sendFile(usuario, arrayChachi, "Práctica 5.pdf");
+                txtChatMensajes.appendText("Yo: Archivo Enviado\n");
+                txtChatMensajes.appendText("");
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -547,8 +614,11 @@ public class Controller implements Initializable {
         usuarioREM=usuarioREMaux;
 
         if(usuarioREM != null) {
-            System.out.println("DENTRO");
             pantallasChat.put(usuarioREM, this);
+        }
+        if(ImvwChatAvatarAmigo!=null && ImvwChatAvatarPropio!=null){
+           ImvwChatAvatarAmigo.setImage(new Image(usuarioREM.avatar));
+           ImvwChatAvatarPropio.setImage(new Image(Controller.usuario.avatar));
         }
 
         usuarioREMaux=null;

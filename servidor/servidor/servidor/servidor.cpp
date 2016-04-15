@@ -263,7 +263,7 @@ class userManager_i : public POA_chat::userManager
 			++i;
 		}
 	
-		while (k < lista->length()) {
+		while (k < usuariosActivos.size()) {
 			::chat::VOUser* user = new ::chat::VOUser;
 
 			user->id = 0;
@@ -325,8 +325,18 @@ class userManager_i : public POA_chat::userManager
 			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
 
 				if (itr->id == destiny.id) {
-					itr->callback->notifyFriendIn(*itr);
-					origin.callback->notifyFriendIn(destiny);
+					::chat::VOUser* origen = new ::chat::VOUser;
+
+					origen->id = origin.id;
+					origen->nombre = origin.nombre;
+					origen->email = origin.email;
+					origen->hash = origin.hash;
+					origen->salt = origin.salt;
+					origen->avatar = origin.avatar;
+					origen->chat = origin.chat;
+					
+					itr->callback->notifyFriendIn(*origen);
+					origin.callback->notifyFriendIn(*itr);
 					found = true;
 				}
 
