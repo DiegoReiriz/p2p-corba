@@ -11,6 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import sun.misc.IOUtils;
@@ -148,6 +151,10 @@ public class Controller implements Initializable {
     // Añadir cosas en la ventana de chat
     public TextArea getTxtChatMensajes(){
         return txtChatMensajes;
+    }
+
+    public TextArea getTxtChatMensaje(){
+        return txtChatMensaje;
     }
 
     public ImageView getImvwChatAvatarAmigo() {
@@ -377,6 +384,16 @@ public class Controller implements Initializable {
                                 ImvwChatAvatarAmigo=new ImageView(imgAmigo);
                                 Image imgUser=new Image(usuario.avatar);
                                 ImvwChatAvatarPropio= new ImageView(imgUser);
+                                pantallasChat.get(usuariosConectados.get(indice)).getTxtChatMensaje().requestFocus();
+                                pantallasChat.get(usuariosConectados.get(indice)).getTxtChatMensaje().setOnKeyPressed(
+                                        new EventHandler<KeyEvent>() {
+                                            @Override
+                                            public void handle(KeyEvent keyEvent) {
+                                                if (keyEvent.getCode() == KeyCode.ENTER)  {
+                                                    pantallasChat.get(usuariosConectados.get(indice)).enviarMensaje();
+                                                }
+                                            }
+                                        });
                             }
                             catch(Exception e){
                                 e.printStackTrace();
@@ -489,7 +506,7 @@ public class Controller implements Initializable {
             listaPeticiones.add(user.email);
         }
         lstvwPeticionPeticiones.setItems(FXCollections.observableArrayList(listaPeticiones));
-    } // EN PROCESO DE PRUEBA
+    }
 
     public void aceptarPeticion(){
         try{
@@ -549,7 +566,7 @@ public class Controller implements Initializable {
         }
         lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(listaUsuarios));
         txtNuevaFiltro.setText("");
-    }  // EN PROCESO DE PRUEBA
+    }
 
     public void enviarSolicitud(){
         try{
@@ -572,7 +589,7 @@ public class Controller implements Initializable {
             }
         }
         catch(Exception e){}
-    } // EN PROCESO DE PRUEBA
+    }
 
     public void salirNueva(){
         pantallaNueva.hide();
@@ -582,30 +599,28 @@ public class Controller implements Initializable {
     // Métodos Pantalla Chat
 
     public void enviarMensaje(){
-        txtChatMensajes.appendText("Yo: "+txtChatMensaje.getText().trim()+"\n");
-        txtChatMensajes.appendText("");
-        usuarioREM.chat.sendMessge(usuario,txtChatMensaje.getText());
-        txtChatMensaje.setText("");
+            txtChatMensajes.appendText("Yo: "+txtChatMensaje.getText().trim()+"\n");
+            txtChatMensajes.appendText("");
+            usuarioREM.chat.sendMessge(usuario,txtChatMensaje.getText());
+            txtChatMensaje.setText("");
     }
 
     // Métodos Pantalla Chat
 
     public void enviarArchivo(){
-        File f=new File("C:\\Users\\Carlos\\Desktop\\Práctica 5.pdf");
-
-
-        if(f.canRead()){
-            try {
+        File f = new FileChooser().showOpenDialog(new Stage());
+        try {
+            if(f.canRead()){
                 InputStream is = new FileInputStream(f);
 
                 byte[] arrayChachi = IOUtils.readFully(is, (int) f.length(), true);
-                usuarioREM.chat.sendFile(usuario, arrayChachi, "Práctica 5.pdf");
-                txtChatMensajes.appendText("Yo: Archivo Enviado\n");
+                usuarioREM.chat.sendFile(usuario, arrayChachi, f.getPath());
+                txtChatMensajes.appendText("Yo: Petición de Archivo Enviada\n");
                 txtChatMensajes.appendText("");
+                }
             }
             catch(Exception e){
                 e.printStackTrace();
-            }
         }
     }
 

@@ -2,6 +2,7 @@ package chat;
 
 import javafx.application.Platform;
 import javafx.event.EventHandler;
+import javafx.scene.image.*;
 import javafx.stage.WindowEvent;
 import org.omg.CORBA.*;
 import org.omg.CORBA.Object;
@@ -12,6 +13,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.omg.PortableServer.*;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Main extends Application {
     public static userManager um;
@@ -55,6 +61,7 @@ public class Main extends Application {
             NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef); // Referencia al Contexto del servivio de nombre
             String name = "User";
             um = userManagerHelper.narrow(ncRef.resolve_str(name));  // Resolvemos la referencia de objetos en el servicio de nombres
+
             launch(args);
         }
         catch(Exception e){

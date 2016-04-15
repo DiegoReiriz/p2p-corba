@@ -335,8 +335,10 @@ class userManager_i : public POA_chat::userManager
 					origen->avatar = origin.avatar;
 					origen->chat = origin.chat;
 					
+					itr->callback->notifyFriendRequestReslution(*origen, true);
 					itr->callback->notifyFriendIn(*origen);
 					origin.callback->notifyFriendIn(*itr);
+					
 					found = true;
 				}
 

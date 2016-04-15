@@ -6,66 +6,38 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$2.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$3.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$4.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$6.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Main$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Main$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Main.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/_peertopeerStub.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/_peertopeerStub.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerOperations.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerOperations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerPOA.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerPOA.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/.vs/servidor/v14/.suo" afterPath="$PROJECT_DIR$/../servidor/servidor/.vs/servidor/v14/.suo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/ipch/SERVIDOR-1362c121/SERVIDOR-6f8e8b32.ipch" afterPath="$PROJECT_DIR$/../servidor/servidor/ipch/SERVIDOR-1362c121/SERVIDOR-6f8e8b32.ipch" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor.sdf" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor.sdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/MyDb.db" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/MyDb.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLite.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLite.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/interfaceSK.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/interfaceSK.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLiteContract.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLiteContract.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.pch" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/stdafx.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/stdafx.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/vc140.pdb" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/vc140.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.exe" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.iobj" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.iobj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.ipdb" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.ipdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.pdb" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/InterfazChat.fxml" afterPath="$PROJECT_DIR$/out/production/cliente/chat/InterfazChat.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/Controller.java" afterPath="$PROJECT_DIR$/src/chat/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/InterfazChat.fxml" afterPath="$PROJECT_DIR$/src/chat/InterfazChat.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/Main.java" afterPath="$PROJECT_DIR$/src/chat/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/VOUser.java" afterPath="$PROJECT_DIR$/src/chat/VOUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/VOUserHelper.java" afterPath="$PROJECT_DIR$/src/chat/VOUserHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/VOUserHolder.java" afterPath="$PROJECT_DIR$/src/chat/VOUserHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/_peertopeerStub.java" afterPath="$PROJECT_DIR$/src/chat/_peertopeerStub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/_supertopeerStub.java" afterPath="$PROJECT_DIR$/src/chat/_supertopeerStub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/_userManagerStub.java" afterPath="$PROJECT_DIR$/src/chat/_userManagerStub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/fileHelper.java" afterPath="$PROJECT_DIR$/src/chat/fileHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/fileHolder.java" afterPath="$PROJECT_DIR$/src/chat/fileHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/listaUsuariosHelper.java" afterPath="$PROJECT_DIR$/src/chat/listaUsuariosHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/listaUsuariosHolder.java" afterPath="$PROJECT_DIR$/src/chat/listaUsuariosHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/peertopeer.java" afterPath="$PROJECT_DIR$/src/chat/peertopeer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/peertopeerHelper.java" afterPath="$PROJECT_DIR$/src/chat/peertopeerHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/peertopeerHolder.java" afterPath="$PROJECT_DIR$/src/chat/peertopeerHolder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/peertopeerImplementation.java" afterPath="$PROJECT_DIR$/src/chat/peertopeerImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/peertopeerOperations.java" afterPath="$PROJECT_DIR$/src/chat/peertopeerOperations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/peertopeerPOA.java" afterPath="$PROJECT_DIR$/src/chat/peertopeerPOA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/supertopeer.java" afterPath="$PROJECT_DIR$/src/chat/supertopeer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/supertopeerHelper.java" afterPath="$PROJECT_DIR$/src/chat/supertopeerHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/supertopeerHolder.java" afterPath="$PROJECT_DIR$/src/chat/supertopeerHolder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/supertopeerImplementation.java" afterPath="$PROJECT_DIR$/src/chat/supertopeerImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/supertopeerOperations.java" afterPath="$PROJECT_DIR$/src/chat/supertopeerOperations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/supertopeerPOA.java" afterPath="$PROJECT_DIR$/src/chat/supertopeerPOA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/userManager.java" afterPath="$PROJECT_DIR$/src/chat/userManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/userManagerHelper.java" afterPath="$PROJECT_DIR$/src/chat/userManagerHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/userManagerHolder.java" afterPath="$PROJECT_DIR$/src/chat/userManagerHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/userManagerOperations.java" afterPath="$PROJECT_DIR$/src/chat/userManagerOperations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/userManagerPOA.java" afterPath="$PROJECT_DIR$/src/chat/userManagerPOA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../idl/interface.idl" afterPath="$PROJECT_DIR$/../idl/interface.idl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.bak" afterPath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.bak" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.dat" afterPath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/SQLite.cpp" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/SQLite.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/interface.hh" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/interface.hh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/interfaceSK.cc" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/interfaceSK.cc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/sample.cfg" afterPath="$PROJECT_DIR$/../servidor/sample.cfg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.cpp" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/stdafx.h" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/stdafx.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.log" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.command.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.command.1.tlog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.read.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.read.1.tlog" />
@@ -136,76 +108,62 @@
         <entry file="file://$PROJECT_DIR$/src/chat/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-              <folding />
+              <caret line="62" column="133" selection-start-line="62" selection-start-column="133" selection-end-line="62" selection-end-column="133" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8636859">
-              <caret line="207" column="9" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+            <state vertical-scroll-proportion="-10.103448">
+              <caret line="612" column="28" selection-start-line="612" selection-start-column="28" selection-end-line="612" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
                 <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
                 <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
                 <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+                <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
                 <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
                 <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-                <element signature="e#12428#12429#0" expanded="true" />
-                <element signature="e#12461#12462#0" expanded="true" />
+                <element signature="e#12611#12612#0" expanded="true" />
+                <element signature="e#12644#12645#0" expanded="true" />
                 <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
                 <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
                 <element signature="method#baja#0;class#Controller#0" expanded="false" />
                 <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
                 <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
                 <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-                <element signature="e#18469#18477#0" expanded="true" />
-                <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-                <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-                <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-                <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-                <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+                <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+                <element signature="e#19449#19457#0" expanded="true" />
+                <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+                <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+                <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+                <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+                <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+                <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+                <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+                <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+                <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+                <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+                <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+                <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1767" column="0" selection-start-line="1767" selection-start-column="0" selection-end-line="1767" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="peertopeerImplementation.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="peertopeerImplementation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="25" selection-start-line="39" selection-start-column="11" selection-end-line="42" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.9577206">
+              <caret line="149" column="28" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="supertopeerImplementation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-              <folding>
-                <element signature="e#827#828#0" expanded="true" />
-                <element signature="e#885#886#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -244,10 +202,10 @@
         <option value="$PROJECT_DIR$/src/chat/Peticion.fxml" />
         <option value="$PROJECT_DIR$/src/chat/Nueva.fxml" />
         <option value="$PROJECT_DIR$/src/chat/InterfazChat.fxml" />
-        <option value="$PROJECT_DIR$/src/chat/peertopeerImplementation.java" />
         <option value="$PROJECT_DIR$/src/chat/Main.java" />
         <option value="$PROJECT_DIR$/src/chat/supertopeerImplementation.java" />
         <option value="$PROJECT_DIR$/src/chat/Controller.java" />
+        <option value="$PROJECT_DIR$/src/chat/peertopeerImplementation.java" />
       </list>
     </option>
   </component>
@@ -350,11 +308,11 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="IOE&#9;PSI&#9;JAVA://java.io.IOException" />
   </component>
   <component name="RecentsManager">
@@ -633,7 +591,7 @@
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialPort 2089 -ORBInitialHost localhost" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.8.0_77" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -686,11 +644,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="1" width="1932" height="1055" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32698414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32804233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -770,60 +728,60 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>549</line>
+          <line>566</line>
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>545</line>
+          <line>562</line>
           <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>517</line>
-          <properties />
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>311</line>
+          <line>318</line>
           <properties />
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>236</line>
-          <properties />
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>584</line>
-          <properties />
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>494</line>
+          <line>511</line>
           <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>180</line>
+          <url>file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java</url>
+          <line>117</line>
           <properties />
-          <option name="timeStamp" value="112" />
+          <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>331</line>
+          <line>533</line>
           <properties />
-          <option name="timeStamp" value="114" />
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
+          <line>502</line>
+          <properties />
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java</url>
+          <line>144</line>
+          <properties />
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java</url>
+          <line>154</line>
+          <properties />
+          <option name="timeStamp" value="147" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="116" />
+      <option name="time" value="153" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -832,54 +790,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-            <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
-            <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#baja#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-            <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/InterfazPrincipal.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chat/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -889,28 +806,35 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
             <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12644#12645#0" expanded="true" />
             <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
             <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+            <element signature="e#19449#19457#0" expanded="true" />
+            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+            <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -930,7 +854,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -973,28 +899,35 @@
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
             <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12644#12645#0" expanded="true" />
             <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
             <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+            <element signature="e#19449#19457#0" expanded="true" />
+            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+            <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1003,7 +936,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,28 +948,35 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
             <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12644#12645#0" expanded="true" />
             <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
             <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+            <element signature="e#19449#19457#0" expanded="true" />
+            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+            <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1054,7 +996,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,28 +1008,35 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
             <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12644#12645#0" expanded="true" />
             <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
             <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+            <element signature="e#19449#19457#0" expanded="true" />
+            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+            <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1105,7 +1056,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1115,28 +1068,35 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
             <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12644#12645#0" expanded="true" />
             <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
             <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+            <element signature="e#19449#19457#0" expanded="true" />
+            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+            <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1156,7 +1116,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1166,28 +1128,35 @@
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
             <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12644#12645#0" expanded="true" />
             <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
             <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+            <element signature="e#19449#19457#0" expanded="true" />
+            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+            <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1256,13 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/peertopeer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chat/supertopeer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1293,13 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/supertopeerPOA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1322,17 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24593128">
           <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/InterfazPrincipal.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64014465">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1407,71 +1351,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="25" selection-start-line="39" selection-start-column="11" selection-end-line="42" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding>
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.38157895">
           <caret line="1767" column="0" selection-start-line="1767" selection-start-column="0" selection-end-line="1767" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/chat/supertopeerPOA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8636859">
-          <caret line="207" column="9" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.33272058">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/peertopeer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78125">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#notifyFriendIn#0;class#supertopeerImplementation#0" expanded="false" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="method#notifyFriendOut#0;class#supertopeerImplementation#0" expanded="false" />
+            <element signature="e#2277#2278#0" expanded="true" />
+            <element signature="e#2360#2361#0" expanded="true" />
+            <element signature="method#notifyFriendRequest#0;class#supertopeerImplementation#0" expanded="false" />
+            <element signature="e#3642#3643#0" expanded="true" />
+            <element signature="e#3709#3710#0" expanded="true" />
+            <element signature="method#notifyFriendRequestReslution#0;class#supertopeerImplementation#0" expanded="false" />
+            <element signature="e#4793#4794#0" expanded="true" />
+            <element signature="e#4860#4861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/InterfazPrincipal.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67484665">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9889706">
+          <caret line="2546" column="17" selection-start-line="2546" selection-start-column="17" selection-end-line="2546" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="133" selection-start-line="62" selection-start-column="133" selection-end-line="62" selection-end-column="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.103448">
+          <caret line="612" column="28" selection-start-line="612" selection-start-column="28" selection-end-line="612" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#crearPantallaPrincipal#0;class#Controller#0" expanded="false" />
             <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
             <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
             <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12461#12462#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12644#12645#0" expanded="true" />
             <element signature="method#crearChat#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
             <element signature="method#baja#0;class#Controller#0" expanded="false" />
             <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
             <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
             <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="e#18469#18477#0" expanded="true" />
-            <marker date="1460724242776" expanded="true" signature="1720:3630" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="1720:3738" placeholder="..." />
-            <marker date="1460724242776" expanded="false" signature="1720:4045" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:3861" placeholder="..." />
-            <marker date="1460724242776" expanded="true" signature="3786:4045" placeholder="..." />
+            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
+            <element signature="e#19449#19457#0" expanded="true" />
+            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
+            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
+            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
+            <element signature="method#enviarMensaje#0;class#Controller#0" expanded="false" />
+            <marker date="1460742846312" expanded="true" signature="1824:3734" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:3842" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="1824:4228" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:3965" placeholder="..." />
+            <marker date="1460742846312" expanded="true" signature="3890:4228" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/_peertopeerStub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.03125">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9577206">
+          <caret line="149" column="28" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1516,6 +1523,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
