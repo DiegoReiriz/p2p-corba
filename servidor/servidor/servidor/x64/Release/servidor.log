@@ -1,1 +1,15 @@
-﻿  servidor.vcxproj -> C:\p2p-corba\servidor\servidor\x64\Release\servidor.exe
+﻿  servidor.cpp
+servidor.cpp(228): warning C4267: 'argument': conversion from 'size_t' to '_CORBA_ULong', possible loss of data
+servidor.cpp(266): warning C4018: '<': signed/unsigned mismatch
+servidor.cpp(357): warning C4267: 'argument': conversion from 'size_t' to '_CORBA_ULong', possible loss of data
+servidor.cpp(518): warning C4101: 'ex': unreferenced local variable
+servidor.cpp(527): warning C4101: 'ex': unreferenced local variable
+servidor.cpp(579): warning C4101: 'ex': unreferenced local variable
+servidor.cpp(584): warning C4101: 'ex': unreferenced local variable
+servidor.cpp(588): warning C4101: 'ex': unreferenced local variable
+  Generating code
+  29 of 2607 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    48 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  servidor.vcxproj -> C:\p2p-corba\servidor\servidor\x64\Release\servidor.exe

@@ -1,5 +1,8 @@
 package chat;
 
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.stage.WindowEvent;
 import org.omg.CORBA.*;
 import org.omg.CORBA.Object;
 import org.omg.CosNaming.*;
@@ -21,6 +24,12 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 282, 194));
         primaryStage.setResizable(false);
         primaryStage.show();
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                Platform.exit();
+                System.exit(0);
+            }
+        });
     }
 
     public static void main(String[] args) {

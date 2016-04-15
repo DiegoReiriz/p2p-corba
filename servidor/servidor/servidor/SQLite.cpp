@@ -152,9 +152,9 @@ bool SQLite::borrarPeticionAmistad(chat::VOUser origen, chat::VOUser destino, sq
 	char* error;
 
 	std::string updateSQL = "DELETE FROM "+TABLE_PETICIONES_AMISTAD::TABLE_NAME+
-		" WHERE "+TABLE_PETICIONES_AMISTAD::ID_ORIGEN+"="+ std::to_string(origen.id) +
+		" WHERE "+TABLE_PETICIONES_AMISTAD::ID_ORIGEN+"="+ std::to_string(destino.id) +
 		" AND " + 
-		TABLE_PETICIONES_AMISTAD::ID_ORIGEN + "=" + std::to_string(origen.id) + ";";
+		TABLE_PETICIONES_AMISTAD::ID_DESTINO + "=" + std::to_string(origen.id) + ";";
 
 	cout << "Deleting friend request ..." << endl;
 	cout << updateSQL << endl << endl;
@@ -335,10 +335,11 @@ list<chat::VOUser>* SQLite::obterPeticionsAmistadPendientes(chat::VOUser usuario
 	int rc = 0;
 	char* error;
 
-	std::string sqlSelect = "SELECT * FROM " + TABLE_USUARIOS::TABLE_NAME + " WHERE " + TABLE_USUARIOS::ID + " SELECT " +
-		TABLE_PETICIONES_AMISTAD::ID_ORIGEN + " FROM " + TABLE_PETICIONES_AMISTAD::TABLE_NAME + " WHERE " + TABLE_PETICIONES_AMISTAD::ID_DESTINO + " = " + std::to_string(usuario.id) + ";";
+	std::string sqlSelect = "SELECT * FROM " + TABLE_USUARIOS::TABLE_NAME + " WHERE " + TABLE_USUARIOS::ID + " IN (SELECT " +
+		TABLE_PETICIONES_AMISTAD::ID_ORIGEN + " FROM " + TABLE_PETICIONES_AMISTAD::TABLE_NAME + " WHERE " + TABLE_PETICIONES_AMISTAD::ID_DESTINO + " = " + std::to_string(usuario.id) + ");";
 	char **results = NULL;
 	int rows, columns;
+	cout << sqlSelect << endl;
 	sqlite3_get_table(db, sqlSelect.c_str(), &results, &rows, &columns, &error);
 	if (rc)
 	{
@@ -365,12 +366,6 @@ list<chat::VOUser>* SQLite::obterPeticionsAmistadPendientes(chat::VOUser usuario
 
 
 		lista = res2User(rows, columns, results);
-		for (std::list<chat::VOUser>::iterator itr = lista->begin(); itr != lista->end();/*nothing*/) {
-
-			cout << (*itr).id << (*itr).nombre << (*itr).email << (*itr).hash << (*itr).salt << (*itr).avatar << endl;
-
-			++itr;
-		}
 
 	}
 	sqlite3_free_table(results);
@@ -388,8 +383,11 @@ list<chat::VOUser>* SQLite::buscarPorNombreyEmail(chat::VOUser usuario, chat::VO
 
 	std::string sqlSelect = "SELECT DISTINCT * FROM " + TABLE_USUARIOS::TABLE_NAME +
 		" WHERE ((" + TABLE_USUARIOS::NOMBRE + " LIKE \"%" + (char *)busqueda.nombre + "%\"  OR " + TABLE_USUARIOS::EMAIL + " LIKE \"%" + (char *)busqueda.email + "%\") AND " +
-		TABLE_USUARIOS::ID + " !=" + std::to_string(usuario.id) + " )AND " + TABLE_USUARIOS::ID +" NOT IN (SELECT "+TABLE_AMIGOS::ID_DESTINO+
-		" FROM "+ TABLE_AMIGOS::TABLE_NAME +" WHERE "+ TABLE_AMIGOS::ID_ORIGEN +"="+ std::to_string(usuario.id)+") LIMIT "+ std::to_string(limit) +";";
+		TABLE_USUARIOS::ID + " !=" + std::to_string(usuario.id) + " ) AND " + TABLE_USUARIOS::ID + " NOT IN (SELECT " + TABLE_AMIGOS::ID_DESTINO +
+		" FROM " + TABLE_AMIGOS::TABLE_NAME + " WHERE " + TABLE_AMIGOS::ID_ORIGEN + "=" + std::to_string(usuario.id) + ") AND " + TABLE_USUARIOS::ID +
+		" NOT IN ( SELECT " + TABLE_PETICIONES_AMISTAD::ID_DESTINO + " FROM " + TABLE_PETICIONES_AMISTAD::TABLE_NAME + " WHERE " +
+		TABLE_PETICIONES_AMISTAD::ID_ORIGEN + "=" + std::to_string(usuario.id) + " ) LIMIT " + std::to_string(limit) + ";";
+
 	char **results = NULL;
 	int rows, columns;
 	sqlite3_get_table(db, sqlSelect.c_str(), &results, &rows, &columns, &error);

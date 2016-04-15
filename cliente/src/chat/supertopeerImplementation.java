@@ -1,12 +1,7 @@
 package chat;
 
-import chat.VOUser;
-import chat.supertopeerPOA;
 import org.omg.CORBA.ORB;
 
-/**
- * Created by Diego on 13/04/2016.
- */
 public class supertopeerImplementation extends supertopeerPOA {
 
     private ORB orb;
@@ -17,17 +12,24 @@ public class supertopeerImplementation extends supertopeerPOA {
 
     @Override
     public void notifyFriendIn(VOUser usuario) {
-        System.out.println("MENSAXE DO SERVIDOR --> CONECTOUSE UN AMIGO");
+        if(!Controller.usuariosConectados.contains(usuario)){
+            Controller.usuariosConectados.add(usuario);
+        }
     }
 
     @Override
     public void notifyFriendOut(VOUser usuario) {
-        System.out.println("MENSAXE DO SERVIDOR");
+        for(VOUser user : Controller.usuariosConectados){
+            if(user.email.compareTo(usuario.email)==0){
+                Controller.usuariosConectados.remove(user);
+                break;
+            }
+        }
     }
 
     @Override
     public void notifyFriendRequest(VOUser usuario) {
-        System.out.println("MENSAXE DO SERVIDOR");
+        Controller.usuariosPeticiones.add(usuario);
     }
 
     @Override

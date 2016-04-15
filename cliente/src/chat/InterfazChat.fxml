@@ -11,19 +11,21 @@
          <children>
             <VBox fx:id="vboxChatMensajes" prefHeight="280.0" prefWidth="386.0">
                <children>
-                  <TextArea fx:id="txtChatMensajes" prefHeight="208.0" prefWidth="386.0" />
+                  <TextArea fx:id="txtChatMensajes" editable="false" prefHeight="208.0" prefWidth="386.0" wrapText="true" />
                   <Separator prefWidth="200.0" visible="false" />
-                  <TextArea fx:id="txtChatMensaje" prefHeight="69.0" prefWidth="380.0" />
+                  <TextArea fx:id="txtChatMensaje" prefHeight="69.0" prefWidth="380.0" wrapText="true" />
                </children>
             </VBox>
             <Separator orientation="VERTICAL" prefHeight="280.0" prefWidth="0.0" visible="false" />
             <VBox fx:id="vboxChatAvatar" prefHeight="280.0" prefWidth="100.0">
                <children>
                   <ListView fx:id="lstvwChatAvatarAmigo" prefHeight="100.0" prefWidth="100.0" />
-                  <Separator prefHeight="8.0" prefWidth="110.0" visible="false" />
+                  <Separator prefHeight="8.0" prefWidth="100.0" visible="false" />
                   <ListView fx:id="lstvwChatAvatarPropio" prefHeight="100.0" prefWidth="107.0" />
-                  <Separator prefWidth="200.0" visible="false" />
-                  <Button fx:id="btnChatEnviar" mnemonicParsing="false" prefHeight="68.0" prefWidth="107.0" text="Enviar" onAction="#enviarMensaje" />
+                  <Separator prefHeight="3.0" prefWidth="100.0" visible="false" />
+                  <Button fx:id="btnChatFile" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Enviar Archivo" />
+                  <Separator prefHeight="8.0" prefWidth="100.0" visible="false" />
+                  <Button fx:id="btnChatEnviar" mnemonicParsing="false" onAction="#enviarMensaje" prefHeight="30.0" prefWidth="100.0" text="Enviar" />
                </children>
             </VBox>
             <Separator orientation="VERTICAL" prefHeight="280.0" prefWidth="0.0" visible="false" />

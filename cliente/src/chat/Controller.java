@@ -1,19 +1,24 @@
 package chat;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.net.URL;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.ResourceBundle;
 
-public class Controller{
+public class Controller implements Initializable {
     public static VOUser usuario=new VOUser(); // Usuario que usa la aplicación
     public static LinkedList<VOUser> usuariosConectados = new LinkedList<>(); // Lista de usuarios conectados (Objetos usuario)
     public static LinkedList<VOUser> usuariosPeticiones = new LinkedList<>(); // Lista de usuarios de los que se tiene solicitudes (Objetos usuario)
@@ -25,9 +30,9 @@ public class Controller{
     private static Stage pantallaNueva;
     private static Stage pantallaBaja;
     private static Stage pantallaContr;
-    private static Stage pantallaChat;
     private static Stage pantallaRegistro;
     private static Stage pantallaInicio;
+    public static HashMap<VOUser, Controller> pantallasChat = new HashMap();
 
     // Elementos de las interfaces
     // Elementos de la interfaz Inicio
@@ -128,7 +133,11 @@ public class Controller{
     @FXML
     private TextArea txtChatMensaje;
 
-    ////////////////////////////
+    // Método para añadir cosas
+    public TextArea getTxtChatMensajes(){
+        return txtChatMensajes;
+    }
+////////////////////////////
     //    Métodos Pantallas   //
     ////////////////////////////
 
@@ -159,10 +168,17 @@ public class Controller{
                 pantallaPrincipal=new Stage();
                 usuario=usuarioHolder.value;
                 Parent root = FXMLLoader.load(getClass().getResource("interfazPrincipal.fxml"));
-                pantallaPrincipal.setTitle("CHAtty - Principal");
+                pantallaPrincipal.setTitle("CHAtty - Principal \""+usuario.email+"\"");
                 pantallaPrincipal.setScene(new Scene(root, 600, 400));
                 pantallaPrincipal.setResizable(false);
                 pantallaPrincipal.show();
+                pantallaPrincipal.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                    public void handle(WindowEvent we) {
+                        Main.um.signOut(usuario);
+                        Platform.exit();
+                        System.exit(0);
+                    }
+                });
                 txtIniSesContr.setText("");
                 txtIniSesEmail.setText("");
                 lblIniSesError.setVisible(false);
@@ -241,6 +257,12 @@ public class Controller{
         pantallaBaja.setScene(new Scene(root, 376, 227));
         pantallaBaja.setResizable(false);
         pantallaBaja.show();
+        pantallaBaja.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                pantallaBaja.hide();
+                pantallaPrincipal.setOpacity(1.0);
+            }
+        });
         pantallaPrincipal.setOpacity(0.0);
     }
 
@@ -252,6 +274,12 @@ public class Controller{
         pantallaContr.setScene(new Scene(root, 304, 235));
         pantallaContr.setResizable(false);
         pantallaContr.show();
+        pantallaContr.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                pantallaContr.hide();
+                pantallaPrincipal.setOpacity(1.0);
+            }
+        });
         pantallaPrincipal.setOpacity(0.0);
     }
 
@@ -264,6 +292,12 @@ public class Controller{
         pantallaPeticion.setScene(new Scene(root, 600, 400));
         pantallaPeticion.setResizable(false);
         pantallaPeticion.show();
+        pantallaPeticion.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                pantallaPeticion.hide();
+                pantallaPrincipal.setOpacity(1.0);
+            }
+        });
         pantallaPrincipal.setOpacity(0.0);
     }
 
@@ -282,9 +316,36 @@ public class Controller{
         pantallaInicio.setOpacity(1.0);
     }
 
-    public void crearChat(){
-        int indice =lstvwInicioUsuarios.getSelectionModel().getSelectedIndex();
-        System.out.println(lstvwInicioUsuarios.getSelectionModel().getSelectedItem());
+    private VOUser usuarioREM=new VOUser();
+    public static VOUser usuarioREMaux;
+    public VOUser getUsuarioREM() {
+        return usuarioREM;
+    }
+
+    public void crearChat() throws IOException{
+        try{
+            int indice =lstvwInicioUsuarios.getSelectionModel().getSelectedIndex();
+            if(pantallasChat.containsKey(usuariosConectados.get(indice))){ // Si ya existe no hacemos nada
+
+            }
+            else{
+                pantallasChat.put(usuariosConectados.get(indice),this);
+                usuarioREMaux=usuariosConectados.get(indice);
+                Stage chat = new Stage();
+                Parent root = FXMLLoader.load(getClass().getResource("InterfazChat.fxml"));
+                chat.setTitle("CHAtty - Chat con "+usuariosConectados.get(indice).nombre);
+                chat.setScene(new Scene(root, 499, 280));
+                chat.setResizable(false);
+                chat.show();
+                chat.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                    public void handle(WindowEvent we) {
+                        chat.hide();
+                        pantallasChat.remove(usuariosConectados.get(indice)); // AQUI
+                    }
+                });
+            }
+        }
+        catch(Exception e){}
     }
 
     // Métodos Pantalla Baja Usuario ((BAJA))
@@ -370,6 +431,12 @@ public class Controller{
         pantallaNueva.setScene(new Scene(root, 600, 400));
         pantallaNueva.setResizable(false);
         pantallaNueva.show();
+        pantallaNueva.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                pantallaNueva.hide();
+                pantallaPeticion.setOpacity(1.0);
+            }
+        });
         pantallaPeticion.setOpacity(0.0);
     }
 
@@ -383,35 +450,41 @@ public class Controller{
     } // EN PROCESO DE PRUEBA
 
     public void aceptarPeticion(){
-        String email= lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
-        // Buscamos al usuario en la lista de peticiones
-        VOUser nuevoAmigo= new VOUser();
-        for(VOUser pet : usuariosPeticiones){
-            if(pet.email.compareTo(email)==0){
-                nuevoAmigo=pet;
-                break;
+        try{
+            String email= lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
+            // Buscamos al usuario en la lista de peticiones
+            VOUser nuevoAmigo= new VOUser();
+            for(VOUser pet : usuariosPeticiones){
+                if(pet.email.compareTo(email)==0){
+                    nuevoAmigo=pet;
+                    break;
+                }
+            }
+            if(Main.um.resolveFriendRequest(usuario,nuevoAmigo,true)){ // Si la operación se realiza con éxito
+                usuariosPeticiones.remove(nuevoAmigo);
+                insertarPeticionesAmistad();
             }
         }
-        if(Main.um.resolveFriendRequest(usuario,nuevoAmigo,true)){ // Si la operación se realiza con éxito
-            usuariosPeticiones.remove(nuevoAmigo);
-            insertarPeticionesAmistad();
-        }
+        catch(Exception e){}
     } // EN PROCESO DE PRUEBA
 
     public void rechazarPeticion(){
-        String email= lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
-        // Buscamos al usuario en la lista de peticiones
-        VOUser nuevoAmigo= new VOUser();
-        for(VOUser pet : usuariosPeticiones){
-            if(pet.email.compareTo(email)==0){
-                nuevoAmigo=pet;
-                break;
+        try {
+            String email = lstvwPeticionPeticiones.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
+            // Buscamos al usuario en la lista de peticiones
+            VOUser nuevoAmigo = new VOUser();
+            for (VOUser pet : usuariosPeticiones) {
+                if (pet.email.compareTo(email) == 0) {
+                    nuevoAmigo = pet;
+                    break;
+                }
+            }
+            if (Main.um.resolveFriendRequest(usuario, nuevoAmigo, false)) { // Si la operacion se realiza con éxito
+                usuariosPeticiones.remove(nuevoAmigo);
+                insertarPeticionesAmistad();
             }
         }
-        if(Main.um.resolveFriendRequest(usuario,nuevoAmigo,false)){ // Si la operacion se realiza con éxito
-            usuariosPeticiones.remove(nuevoAmigo);
-            insertarPeticionesAmistad();
-        }
+        catch(Exception e){}
     } // EN PROCESO DE PRUEBA
 
     public void salirPeticion(){
@@ -433,21 +506,24 @@ public class Controller{
     }  // EN PROCESO DE PRUEBA
 
     public void enviarSolicitud(){
-        String email= lstvwNuevaUsuarios.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
-        // Buscamos al usuario en la lista de solicitudes
-        VOUser nuevaSolicitud= new VOUser();
-        for(VOUser pet : usuariosPeticiones){
-            if(pet.email.compareTo(email)==0){
-                nuevaSolicitud=pet;
-                break;
+        try{
+            String email= lstvwNuevaUsuarios.getSelectionModel().getSelectedItem(); // Obtenemos el elemento seleccionado del listview
+            // Buscamos al usuario en la lista de solicitudes
+            VOUser nuevaSolicitud= new VOUser();
+            for(VOUser sol : usuariosSolicitudes){
+                if(sol.email.compareTo(email)==0){
+                    nuevaSolicitud=sol;
+                    break;
+                }
+            }
+            if(Main.um.newFriendRequest(usuario,nuevaSolicitud)){ // Si la operación se realiza con éxito
+                while(!usuariosSolicitudes.isEmpty()){ // Vaciamos los usuarios temporales para la solicitud que hay
+                    usuariosSolicitudes.remove(0);
+                }
+                lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(""));
             }
         }
-        if(Main.um.newFriendRequest(usuario,nuevaSolicitud)){ // Si la operación se realiza con éxito
-            while(!usuariosPeticiones.isEmpty()){ // Vaciamos los usuarios temporales para la solicitud que hay
-                usuariosPeticiones.remove(0);
-            }
-            lstvwNuevaUsuarios.setItems(FXCollections.observableArrayList(""));
-        }
+        catch(Exception e){}
     } // EN PROCESO DE PRUEBA
 
     public void salirNueva(){
@@ -458,9 +534,23 @@ public class Controller{
     // Métodos Pantalla Chat
 
     public void enviarMensaje(){
-        pantallaChat.hide();
-        pantallaPrincipal.hide();
-        pantallaInicio.hide();
+        txtChatMensajes.appendText("Yo: "+txtChatMensaje.getText().trim()+"\n");
+        txtChatMensajes.appendText("");
+        usuarioREM.chat.sendMessge(usuario,txtChatMensaje.getText());
+        txtChatMensaje.setText("");
+        //pantallaPrincipal.hide();
+        //pantallaInicio.hide();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        usuarioREM=usuarioREMaux;
+
+        if(usuarioREM != null) {
+            System.out.println("DENTRO");
+            pantallasChat.put(usuarioREM, this);
+        }
+
+        usuarioREMaux=null;
+    }
 }

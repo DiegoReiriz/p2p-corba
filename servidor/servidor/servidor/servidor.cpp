@@ -69,7 +69,17 @@ class userManager_i : public POA_chat::userManager
 	res=database.obterUsuario(usuario,db);
 
 	if (res) {
+		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && res;/*nothing*/) {
+			if (itr->id == usuario.id)
+				res = false;
+			++itr;
+		}
+	}
+
+	if (res) {
 		//AVISA AOS AMIGOS CONECTADOS DE QUE SE ACABA DE CONECTAR
+		
+
 		list<chat::VOUser>* amigos = database.obterAmigos(usuario, db);
 		if(amigos != NULL && usuariosActivos.size() > 0){
 			int i = 0;
@@ -87,7 +97,7 @@ class userManager_i : public POA_chat::userManager
 						user->hash = usuario.hash;
 						user->salt = usuario.salt;
 						user->avatar = usuario.avatar;
-						user->callback = usuario.callback;
+						user->chat = usuario.chat;
 
 						itr->callback->notifyFriendIn(*user);
 						found = true;
@@ -108,7 +118,17 @@ class userManager_i : public POA_chat::userManager
 		if(peticiones != NULL && peticiones->size() > 0){
 			for (std::list<chat::VOUser>::iterator itr = peticiones->begin(); itr != peticiones->end();/*nothing*/) {
 
-				usuario.callback->notifyFriendRequest(*itr);
+				::chat::VOUser* user = new ::chat::VOUser;
+
+				user->id = itr->id;
+				user->nombre = itr->nombre;
+				user->email = itr->email;
+				user->hash = itr->hash;
+				user->salt = itr->salt;
+				user->avatar = itr->avatar;
+				user->chat = itr->chat;
+
+				usuario.callback->notifyFriendRequest(*user);
 			
 				++itr;
 			}
@@ -211,7 +231,7 @@ class userManager_i : public POA_chat::userManager
 
 	int i = 0;
 	int k = 0;
-	if(amigos != NULL){
+	if(amigos != NULL && usuariosActivos.size()>0){
 		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
 			bool found = false;
 		
@@ -234,7 +254,7 @@ class userManager_i : public POA_chat::userManager
 				user->hash = itr->hash;
 				user->salt = itr->salt;
 				user->avatar = itr->avatar;
-				user->callback = itr->callback;
+				user->chat = itr->chat;
 				(*lista)[k] = *user;
 				k++;
 			}
@@ -276,7 +296,7 @@ class userManager_i : public POA_chat::userManager
 	if(usuariosActivos.size() > 0){
 		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
 			if (itr->id == destiny.id) {
-				destiny.callback->notifyFriendRequest(origin);
+				itr->callback->notifyFriendRequest(origin);
 				found = true;
 			}
 
@@ -305,7 +325,7 @@ class userManager_i : public POA_chat::userManager
 			for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && !found;/*nothing*/) {
 
 				if (itr->id == destiny.id) {
-					destiny.callback->notifyFriendIn(origin);
+					itr->callback->notifyFriendIn(*itr);
 					origin.callback->notifyFriendIn(destiny);
 					found = true;
 				}
@@ -314,9 +334,7 @@ class userManager_i : public POA_chat::userManager
 			}
 		}
 	}
-	else
-		return false;
-	
+		
 	res = database.borrarPeticionAmistad(origin, destiny, db);
 	
 	ReleaseMutex(ghMutex);
@@ -340,7 +358,7 @@ class userManager_i : public POA_chat::userManager
 
 		int i = 0;
 	
-		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end();/*nothing*/) {
+		for (std::list<chat::VOUser>::iterator itr = amigos->begin(); itr != amigos->end();/*nothing*/) {
 		
 			::chat::VOUser* user = new ::chat::VOUser;
 
