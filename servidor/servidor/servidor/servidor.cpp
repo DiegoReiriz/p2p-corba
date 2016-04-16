@@ -56,7 +56,7 @@ class userManager_i : public POA_chat::userManager
 
 ::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
-	::CORBA::Boolean resu = false;
+	::CORBA::Boolean resu = true;
 	
 	cout << "SIGN IN" << endl;
 	cout << "=======" << endl;
@@ -77,7 +77,7 @@ class userManager_i : public POA_chat::userManager
 		}
 	}
 
-	if (resu) {
+	if (res && resu) {
 		//AVISA AOS AMIGOS CONECTADOS DE QUE SE ACABA DE CONECTAR
 		
 

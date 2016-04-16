@@ -7,8 +7,8 @@ servidor.cpp(592): warning C4101: 'ex': variable local sin referencia
 servidor.cpp(597): warning C4101: 'ex': variable local sin referencia
 servidor.cpp(601): warning C4101: 'ex': variable local sin referencia
   Generando código
-  31 of 2607 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+  29 of 2607 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    51 functions had inline decision re-evaluated but remain unchanged
+    52 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   servidor.vcxproj -> C:\p2p-corba\servidor\servidor\x64\Release\servidor.exe

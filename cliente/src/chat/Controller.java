@@ -390,7 +390,9 @@ public class Controller implements Initializable {
                                             @Override
                                             public void handle(KeyEvent keyEvent) {
                                                 if (keyEvent.getCode() == KeyCode.ENTER)  {
-                                                    pantallasChat.get(usuariosConectados.get(indice)).enviarMensaje();
+                                                    if(pantallasChat.get(usuariosConectados.get(indice)).getTxtChatMensaje().getText().trim().compareTo("")!=0){
+                                                        pantallasChat.get(usuariosConectados.get(indice)).enviarMensaje();
+                                                    }
                                                 }
                                             }
                                         });
@@ -600,7 +602,7 @@ public class Controller implements Initializable {
     // Métodos Pantalla Chat
 
     public void enviarMensaje(){
-        if(txtChatMensaje.getText().compareTo("")!=0){
+        if(txtChatMensaje.getText().trim().compareTo("")!=0){
             txtChatMensajes.appendText("Yo: "+txtChatMensaje.getText().trim()+"\n");
             txtChatMensajes.appendText("");
             usuarioREM.chat.sendMessge(usuario,txtChatMensaje.getText());

@@ -12,6 +12,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.stage.WindowEvent;
 
 import java.io.File;
@@ -19,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Optional;
+import java.util.Random;
 
 public class peertopeerImplementation extends peertopeerPOA {
 
@@ -34,9 +36,60 @@ public class peertopeerImplementation extends peertopeerPOA {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                      c.getTxtChatMensajes().appendText(usuario.nombre + ": " + message.trim() + "\n");
-                      c.getTxtChatMensajes().appendText("");
-                      c.getTxtChatMensajes().notify();
+                        String mens=message;
+                        if(message.trim().startsWith("/zumbido")){
+                            mens=message.replaceFirst("/zumbido","");
+                            Window ventana= c.getTxtChatMensajes().getScene().getWindow();
+                            double posInix=ventana.getX(), posIniy=ventana.getY();
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try{
+                                        ventana.setX(posInix+ new Random().nextInt(5+5+1)-5);
+                                        ventana.setY(posIniy+ new Random().nextInt(5+5+1)-5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix+ new Random().nextInt(5+5+1)-5);
+                                        ventana.setY(posIniy+ new Random().nextInt(5+5+1)-5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix+ new Random().nextInt(5+5+1)-5);
+                                        ventana.setY(posIniy+ new Random().nextInt(5+5+1)-5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix+ new Random().nextInt(5+5+1)-5);
+                                        ventana.setY(posIniy+ new Random().nextInt(5+5+1)-5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix+ new Random().nextInt(5+5+1)-5);
+                                        ventana.setY(posIniy+ new Random().nextInt(5+5+1)-5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix+ new Random().nextInt(5+5+1)-5);
+                                        ventana.setY(posIniy+ new Random().nextInt(5+5+1)-5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                    }
+                                    catch(Exception e){}
+                                }
+                            }).start();
+                        }
+                        if(mens.compareTo("")!=0) {
+                            c.getTxtChatMensajes().appendText(usuario.nombre + ": " + mens.trim() + "\n");
+                            c.getTxtChatMensajes().appendText("");
+                            c.getTxtChatMensajes().notify();
+                        }
                     }
                 });
                 found=true;
@@ -64,18 +117,72 @@ public class peertopeerImplementation extends peertopeerPOA {
                         });
                         Controller.pantallasChat.get(usuario).getImvwChatAvatarAmigo().setImage(new Image(usuario.avatar));
                         Controller.pantallasChat.get(usuario).getImvwChatAvatarPropio().setImage(new Image(Controller.usuario.avatar));
-                        Controller.pantallasChat.get(usuario).getTxtChatMensajes().appendText(usuario.nombre+": "+message.trim()+"\n");
-                        Controller.pantallasChat.get(usuario).getTxtChatMensajes().appendText("");
-                        Controller.pantallasChat.get(usuario).getTxtChatMensaje().requestFocus();
+                        String mens = message;
+                        if(message.trim().startsWith("/zumbido")) {
+                            mens = message.replaceFirst("/zumbido", "");
+                            Window ventana = Controller.pantallasChat.get(usuario).getTxtChatMensajes().getScene().getWindow();
+                            double posInix = ventana.getX(), posIniy = ventana.getY();
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        ventana.setX(posInix + new Random().nextInt(5 + 5 + 1) - 5);
+                                        ventana.setY(posIniy + new Random().nextInt(5 + 5 + 1) - 5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix + new Random().nextInt(5 + 5 + 1) - 5);
+                                        ventana.setY(posIniy + new Random().nextInt(5 + 5 + 1) - 5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix + new Random().nextInt(5 + 5 + 1) - 5);
+                                        ventana.setY(posIniy + new Random().nextInt(5 + 5 + 1) - 5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix + new Random().nextInt(5 + 5 + 1) - 5);
+                                        ventana.setY(posIniy + new Random().nextInt(5 + 5 + 1) - 5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix + new Random().nextInt(5 + 5 + 1) - 5);
+                                        ventana.setY(posIniy + new Random().nextInt(5 + 5 + 1) - 5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix + new Random().nextInt(5 + 5 + 1) - 5);
+                                        ventana.setY(posIniy + new Random().nextInt(5 + 5 + 1) - 5);
+                                        Thread.sleep(100);
+                                        ventana.setX(posInix);
+                                        ventana.setY(posIniy);
+                                    }
+                                    catch (Exception e) {
+                                    }
+                                }
+                            }).start();
+                        }
+                        if(mens.compareTo("")!=0) {
+                            Controller.pantallasChat.get(usuario).getTxtChatMensajes().appendText(usuario.nombre+": "+mens.trim()+"\n");
+                            Controller.pantallasChat.get(usuario).getTxtChatMensajes().appendText("");
+                            Controller.pantallasChat.get(usuario).getTxtChatMensaje().requestFocus();
+                        }
                         Controller.pantallasChat.get(usuario).getTxtChatMensaje().setOnKeyPressed(
-                                new EventHandler<KeyEvent>() {
-                                    @Override
-                                    public void handle(KeyEvent keyEvent) {
-                                        if (keyEvent.getCode() == KeyCode.ENTER)  {
+                            new EventHandler<KeyEvent>() {
+                                @Override
+                                public void handle(KeyEvent keyEvent) {
+                                    if (keyEvent.getCode() == KeyCode.ENTER) {
+                                        if(Controller.pantallasChat.get(usuario).getTxtChatMensaje().getText().trim().compareTo("")!=0){
                                             Controller.pantallasChat.get(usuario).enviarMensaje();
                                         }
                                     }
-                                });
+                                }
+                            });
                         Controller.pantallasChat.get(usuario).getTxtChatMensajes().notify();
                     }
                     catch (IOException e){
