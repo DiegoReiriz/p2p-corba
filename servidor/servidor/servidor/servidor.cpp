@@ -56,6 +56,7 @@ class userManager_i : public POA_chat::userManager
 
 ::CORBA::Boolean userManager_i::signIn(::chat::VOUser& usuario) {
 	::CORBA::Boolean res = false;
+	::CORBA::Boolean resu = false;
 	
 	cout << "SIGN IN" << endl;
 	cout << "=======" << endl;
@@ -71,12 +72,12 @@ class userManager_i : public POA_chat::userManager
 	if (res) {
 		for (std::list<chat::VOUser>::iterator itr = usuariosActivos.begin(); itr != usuariosActivos.end() && res;/*nothing*/) {
 			if (itr->id == usuario.id)
-				res = false;
+				resu = false;
 			++itr;
 		}
 	}
 
-	if (res) {
+	if (resu) {
 		//AVISA AOS AMIGOS CONECTADOS DE QUE SE ACABA DE CONECTAR
 		
 

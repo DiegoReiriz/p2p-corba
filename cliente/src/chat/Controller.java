@@ -463,7 +463,8 @@ public class Controller implements Initializable {
                 // Comprobamos que la contraseña es correcta
                 VOUserHolder usuarioHolder = new VOUserHolder();
                 usuarioHolder.value=usuario;
-                if(Main.um.signIn(usuarioHolder)){//Si es correcta cambiamos la contraseña
+                usuarioHolder.value.hash=txtCambContr.getText();
+                if(Main.um.signIn(usuarioHolder)){// Si es correcta cambiamos la contraseña
                     if(Main.um.alterUser(new VOUser(usuario.id,usuario.nombre,usuario.email,txtCambNewContr.getText(),usuario.salt,usuario.avatar,usuario.callback,usuario.chat))){
                         usuario.hash=txtCambNewContr.getText();
                         pantallaContr.hide();
