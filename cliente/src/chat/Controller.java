@@ -33,6 +33,7 @@ public class Controller implements Initializable {
     public static LinkedList<VOUser> usuariosPeticiones = new LinkedList<>(); // Lista de usuarios de los que se tiene solicitudes (Objetos usuario)
     public static LinkedList<VOUser> usuariosSolicitudes = new LinkedList<>();// Lista de usuarios a los que se le pueden hacer solicitudes (Objetos usuario)
     public static HashMap<VOUser, Controller> pantallasChat = new HashMap();
+    public static Controller pantprin;
 
     // Referencia a las pantallas de las interfaces de la aplicación
     private static Stage pantallaPrincipal;
@@ -164,6 +165,15 @@ public class Controller implements Initializable {
     public ImageView getImvwChatAvatarPropio() {
         return ImvwChatAvatarPropio;
     }
+
+    // Añadir amigos en la ventana principal
+    public TitledPane refreshlistaAmigos(){
+        insertarAmigosConectados();
+        return pnelInicioUsuarios;
+    }
+
+    //
+
 
     ////////////////////////////
     //    Métodos Pantallas   //
@@ -427,7 +437,6 @@ public class Controller implements Initializable {
             VOUserHolder usuarioHolder = new VOUserHolder();
             usuarioHolder.value=new VOUser((short)0,"",txtBajaEmail.getText(),txtBajaContr.getText(),"","",usuario.callback,usuario.chat);
             if(Main.um.signIn(usuarioHolder)){ // Comprobación con la base de datos correcta
-                // Terminar chats activos (notificar desconexión) + lo de abajo
                 //Método de borrado
                 Main.um.deleteUser(usuario);
                 System.out.println("Has borrado tu cuenta");
@@ -615,17 +624,19 @@ public class Controller implements Initializable {
     public void enviarArchivo(){
         File f = new FileChooser().showOpenDialog(new Stage());
         try {
-            if(f.canRead()){
-                InputStream is = new FileInputStream(f);
+            if(f!=null){
+                if(f.canRead()){
+                    InputStream is = new FileInputStream(f);
 
-                byte[] arrayChachi = IOUtils.readFully(is, (int) f.length(), true);
-                usuarioREM.chat.sendFile(usuario, arrayChachi, f.getPath());
-                txtChatMensajes.appendText("CHAtty: Petición de Archivo Enviada\n");
-                txtChatMensajes.appendText("");
+                    byte[] arrayChachi = IOUtils.readFully(is, (int) f.length(), true);
+                    usuarioREM.chat.sendFile(usuario, arrayChachi, f.getPath());
+                    txtChatMensajes.appendText("CHAtty: Petición de Archivo Enviada\n");
+                    txtChatMensajes.appendText("");
+                    }
                 }
-            }
-            catch(Exception e){
-                e.printStackTrace();
+        }
+        catch(Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -636,11 +647,15 @@ public class Controller implements Initializable {
         if(usuarioREM != null) {
             pantallasChat.put(usuarioREM, this);
         }
+
         if(ImvwChatAvatarAmigo!=null && ImvwChatAvatarPropio!=null){
            ImvwChatAvatarAmigo.setImage(new Image(usuarioREM.avatar));
            ImvwChatAvatarPropio.setImage(new Image(Controller.usuario.avatar));
         }
 
+        if(lstvwInicioUsuarios != null) {
+            pantprin = this;
+        }
         usuarioREMaux=null;
     }
 }

@@ -5,6 +5,7 @@ module chat
     considerar convertir as notificacións a oneway para que  non espere o servidor
     a comprobar si os clientes recibiron ou no a notificación correspondiente
   */
+
   interface supertopeer;
   interface peertopeer;
 

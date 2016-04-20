@@ -12,6 +12,7 @@
 using namespace std;
 
 CORBA::ORB_var orb;
+CORBA::Object_var obj;
 std::list<chat::VOUser> usuariosActivos;
 sqlite3 *db;
 SQLite database;
@@ -19,22 +20,6 @@ HANDLE ghMutex;
 
 static CORBA::Boolean bindObjectToName(CORBA::ORB_ptr, CORBA::Object_ptr,const char*);
 static CORBA::Boolean unbindObjectfromName(CORBA::ORB_ptr, CORBA::Object_ptr, const char*);
-
-class Echo_i : public POA_ECHOAPP::Echo
-{
-public:
-	inline Echo_i() {}
-	virtual ~Echo_i() {}
-	virtual char* echoString(const char* mesg);
-};
-
-
-char* Echo_i::echoString(const char* mesg)
-{
-	cout << mesg;
-
-	return CORBA::string_dup(mesg);
-}
 
 //////////////////////////////////////////////////////////////////////
 class userManager_i : public POA_chat::userManager
@@ -95,8 +80,8 @@ class userManager_i : public POA_chat::userManager
 						user->id = usuario.id;
 						user->nombre = usuario.nombre;
 						user->email = usuario.email;
-						user->hash = usuario.hash;
-						user->salt = usuario.salt;
+						user->hash = "";
+						user->salt = "";
 						user->avatar = usuario.avatar;
 						user->chat = usuario.chat;
 
@@ -112,8 +97,6 @@ class userManager_i : public POA_chat::userManager
 			}
 		}
 
-
-
 		usuariosActivos.push_back(usuario);
 		list<chat::VOUser>* peticiones = database.obterPeticionsAmistadPendientes(usuario,db);
 		if(peticiones != NULL && peticiones->size() > 0){
@@ -124,8 +107,8 @@ class userManager_i : public POA_chat::userManager
 				user->id = itr->id;
 				user->nombre = itr->nombre;
 				user->email = itr->email;
-				user->hash = itr->hash;
-				user->salt = itr->salt;
+				user->hash = "";
+				user->salt = "";
 				user->avatar = itr->avatar;
 				user->chat = itr->chat;
 
@@ -212,6 +195,10 @@ class userManager_i : public POA_chat::userManager
 	::CORBA::Boolean res = false;
 
 	res = database.borrarUsuario(usuario, db);
+	
+	if(res)
+		res = signOut(usuario);
+
 
 	ReleaseMutex(ghMutex);
 
@@ -252,8 +239,8 @@ class userManager_i : public POA_chat::userManager
 				user->id = itr->id;
 				user->nombre = itr->nombre;
 				user->email = itr->email;
-				user->hash = itr->hash;
-				user->salt = itr->salt;
+				user->hash = "";
+				user->salt = "";
 				user->avatar = itr->avatar;
 				user->chat = itr->chat;
 				(*lista)[k] = *user;
@@ -331,8 +318,8 @@ class userManager_i : public POA_chat::userManager
 					origen->id = origin.id;
 					origen->nombre = origin.nombre;
 					origen->email = origin.email;
-					origen->hash = origin.hash;
-					origen->salt = origin.salt;
+					origen->hash = "";
+					origen->salt = "";
 					origen->avatar = origin.avatar;
 					origen->chat = origin.chat;
 					
@@ -378,8 +365,8 @@ class userManager_i : public POA_chat::userManager
 			user->id = itr->id;
 			user->nombre = itr->nombre;
 			user->email = itr->email;
-			user->hash = itr->hash;
-			user->salt = itr->salt;
+			user->hash = "";
+			user->salt = "";
 			user->avatar = itr->avatar;
 			(*lista)[i] = *user;
 		
@@ -399,9 +386,11 @@ BOOL WINAPI consoleHandler(DWORD signal) {
 
 	//si se detecta sinal de peche da aplicación, se devinculan todos os obxectos rexistrados no servicio de nomes
 	if (signal == CTRL_C_EVENT || signal == CTRL_CLOSE_EVENT || signal == RIGHT_CTRL_PRESSED) {
+		unbindObjectfromName(orb, obj, "User");
+		
 		orb->shutdown(true);
 		
-		cout << "EXCEPCION DONE" << endl;
+		cout << "Servidor cerrado correctamente" << endl;
 	}
 
 	return TRUE;
@@ -439,7 +428,7 @@ int main(int argc, char **argv){
 	try {
 		//inicialización e xestión de CORBA
 		orb = CORBA::ORB_init(argc, argv);
-		CORBA::Object_var       obj = orb->resolve_initial_references("RootPOA");
+		obj = orb->resolve_initial_references("RootPOA");
 		PortableServer::POA_var poa = PortableServer::POA::_narrow(obj);
 
 		//PortableServer::Servant_var<Echo_i> myecho = new Echo_i();

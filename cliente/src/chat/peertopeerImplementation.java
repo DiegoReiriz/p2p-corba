@@ -88,7 +88,10 @@ public class peertopeerImplementation extends peertopeerPOA {
                         if(mens.compareTo("")!=0) {
                             c.getTxtChatMensajes().appendText(usuario.nombre + ": " + mens.trim() + "\n");
                             c.getTxtChatMensajes().appendText("");
-                            c.getTxtChatMensajes().notify();
+                            try{
+                                c.getTxtChatMensajes().notify();
+                            }
+                            catch(Exception e){}
                         }
                     }
                 });
@@ -183,7 +186,10 @@ public class peertopeerImplementation extends peertopeerPOA {
                                     }
                                 }
                             });
-                        Controller.pantallasChat.get(usuario).getTxtChatMensajes().notify();
+                        try{
+                            Controller.pantallasChat.get(usuario).getTxtChatMensajes().notify();
+                        }
+                        catch(Exception e){}
                     }
                     catch (IOException e){
                     }
@@ -207,8 +213,7 @@ public class peertopeerImplementation extends peertopeerPOA {
 
         Platform.runLater(new Runnable() {
             @Override
-            public void run() {
-                Controller.pantallasChat.get(usuario).getTxtChatMensajes().setText(Controller.pantallasChat.get(usuario).getTxtChatMensajes().getText().substring(0,(Controller.pantallasChat.get(usuario).getTxtChatMensajes().getText().length()-(usuario.nombre.length()+3))));
+            public void run(){
                 sendMessge(user,"Petición de Archivo Recibida");
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Dialogo de confirmación");
@@ -222,26 +227,27 @@ public class peertopeerImplementation extends peertopeerPOA {
                         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("File",nombre.substring(nombre.indexOf('.'))));
 
                         File f2 = fc.showSaveDialog(new Stage());
+                        if(f2!=null) {
+                            if (!f2.exists()) {
+                                f2.createNewFile();
+                            }
+                            OutputStream out = new FileOutputStream(f2);
 
-                        if (!f2.exists()) {
-                            f2.createNewFile();
+                            out.write(archivo, 0, archivo.length);
+
+                            //se ciera el archivo
+                            out.close();
+                            sendMessge(user, "Archivo guardado en: " + f2.getPath());
+                            user.chat = Controller.usuario.chat;
+                            user.nombre = "CHAtty";
+                            user.email = Controller.usuario.email;
+                            user.id = Controller.usuario.id;
+                            user.callback = Controller.usuario.callback;
+                            user.hash = Controller.usuario.hash;
+                            user.salt = Controller.usuario.salt;
+                            user.avatar = Controller.usuario.avatar;
+                            usuario.chat.sendMessge(user, "El usuario " + Controller.usuario.nombre + " ha aceptado el archivo enviado");
                         }
-                        OutputStream out = new FileOutputStream(f2);
-
-                        out.write(archivo, 0, archivo.length);
-
-                        //se ciera el archivo
-                        out.close();
-                        sendMessge(user,"Archivo guardado en: "+f2.getPath());
-                        user.chat= Controller.usuario.chat;
-                        user.nombre="CHAtty";
-                        user.email=Controller.usuario.email;
-                        user.id=Controller.usuario.id;
-                        user.callback=Controller.usuario.callback;
-                        user.hash=Controller.usuario.hash;
-                        user.salt=Controller.usuario.salt;
-                        user.avatar=Controller.usuario.avatar;
-                        usuario.chat.sendMessge(user,"El usuario "+Controller.usuario.nombre+" ha aceptado el archivo enviado");
                     }catch (Exception e) {
                         e.printStackTrace();
                     }

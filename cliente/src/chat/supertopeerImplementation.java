@@ -1,5 +1,6 @@
 package chat;
 
+import javafx.application.Platform;
 import org.omg.CORBA.ORB;
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,16 @@ public class supertopeerImplementation extends supertopeerPOA {
     public void notifyFriendIn(VOUser usuario) {
         if(!Controller.usuariosConectados.contains(usuario)){
             Controller.usuariosConectados.add(usuario);
+            Platform.runLater(() -> {
+                try{
+                    if(Controller.pantprin.refreshlistaAmigos().isExpanded()){
+                        Controller.pantprin.refreshlistaAmigos().setExpanded(false);
+                        Controller.pantprin.refreshlistaAmigos().setExpanded(true);
+                    }
+                }
+                catch(Exception e){}
+            });
+
             if (SystemTray.isSupported()) {
                 final SystemTray systemTray = SystemTray.getSystemTray();
                 final TrayIcon trayIcon = new TrayIcon(new ImageIcon("", "omt").getImage(), "CHAtty");
@@ -52,6 +63,15 @@ public class supertopeerImplementation extends supertopeerPOA {
         for(VOUser user : Controller.usuariosConectados){
             if(user.email.compareTo(usuario.email)==0){
                 Controller.usuariosConectados.remove(user);
+                Platform.runLater(() -> {
+                    try{
+                        if(Controller.pantprin.refreshlistaAmigos().isExpanded()){
+                            Controller.pantprin.refreshlistaAmigos().setExpanded(false);
+                            Controller.pantprin.refreshlistaAmigos().setExpanded(true);
+                        }
+                    }
+                    catch(Exception e){}
+                });
                 if (SystemTray.isSupported()) {
                     final SystemTray systemTray = SystemTray.getSystemTray();
                     final TrayIcon trayIcon = new TrayIcon(new ImageIcon("", "omt").getImage(), "CHAtty");

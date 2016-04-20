@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../NamingService/NC0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../NamingService/counter" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../NamingService/servers.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-CARLI.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-ICARLY.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-ICARLY.dat" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$2.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$3.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$4.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5$2.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/Controller$6.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/Controller$6.class" />
@@ -9,24 +21,53 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2$2.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2$3.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$3.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/peertopeerImplementation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$1.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$2.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$3.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$4.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$5.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$6.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$7.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$8.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation.class" afterPath="$PROJECT_DIR$/out/production/cliente/chat/supertopeerImplementation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/.vs/servidor/v14/.suo" afterPath="$PROJECT_DIR$/../servidor/servidor/.vs/servidor/v14/.suo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor.sdf" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor.sdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/MyDb.db" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/MyDb.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLite.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLite.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLiteContract.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/SQLiteContract.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/echoSK.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/echoSK.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/interfaceSK.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/interfaceSK.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.pch" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/sqlite3.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/sqlite3.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/stdafx.obj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/stdafx.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/vc140.pdb" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/vc140.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.exe" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.iobj" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.iobj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.ipdb" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.ipdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.pdb" afterPath="$PROJECT_DIR$/../servidor/servidor/x64/Release/servidor.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LinkerPuertoOmniName.bat" afterPath="$PROJECT_DIR$/../LinkerPuertoOmniName.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/Controller.java" afterPath="$PROJECT_DIR$/src/chat/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/peertopeerImplementation.java" afterPath="$PROJECT_DIR$/src/chat/peertopeerImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-ICARLY.bak" afterPath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-ICARLY.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-ICARLY.dat" afterPath="$PROJECT_DIR$/../servidor/omniNamesData/omninames-ICARLY.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chat/supertopeerImplementation.java" afterPath="$PROJECT_DIR$/src/chat/supertopeerImplementation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.cpp" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.vcxproj" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/servidor.vcxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.log" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.command.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.command.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.read.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.read.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.write.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/CL.write.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.command.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.command.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.read.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.read.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.write.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/link.write.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.command.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.command.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.read.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.read.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.write.1.tlog" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/rc.write.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/servidor.lastbuildstate" afterPath="$PROJECT_DIR$/../servidor/servidor/servidor/x64/Release/servidor.tlog/servidor.lastbuildstate" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,46 +130,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chat/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="443">
+              <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="392" column="141" selection-start-line="392" selection-start-column="141" selection-end-line="392" selection-end-column="141" />
-              <folding>
-                <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-                <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-                <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-                <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-                <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-                <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-                <element signature="method#baja#0;class#Controller#0" expanded="false" />
-                <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-                <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-                <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-                <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
-                <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
-                <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
-                <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-                <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-                <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
-                <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
-                <element signature="method#enviarArchivo#0;class#Controller#0" expanded="false" />
-                <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="732">
+              <caret line="661" column="0" selection-start-line="661" selection-start-column="0" selection-end-line="661" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,11 +153,23 @@
       <file leaf-file-name="peertopeerImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="179" column="117" selection-start-line="179" selection-start-column="117" selection-end-line="179" selection-end-column="117" />
+            <state relative-caret-position="1716">
+              <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#sendFile#0;class#peertopeerImplementation#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="supertopeerImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="770">
+              <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
+              <folding>
+                <element signature="method#notifyFriendRequest#0;class#supertopeerImplementation#0" expanded="false" />
+                <element signature="method#notifyFriendRequestReslution#0;class#supertopeerImplementation#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -180,8 +209,8 @@
         <option value="$PROJECT_DIR$/src/chat/Nueva.fxml" />
         <option value="$PROJECT_DIR$/src/chat/InterfazChat.fxml" />
         <option value="$PROJECT_DIR$/src/chat/Main.java" />
-        <option value="$PROJECT_DIR$/src/chat/supertopeerImplementation.java" />
         <option value="$PROJECT_DIR$/src/chat/peertopeerImplementation.java" />
+        <option value="$PROJECT_DIR$/src/chat/supertopeerImplementation.java" />
         <option value="$PROJECT_DIR$/src/chat/Controller.java" />
       </list>
     </option>
@@ -195,10 +224,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -230,8 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,7 +297,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,43 +332,6 @@
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -546,7 +538,7 @@
       <option name="PROGRAM_PARAMETERS" value="-ORBInitialPort 2089 -ORBInitialHost localhost" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.8.0_77" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -601,35 +593,35 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266385" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32581738" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1453125" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14484979" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4027484" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -685,25 +677,25 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java</url>
-          <line>117</line>
-          <properties />
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>548</line>
+          <line>557</line>
           <properties />
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/chat/Controller.java</url>
-          <line>547</line>
+          <line>556</line>
           <properties />
           <option name="timeStamp" value="171" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="185" />
+      <option name="time" value="194" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -749,31 +741,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-            <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#baja#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-            <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
-            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarArchivo#0;class#Controller#0" expanded="false" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -789,31 +757,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-            <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#baja#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-            <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
-            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarArchivo#0;class#Controller#0" expanded="false" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -840,31 +784,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-            <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#baja#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-            <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
-            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarArchivo#0;class#Controller#0" expanded="false" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -891,31 +811,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-            <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#baja#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-            <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
-            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarArchivo#0;class#Controller#0" expanded="false" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -942,31 +838,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-            <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#baja#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-            <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
-            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarArchivo#0;class#Controller#0" expanded="false" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,7 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1129,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1144,18 +1010,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2546" column="17" selection-start-line="2546" selection-start-column="17" selection-end-line="2546" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/chat/peertopeerPOA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,102 +1038,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/Node.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/Node.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/control/Button.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/event/Event.java" />
+    <entry file="file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="8411" column="0" selection-start-line="8411" selection-start-column="0" selection-end-line="8411" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/control/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="1770" column="0" selection-start-line="1770" selection-start-column="0" selection-end-line="1770" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1716">
+          <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chat/supertopeerImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="129" column="12" selection-start-line="129" selection-start-column="12" selection-end-line="139" selection-end-column="23" />
+        <state relative-caret-position="770">
+          <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
           <folding>
-            <element signature="method#notifyFriendIn#0;class#supertopeerImplementation#0" expanded="false" />
-            <element signature="method#notifyFriendOut#0;class#supertopeerImplementation#0" expanded="false" />
             <element signature="method#notifyFriendRequest#0;class#supertopeerImplementation#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/peertopeerImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="179" column="117" selection-start-line="179" selection-start-column="117" selection-end-line="179" selection-end-column="117" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#sendFile#0;class#peertopeerImplementation#0" expanded="false" />
+            <element signature="method#notifyFriendRequestReslution#0;class#supertopeerImplementation#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chat/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="392" column="141" selection-start-line="392" selection-start-column="141" selection-end-line="392" selection-end-column="141" />
-          <folding>
-            <element signature="method#SalirInicio#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarRegistro#0;class#Controller#0" expanded="false" />
-            <element signature="method#Registrar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaContr#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarAmigosConectados#0;class#Controller#0" expanded="false" />
-            <element signature="method#cerrarSesion#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarBaja#0;class#Controller#0" expanded="false" />
-            <element signature="method#baja#0;class#Controller#0" expanded="false" />
-            <element signature="method#cancelarCambio#0;class#Controller#0" expanded="false" />
-            <element signature="method#cambiar#0;class#Controller#0" expanded="false" />
-            <element signature="method#crearPantallaNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#insertarPeticionesAmistad#0;class#Controller#0" expanded="false" />
-            <element signature="method#aceptarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#rechazarPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirPeticion#0;class#Controller#0" expanded="false" />
-            <element signature="method#buscarUsuarios#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarSolicitud#0;class#Controller#0" expanded="false" />
-            <element signature="method#salirNueva#0;class#Controller#0" expanded="false" />
-            <element signature="method#enviarArchivo#0;class#Controller#0" expanded="false" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="732">
+          <caret line="661" column="0" selection-start-line="661" selection-start-column="0" selection-end-line="661" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
